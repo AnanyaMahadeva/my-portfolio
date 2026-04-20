@@ -1,5 +1,222 @@
 [
   {
+    "objectID": "reflection.html",
+    "href": "reflection.html",
+    "title": "Reflection",
+    "section": "",
+    "text": "This module gave me a practical understanding of how to build and deploy professional digital projects using modern tools like Quarto, Git, and GitHub Pages. It bridged the gap between academic work and real-world software development practices."
+  },
+  {
+    "objectID": "reflection.html#my-learning-journey",
+    "href": "reflection.html#my-learning-journey",
+    "title": "Reflection",
+    "section": "",
+    "text": "This module gave me a practical understanding of how to build and deploy professional digital projects using modern tools like Quarto, Git, and GitHub Pages. It bridged the gap between academic work and real-world software development practices."
+  },
+  {
+    "objectID": "reflection.html#hands-on-learning",
+    "href": "reflection.html#hands-on-learning",
+    "title": "Reflection",
+    "section": "Hands-On Learning",
+    "text": "Hands-On Learning\nThe hands-on learning approach played a key role in my development. By building a portfolio website from scratch, I learned not just the tools, but how to think like a developer — planning structure, writing clean code, and iterating based on feedback.\n\n\n\n\n\n\nTipKey Insight\n\n\n\nBuilding something real is far more valuable than reading about it. Every bug I fixed taught me more than any lecture could."
+  },
+  {
+    "objectID": "reflection.html#guest-lectures-inspiration",
+    "href": "reflection.html#guest-lectures-inspiration",
+    "title": "Reflection",
+    "section": "Guest Lectures & Inspiration",
+    "text": "Guest Lectures & Inspiration\nThe guest lectures were another valuable part of this experience. Hearing from professionals who use data analytics and web technologies daily gave me a sense of what the industry expects — and motivated me to go beyond the minimum requirements."
+  },
+  {
+    "objectID": "reflection.html#module-overview-video",
+    "href": "reflection.html#module-overview-video",
+    "title": "Reflection",
+    "section": "Module Overview Video",
+    "text": "Module Overview Video\nHere is a short overview of what Quarto is and how it enables reproducible publishing:\n\n\n\n\n\n\n\nNoteWhy Quarto?\n\n\n\nQuarto allows seamless integration of Python code, markdown text, and HTML output — making it perfect for a data analytics portfolio."
+  },
+  {
+    "objectID": "reflection.html#skills-i-developed",
+    "href": "reflection.html#skills-i-developed",
+    "title": "Reflection",
+    "section": "Skills I Developed",
+    "text": "Skills I Developed\n\n\n\nSkill\nTool Used\nProficiency Gained\n\n\n\n\nVersion Control\nGit & GitHub\nCommitting, branching, pushing\n\n\nWeb Publishing\nGitHub Pages\nLive deployment from docs/\n\n\nReproducible Reports\nQuarto\n.qmd files with Python chunks\n\n\nStyling\nSCSS / Bootswatch\nCustom themes and variables\n\n\nData Visualisation\nPython / Plotly\nInteractive charts"
+  },
+  {
+    "objectID": "reflection.html#challenges-i-overcame",
+    "href": "reflection.html#challenges-i-overcame",
+    "title": "Reflection",
+    "section": "Challenges I Overcame",
+    "text": "Challenges I Overcame\n\n“The only way to learn is to do.” — The experience of troubleshooting deployment issues taught me more about web hosting than any tutorial.\n\n\nSetting up the correct output-dir: docs in _quarto.yml\nWriting descriptive Git commit messages consistently\nEnsuring Python code chunks executed correctly in each project page\nBalancing academic workload with portfolio development"
+  },
+  {
+    "objectID": "reflection.html#future-goals",
+    "href": "reflection.html#future-goals",
+    "title": "Reflection",
+    "section": "Future Goals",
+    "text": "Future Goals\nThis module has strengthened my ability to present analytical work professionally. Going forward, I plan to:\n\nDeploy more advanced data science projects\nContribute to open-source repositories\nBuild interactive dashboards with Plotly and Dash\nPursue certifications in cloud platforms (Azure / AWS)\nApply Business Analytics skills in a professional setting in Ireland"
+  },
+  {
+    "objectID": "reflection.html#final-thoughts",
+    "href": "reflection.html#final-thoughts",
+    "title": "Reflection",
+    "section": "Final Thoughts",
+    "text": "Final Thoughts\nThis ePortfolio represents more than just an assignment — it is a living document of my skills, growth, and ambitions as a Business Analytics professional. I am proud of what I have built and excited to continue evolving it as I grow in my career.\n\nBuilt with Quarto | Ananya Mahadeva | MSc Business Analytics"
+  },
+  {
+    "objectID": "projects/project2.html",
+    "href": "projects/project2.html",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "",
+    "text": "This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models."
+  },
+  {
+    "objectID": "projects/project2.html#project-overview",
+    "href": "projects/project2.html#project-overview",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "",
+    "text": "This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models."
+  },
+  {
+    "objectID": "projects/project2.html#generate-dataset",
+    "href": "projects/project2.html#generate-dataset",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "📊 Generate Dataset",
+    "text": "📊 Generate Dataset\n\n\nCode\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\n\nn = 500\n\ndf = pd.DataFrame({\n    \"transactionamount\": np.random.randint(100, 10000, n),\n    \"loanamount\": np.random.randint(1000, 50000, n),\n    \"income\": np.random.randint(20000, 100000, n),\n    \"creditscore\": np.random.randint(300, 850, n),\n    \"isfraud\": np.random.choice([0, 1], n)\n})\n\ndf.head()\n\n\n\n\n\n\n\n\n\ntransactionamount\nloanamount\nincome\ncreditscore\nisfraud\n\n\n\n\n0\n7370\n6644\n39282\n753\n0\n\n\n1\n960\n44286\n43930\n336\n1\n\n\n2\n5490\n48320\n20077\n615\n1\n\n\n3\n5291\n3914\n40611\n413\n1\n\n\n4\n5834\n22352\n36984\n339\n0"
+  },
+  {
+    "objectID": "projects/project2.html#descriptive-statistics",
+    "href": "projects/project2.html#descriptive-statistics",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "📈 Descriptive Statistics",
+    "text": "📈 Descriptive Statistics\n\n\nCode\ndf.describe()\n\n\n\n\n\n\n\n\n\ntransactionamount\nloanamount\nincome\ncreditscore\nisfraud\n\n\n\n\ncount\n500.000000\n500.000000\n500.000000\n500.000000\n500.000000\n\n\nmean\n5126.896000\n25124.464000\n60233.066000\n567.890000\n0.536000\n\n\nstd\n2805.442697\n14298.929838\n22751.331509\n156.335368\n0.499202\n\n\nmin\n104.000000\n1009.000000\n20060.000000\n300.000000\n0.000000\n\n\n25%\n2822.000000\n12279.000000\n40770.000000\n431.250000\n0.000000\n\n\n50%\n5289.500000\n24455.000000\n59474.000000\n583.500000\n1.000000\n\n\n75%\n7492.000000\n38617.000000\n79147.000000\n686.750000\n1.000000\n\n\nmax\n9988.000000\n49529.000000\n99273.000000\n848.000000\n1.000000"
+  },
+  {
+    "objectID": "projects/project2.html#outlier-detection",
+    "href": "projects/project2.html#outlier-detection",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "⚠️ Outlier Detection",
+    "text": "⚠️ Outlier Detection\n\n\nCode\nQ1 = df[\"transactionamount\"].quantile(0.25)\nQ3 = df[\"transactionamount\"].quantile(0.75)\nIQR = Q3 - Q1\n\noutliers = df[(df[\"transactionamount\"] &lt; (Q1 - 1.5 * IQR)) |\n              (df[\"transactionamount\"] &gt; (Q3 + 1.5 * IQR))]\n\nlen(outliers)\n\n\n0"
+  },
+  {
+    "objectID": "projects/project2.html#fraud-distribution",
+    "href": "projects/project2.html#fraud-distribution",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "📊 Fraud Distribution",
+    "text": "📊 Fraud Distribution\n\n\nCode\ndf[\"isfraud\"].value_counts()\n\n\nisfraud\n1    268\n0    232\nName: count, dtype: int64"
+  },
+  {
+    "objectID": "projects/project2.html#visualization",
+    "href": "projects/project2.html#visualization",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "📉 Visualization",
+    "text": "📉 Visualization\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.figure()\ndf[\"transactionamount\"].hist()\nplt.title(\"Transaction Amount Distribution\")\nplt.xlabel(\"Amount\")\nplt.ylabel(\"Frequency\")\nplt.show()"
+  },
+  {
+    "objectID": "projects/project2.html#machine-learning-model",
+    "href": "projects/project2.html#machine-learning-model",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "🤖 Machine Learning Model",
+    "text": "🤖 Machine Learning Model\n\n\nCode\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\n\nX = df.drop(columns=[\"isfraud\"])\ny = df[\"isfraud\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)\n\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\n\npred = model.predict(X_test)\npred\n\n\narray([0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0,\n       1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1,\n       0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0,\n       1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,\n       0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0,\n       1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0])"
+  },
+  {
+    "objectID": "projects/project2.html#model-accuracy",
+    "href": "projects/project2.html#model-accuracy",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "📊 Model Accuracy",
+    "text": "📊 Model Accuracy\n\n\nCode\nfrom sklearn.metrics import accuracy_score\n\naccuracy_score(y_test, pred)\n\n\n0.464"
+  },
+  {
+    "objectID": "projects/project2.html#key-insights",
+    "href": "projects/project2.html#key-insights",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "🔍 Key Insights",
+    "text": "🔍 Key Insights\n\nFraud detection is not dependent on a single variable\n\nTransaction amount alone is insufficient\n\nMultiple financial indicators improve prediction"
+  },
+  {
+    "objectID": "projects/project2.html#business-impact",
+    "href": "projects/project2.html#business-impact",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "💼 Business Impact",
+    "text": "💼 Business Impact\n\nHelps detect fraud early\n\nReduces financial losses\n\nImproves monitoring systems"
+  },
+  {
+    "objectID": "projects/project2.html#conclusion",
+    "href": "projects/project2.html#conclusion",
+    "title": "Fraud Detection & Risk Modeling",
+    "section": "🚀 Conclusion",
+    "text": "🚀 Conclusion\nMachine learning models significantly improve fraud detection compared to traditional rule-based systems."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "These projects reflect my experience in data analysis, business problem solving, and dashboard development."
+  },
+  {
+    "objectID": "projects/index.html#my-projects",
+    "href": "projects/index.html#my-projects",
+    "title": "Projects",
+    "section": "",
+    "text": "These projects reflect my experience in data analysis, business problem solving, and dashboard development."
+  },
+  {
+    "objectID": "cv/cv.html",
+    "href": "cv/cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "My CV\nYou can view or download my CV below.\nDownload CV"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Profile\n\n\nI am a Business Analytics postgraduate student at a leading Dublin university, with a strong passion for data-driven decision making. My academic and professional background spans data analysis, machine learning, and business intelligence.\nMy journey reflects a strong transition from traditional work environments — like food service and retail — to a data-focused analytical career. I believe diverse experience makes a better analyst.\nI am deeply passionate about working with data to uncover patterns and tell compelling stories that drive smart decisions."
+  },
+  {
+    "objectID": "about.html#hi-im-ananya-mahadeva",
+    "href": "about.html#hi-im-ananya-mahadeva",
+    "title": "About Me",
+    "section": "",
+    "text": "Profile\n\n\nI am a Business Analytics postgraduate student at a leading Dublin university, with a strong passion for data-driven decision making. My academic and professional background spans data analysis, machine learning, and business intelligence.\nMy journey reflects a strong transition from traditional work environments — like food service and retail — to a data-focused analytical career. I believe diverse experience makes a better analyst.\nI am deeply passionate about working with data to uncover patterns and tell compelling stories that drive smart decisions."
+  },
+  {
+    "objectID": "about.html#professional-experience",
+    "href": "about.html#professional-experience",
+    "title": "About Me",
+    "section": "Professional Experience",
+    "text": "Professional Experience\n\nChristmas Market Food Service — RDS Stadium, Dublin\nRole: Food Service Assistant | Dec 2024\n\nDelivered fast-paced customer service in a high-volume event environment\nMaintained HACCP food safety standards throughout service\nCollaborated with team members to optimise order processing speed\n\n\n\nDeli Assistant — Dublin\nRole: Deli Counter Assistant | 2023–2024\n\nPrepared and served deli products to strict hygiene and quality standards\nManaged stock rotation and inventory reporting\nBuilt strong rapport with regular customers"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nMSc Business Analytics\nUniversity, Dublin | 2024–2025\nKey modules include: - Predictive Analytics & Machine Learning - Data Visualisation with Power BI - Statistical Methods for Business - ePortfolio & Professional Development\n\n\nPrior Education\nBachelor’s Degree in Commerce/Business (India)"
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "About Me",
+    "section": "Technical Skills",
+    "text": "Technical Skills\n\n\n\nProgramming & Analysis\n\n\n\nPython (Pandas, NumPy, Scikit-learn)\nSQL & Database Querying\nMicrosoft Excel (Advanced)\nPower BI Dashboard Development\n\n\n\n\n\nWeb & DevOps\n\n\n\nQuarto Website Development\nGit & GitHub Version Control\nGitHub Pages Deployment\nSCSS / CSS Styling"
+  },
+  {
+    "objectID": "about.html#personal-goals",
+    "href": "about.html#personal-goals",
+    "title": "About Me",
+    "section": "Personal Goals",
+    "text": "Personal Goals\n\n“Data is the new oil, but insight is the fuel.” — My guiding principle\n\n\nSecure a graduate-level data analytics role in Ireland\nContribute to open-source data projects\nContinue building and maintaining this professional portfolio\nAchieve AZ-900 Azure Fundamentals certification"
+  },
+  {
+    "objectID": "about.html#outside-work",
+    "href": "about.html#outside-work",
+    "title": "About Me",
+    "section": "Outside Work",
+    "text": "Outside Work\nWhen I’m not analysing data, I enjoy:\n\nExploring Dublin’s tech and innovation scene\nVisual design and diagram creation\nLearning about machine learning advances\nFollowing career development best practices"
+  },
+  {
     "objectID": "contact.html",
     "href": "contact.html",
     "title": "Contact & References",
@@ -26,5 +243,208 @@
     "title": "Contact & References",
     "section": "Send A Message",
     "text": "Send A Message\nThe fastest way to reach me is via email at ananyam461@gmail.com or connect with me on LinkedIn.\n\n\n\n\n\n\nImportantResponse Time\n\n\n\nI typically respond to messages within 24–48 hours. I look forward to hearing from you!\n\n\n\nThis portfolio is built with Quarto and hosted on GitHub Pages."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ananya Mahadeva",
+    "section": "",
+    "text": "Hi, I’m Ananya Mahadeva — a passionate data analyst and MSc Business Analytics student at a leading Dublin university. I love turning raw data into meaningful insights."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Ananya Mahadeva",
+    "section": "",
+    "text": "Hi, I’m Ananya Mahadeva — a passionate data analyst and MSc Business Analytics student at a leading Dublin university. I love turning raw data into meaningful insights."
+  },
+  {
+    "objectID": "index.html#what-i-do",
+    "href": "index.html#what-i-do",
+    "title": "Ananya Mahadeva",
+    "section": "What I Do",
+    "text": "What I Do\n\n\n\n\n\n\nData Analysis\n\n\n\n\n\n\n\nMachine Learning\n\n\n\n\n\n\n\nVisualisation"
+  },
+  {
+    "objectID": "index.html#core-skills",
+    "href": "index.html#core-skills",
+    "title": "Ananya Mahadeva",
+    "section": "Core Skills",
+    "text": "Core Skills\n\n\n\nSkill\nTools\n\n\n\n\nData Analysis\nPython, Excel, SQL\n\n\nVisualisation\nPower BI, Plotly, Matplotlib\n\n\nMachine Learning\nScikit-learn, Pandas\n\n\nWeb Publishing\nQuarto, GitHub Pages\n\n\nVersion Control\nGit, GitHub"
+  },
+  {
+    "objectID": "index.html#quick-highlights",
+    "href": "index.html#quick-highlights",
+    "title": "Ananya Mahadeva",
+    "section": "Quick Highlights",
+    "text": "Quick Highlights\n\n\n\n\n\n\nTipCurrently\n\n\n\n\nStudying MSc Business Analytics in Dublin\nBuilding this ePortfolio with Quarto & GitHub Pages\nSeeking part-time roles in retail & data analytics\n\n\n\n\n\n\n\n\n\nNoteFun Fact\n\n\n\nI processed over 10,000 rows of fraud detection data for my dissertation project using Python!"
+  },
+  {
+    "objectID": "projects/project1.html",
+    "href": "projects/project1.html",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "",
+    "text": "This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.\nUsing advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making."
+  },
+  {
+    "objectID": "projects/project1.html#project-overview",
+    "href": "projects/project1.html#project-overview",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "",
+    "text": "This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.\nUsing advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making."
+  },
+  {
+    "objectID": "projects/project1.html#dataset",
+    "href": "projects/project1.html#dataset",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "📁 Dataset",
+    "text": "📁 Dataset\n\n\nCode\nimport pandas as pd\n\ndata = {\n    \"Complaint_Type\": [\"Loan\", \"Credit Card\", \"Mortgage\", \"Loan\", \"Mortgage\", \"Credit Card\"],\n    \"Risk\": [1, 0, 1, 1, 0, 0]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\n\nComplaint_Type\nRisk\n\n\n\n\n0\nLoan\n1\n\n\n1\nCredit Card\n0\n\n\n2\nMortgage\n1\n\n\n3\nLoan\n1\n\n\n4\nMortgage\n0\n\n\n5\nCredit Card\n0"
+  },
+  {
+    "objectID": "projects/project1.html#analysis",
+    "href": "projects/project1.html#analysis",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "📈 Analysis",
+    "text": "📈 Analysis\n\n\nCode\nrisk_summary = df.groupby(\"Complaint_Type\")[\"Risk\"].mean()\nrisk_summary\n\n\nComplaint_Type\nCredit Card    0.0\nLoan           1.0\nMortgage       0.5\nName: Risk, dtype: float64"
+  },
+  {
+    "objectID": "projects/project1.html#visualization",
+    "href": "projects/project1.html#visualization",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "📊 Visualization",
+    "text": "📊 Visualization\n\n\nCode\nimport matplotlib.pyplot as plt\n\nrisk_summary.plot(kind='bar')\nplt.title(\"Average Risk by Complaint Type\")\nplt.ylabel(\"Risk Level\")\nplt.show()"
+  },
+  {
+    "objectID": "projects/project1.html#analytical-approach",
+    "href": "projects/project1.html#analytical-approach",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "🧠 Analytical Approach",
+    "text": "🧠 Analytical Approach\nThis project used a prescriptive analytics framework to optimise complaint resolution.\nThe dataset consisted of over 61,000 consumer complaint records sourced from the Consumer Financial Protection Bureau (CFPB).\n\nKey steps:\n\nData cleaning and preprocessing\n\nFeature engineering (time-based, risk-based features)\n\nText analysis using TF-IDF on complaint narratives\n\nCreation of predictive variables\n\nBinary classification model to predict monetary relief\n\nA Voting Classifier (Gradient Boosting + Random Forest) was used to improve prediction accuracy and robustness."
+  },
+  {
+    "objectID": "projects/project1.html#key-metric-calculation",
+    "href": "projects/project1.html#key-metric-calculation",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "📊 Key Metric Calculation",
+    "text": "📊 Key Metric Calculation\nThe key KPI calculated in this project was the probability of monetary relief, used to prioritise complaints."
+  },
+  {
+    "objectID": "projects/project1.html#results-model-performance",
+    "href": "projects/project1.html#results-model-performance",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "📈 Results & Model Performance",
+    "text": "📈 Results & Model Performance\nThe model demonstrated strong predictive performance:\n\nAccuracy: 77.4%\n\nPrecision: 86.1%\n\nROC-AUC: 0.794\n\nHigh precision was prioritised to ensure that flagged complaints were genuinely high-risk, reducing unnecessary workload for the resolution team."
+  },
+  {
+    "objectID": "projects/project1.html#key-insights",
+    "href": "projects/project1.html#key-insights",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "Key Insights",
+    "text": "Key Insights\n\nComplaint risk varies significantly across product categories (e.g., credit cards vs loans)\n\nHigher complaint volumes are associated with increased financial risk\n\nLonger complaint narratives are more likely to result in monetary relief\n\nSeasonal trends impact complaint volume and operational pressure\n\nThese insights helped identify operational bottlenecks and prioritisation opportunities."
+  },
+  {
+    "objectID": "projects/project1.html#business-impact",
+    "href": "projects/project1.html#business-impact",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "Business Impact",
+    "text": "Business Impact\nThe implementation of this model enables:\n\nFaster identification of high-risk complaints\n\nImproved allocation of specialist resolution teams\n\nReduction in financial losses due to delayed action\n\nA simulation estimated:\n\nNet Benefit: ~$470,000\n\nROI: ~1191%\n\nThis demonstrates significant operational and financial value from data-driven decision making."
+  },
+  {
+    "objectID": "projects/project1.html#solution-deployment",
+    "href": "projects/project1.html#solution-deployment",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "Solution & Deployment",
+    "text": "Solution & Deployment\nThe final solution was deployed as an interactive Streamlit dashboard, allowing:\n\nReal-time complaint risk scoring\n\nDecision support for resolution teams\n\nMonitoring of operational performance\n\nThe system enables a shift from reactive complaint handling to proactive risk management."
+  },
+  {
+    "objectID": "projects/project3.html",
+    "href": "projects/project3.html",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "",
+    "text": "This project presents a business performance analysis of TechNova Inc using Power BI dashboards.\nThe objective is to evaluate revenue trends, profitability patterns, and operational performance across regions, products, and sales channels to support data-driven decision-making."
+  },
+  {
+    "objectID": "projects/project3.html#project-overview",
+    "href": "projects/project3.html#project-overview",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "",
+    "text": "This project presents a business performance analysis of TechNova Inc using Power BI dashboards.\nThe objective is to evaluate revenue trends, profitability patterns, and operational performance across regions, products, and sales channels to support data-driven decision-making."
+  },
+  {
+    "objectID": "projects/project3.html#dashboard-preview",
+    "href": "projects/project3.html#dashboard-preview",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "📊 Dashboard Preview",
+    "text": "📊 Dashboard Preview\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis dashboard enables real-time monitoring of business performance and supports strategic decision-making."
+  },
+  {
+    "objectID": "projects/project3.html#key-business-metrics",
+    "href": "projects/project3.html#key-business-metrics",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "📊 Key Business Metrics",
+    "text": "📊 Key Business Metrics\n\nTotal Revenue: 263.47K\nNet Revenue: 217.82K\nTotal Profit: 4.59K\nTotal Orders: 500\nAverage Discount: 15.18%\n\n👉 The relatively low profit margin suggests potential inefficiencies in pricing or cost structures."
+  },
+  {
+    "objectID": "projects/project3.html#revenue-analysis",
+    "href": "projects/project3.html#revenue-analysis",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "📈 Revenue Analysis",
+    "text": "📈 Revenue Analysis\n\nRevenue peaked in 2017 (~31K)\n\nDecline observed during 2018–2020\n\nRecovery seen in 2023\n\nDrop observed again in 2024\n\n👉 This pattern indicates fluctuating business performance with signs of recovery in recent years."
+  },
+  {
+    "objectID": "projects/project3.html#regional-insights",
+    "href": "projects/project3.html#regional-insights",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "🌍 Regional Insights",
+    "text": "🌍 Regional Insights\n\nStrong markets: Asia, North America\nGrowth opportunities: South America, Africa\nUnderperforming region: Europe\n\n👉 Some regions generate high revenue but lower profit, indicating pricing or cost inefficiencies."
+  },
+  {
+    "objectID": "projects/project3.html#product-performance",
+    "href": "projects/project3.html#product-performance",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "🛍️ Product Performance",
+    "text": "🛍️ Product Performance\nTop contributors: - Flight Tickets (~24.6%) - Tablets (~24.2%)\nModerate contributors: - Smartphones - Building Materials - Solar Panels (~13% each)\nLower contributors: - Insurance Plans (~11%)\n👉 Revenue concentration in a few categories suggests dependency on specific product segments."
+  },
+  {
+    "objectID": "projects/project3.html#profit-trend-analysis",
+    "href": "projects/project3.html#profit-trend-analysis",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "📉 Profit Trend Analysis",
+    "text": "📉 Profit Trend Analysis\n\nPeak profit in 2017 (~5.6K)\nLoss period: 2018–2022\nRecovery in 2023–2024\n\n👉 Indicates operational challenges followed by improved performance in later years."
+  },
+  {
+    "objectID": "projects/project3.html#sales-channel-insights",
+    "href": "projects/project3.html#sales-channel-insights",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "🛒 Sales Channel Insights",
+    "text": "🛒 Sales Channel Insights\n\nOnline sales: 82.7% of total profit\nOffline sales: 17.3%\n\n👉 Digital channels significantly outperform offline sales in profitability."
+  },
+  {
+    "objectID": "projects/project3.html#sales-representative-insights",
+    "href": "projects/project3.html#sales-representative-insights",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "👥 Sales Representative Insights",
+    "text": "👥 Sales Representative Insights\n\nTop performers: Alice & Diana\nSome representatives generate high sales but low profit\n\n👉 High sales volume does not always translate into high profitability."
+  },
+  {
+    "objectID": "projects/project3.html#key-insights",
+    "href": "projects/project3.html#key-insights",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "💡 Key Insights",
+    "text": "💡 Key Insights\n\nProfit margins are relatively low compared to revenue\n\nRevenue is concentrated in limited product categories\n\nOnline sales dominate profitability\n\nRegional performance varies significantly\n\nSales performance does not always equal profitability"
+  },
+  {
+    "objectID": "projects/project3.html#business-impact",
+    "href": "projects/project3.html#business-impact",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "🚀 Business Impact",
+    "text": "🚀 Business Impact\n\nImproved visibility of revenue and profit trends\n\nBetter understanding of regional performance\n\nIdentification of cost and pricing inefficiencies\n\nSupports data-driven strategic decision-making"
+  },
+  {
+    "objectID": "projects/project3.html#conclusion",
+    "href": "projects/project3.html#conclusion",
+    "title": "Sales & Profitability Analysis (Power BI)",
+    "section": "🏁 Conclusion",
+    "text": "🏁 Conclusion\nThe analysis highlights both strengths and inefficiencies in TechNova’s business performance.\nFocusing on high-margin products, optimizing pricing strategies, and strengthening digital sales channels can significantly improve long-term profitability and operational efficiency."
   }
 ]
