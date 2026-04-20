@@ -67,4 +67,4 @@ This module has strengthened my ability to present analytical work professionall
 This ePortfolio represents more than just an assignment — it is a **living document** of my skills, growth, and ambitions as a Business Analytics professional. I am proud of what I have built and excited to continue evolving it as I grow in my career.
 
 ---
-*Built with [Quarto](https://quarto.org) | Ananya Mahadeva | MSc Business Analytics*
+

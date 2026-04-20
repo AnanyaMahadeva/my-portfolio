@@ -1,128 +1,400 @@
 ---
-title: "Sales & Profitability Analysis (Power BI)"
-description: "Business performance analysis of TechNova Inc using interactive Power BI dashboards."
+title: "Sales and Profitability Analysis — TechNova Inc."
+description: "Business performance analysis of TechNova Inc. using interactive data visualisations."
 author: "Ananya Mahadeva"
-date: today
-categories: [Power BI, Data Analysis, Business Intelligence]
-
-image: ../image/powerbi_dashboard.png
+date: 2025-11-15
+image: "image/projects/powerbi_dashboard.png"
+categories: [Python, Power BI, Data Analysis, Business Intelligence]
 ---
 
-## 📌 Project Overview
+## {{< fa circle-info >}} Project Overview
 
-This project presents a business performance analysis of TechNova Inc using Power BI dashboards.
+This project analyses the sales and profitability performance of **TechNova Inc.** over a
+ten-year period from 2015 to 2024. Using a dataset of 500 transactions, the analysis
+examines revenue trends, product category performance, regional distribution, and sales
+channel profitability to identify key business drivers and strategic opportunities.
 
-The objective is to evaluate revenue trends, profitability patterns, and operational performance across regions, products, and sales channels to support data-driven decision-making.
+::: {.callout-note appearance="simple"}
+**Original Tool:** Power BI dashboard developed as a group project (Group 9, DCU BAA 1089).
 
----
+**This page** reproduces and extends the analysis using Python and Plotly for interactive,
+executable visualisations.
 
-## 📊 Dashboard Preview
-
-![](../image/powerbi_dashboard.png)
-
----
-
-::: {.callout-tip}
-This dashboard enables real-time monitoring of business performance and supports strategic decision-making.
+**Dataset:** 500 internal transaction records — TechNova Inc. global sales 2015–2024.
 :::
 
 ---
 
-## 📊 Key Business Metrics
+## {{< fa gauge-high >}} Key Performance Indicators
 
-- Total Revenue: **263.47K**
-- Net Revenue: **217.82K**
-- Total Profit: **4.59K**
-- Total Orders: **500**
-- Average Discount: **15.18%**
+```{=html}
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
 
-👉 The relatively low profit margin suggests potential inefficiencies in pricing or cost structures.
+  <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.6rem; font-weight: 700;">€263.47K</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Total Revenue</div>
+  </div>
 
----
+  <div style="background: linear-gradient(135deg, #0f3460, #533483); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.6rem; font-weight: 700;">€217.82K</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Net Revenue</div>
+  </div>
 
-## 📈 Revenue Analysis
+  <div style="background: linear-gradient(135deg, #2d6a4f, #1b4332); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.6rem; font-weight: 700;">€4.59K</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Net Profit</div>
+  </div>
 
-- Revenue peaked in **2017 (~31K)**  
-- Decline observed during **2018–2020**  
-- Recovery seen in **2023**  
-- Drop observed again in **2024**
+  <div style="background: linear-gradient(135deg, #7b2d00, #c0392b); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.6rem; font-weight: 700;">15.18%</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Avg Discount</div>
+  </div>
 
-👉 This pattern indicates fluctuating business performance with signs of recovery in recent years.
+  <div style="background: linear-gradient(135deg, #b7791f, #c9a84c); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.6rem; font-weight: 700;">500</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Total Orders</div>
+  </div>
 
----
-
-## 🌍 Regional Insights
-
-- Strong markets: **Asia, North America**
-- Growth opportunities: **South America, Africa**
-- Underperforming region: **Europe**
-
-👉 Some regions generate high revenue but lower profit, indicating pricing or cost inefficiencies.
-
----
-
-## 🛍️ Product Performance
-
-Top contributors:
-- Flight Tickets (~24.6%)
-- Tablets (~24.2%)
-
-Moderate contributors:
-- Smartphones
-- Building Materials
-- Solar Panels (~13% each)
-
-Lower contributors:
-- Insurance Plans (~11%)
-
-👉 Revenue concentration in a few categories suggests dependency on specific product segments.
+</div>
+```
 
 ---
 
-## 📉 Profit Trend Analysis
+## {{< fa chart-line >}} Revenue Trend: 2015–2024
 
-- Peak profit in **2017 (~5.6K)**
-- Loss period: **2018–2022**
-- Recovery in **2023–2024**
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show revenue trend code"
+#| fig-cap: "Annual total revenue for TechNova Inc. 2015–2024, showing peak in 2017 and significant decline in 2024."
 
-👉 Indicates operational challenges followed by improved performance in later years.
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
+revenue_data = pd.DataFrame({
+    "Year": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+    "Total_Revenue": [26758.94, 29454.11, 31229.49, 25208.31,
+                      26943.71, 24720.27, 25520.57, 27596.94, 29187.05, 16853.70],
+    "Net_Profit": [1088.54, 406.57, 5603.35, -2200.00,
+                   -800.00, -1500.00, -1200.00, -2115.75, 4141.20, 1517.99]
+})
 
-## 🛒 Sales Channel Insights
+fig = make_subplots(specs=[[{"secondary_y": True}]])
 
-- Online sales: **82.7% of total profit**
-- Offline sales: **17.3%**
+fig.add_trace(
+    go.Bar(
+        x=revenue_data["Year"],
+        y=revenue_data["Total_Revenue"],
+        name="Total Revenue",
+        marker_color="#c9a84c",
+        opacity=0.8
+    ),
+    secondary_y=False
+)
 
-👉 Digital channels significantly outperform offline sales in profitability.
+fig.add_trace(
+    go.Scatter(
+        x=revenue_data["Year"],
+        y=revenue_data["Net_Profit"],
+        name="Net Profit",
+        mode="lines+markers",
+        line=dict(color="#1a1a2e", width=2.5),
+        marker=dict(size=8)
+    ),
+    secondary_y=True
+)
 
+fig.add_hline(y=0, line_dash="dash", line_color="grey",
+              secondary_y=True, annotation_text="Break-even")
 
-## 👥 Sales Representative Insights
+fig.update_layout(
+    title="TechNova Inc. — Revenue and Profit Trend 2015–2024",
+    template="plotly_white",
+    font_family="Georgia",
+    title_font_size=16,
+    legend=dict(x=0.01, y=0.99)
+)
 
-- Top performers: **Alice & Diana**
-- Some representatives generate high sales but low profit
+fig.update_yaxes(title_text="Total Revenue (€)", secondary_y=False)
+fig.update_yaxes(title_text="Net Profit (€)", secondary_y=True)
 
-👉 High sales volume does not always translate into high profitability.
+fig
+```
 
+::: {.callout-important appearance="simple"}
+**Key Finding:** Revenue peaked in 2017 at €31,229 but the company recorded losses from
+2018 to 2022, with the worst performance in 2022 (−€2,115). A strong recovery occurred
+in 2023 (€4,141 profit), though 2024 saw the decade's lowest revenue at €16,853 —
+indicating potential market headwinds requiring strategic review.
+:::
 
-## 💡 Key Insights
+---
 
-- Profit margins are relatively low compared to revenue  
-- Revenue is concentrated in limited product categories  
-- Online sales dominate profitability  
-- Regional performance varies significantly  
-- Sales performance does not always equal profitability  
+## {{< fa layer-group >}} Gross Revenue by Product Category
 
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show category revenue code"
+#| fig-cap: "Gross revenue by product category — Accessories, Automotive and Finance are top performers."
 
-## 🚀 Business Impact
+category_data = pd.DataFrame({
+    "Category": ["Accessories", "Automotive", "Finance", "Energy",
+                 "Healthcare", "Agriculture", "Education",
+                 "Travel", "Electronics", "Construction"],
+    "Gross_Revenue": [32000, 30000, 30000, 28000,
+                      28000, 27000, 25000, 22000, 21000, 20000]
+})
 
-- Improved visibility of revenue and profit trends  
-- Better understanding of regional performance  
-- Identification of cost and pricing inefficiencies  
-- Supports data-driven strategic decision-making  
+category_data = category_data.sort_values("Gross_Revenue", ascending=True)
+category_data["Tier"] = category_data["Gross_Revenue"].apply(
+    lambda x: "High" if x >= 29000 else ("Mid" if x >= 25000 else "Low")
+)
 
+fig2 = px.bar(
+    category_data,
+    x="Gross_Revenue",
+    y="Category",
+    color="Tier",
+    color_discrete_map={"High": "#1a1a2e", "Mid": "#c9a84c", "Low": "#c0392b"},
+    orientation="h",
+    title="Gross Revenue by Product Category",
+    template="plotly_white",
+    text="Gross_Revenue"
+)
 
-## 🏁 Conclusion
+fig2.update_traces(texttemplate="€%{text:,.0f}", textposition="outside")
+fig2.update_layout(
+    font_family="Georgia",
+    title_font_size=16,
+    xaxis_title="Gross Revenue (€)",
+    yaxis_title="",
+    showlegend=True,
+    legend_title_text="Revenue Tier"
+)
 
-The analysis highlights both strengths and inefficiencies in TechNova’s business performance.
+fig2
+```
 
-Focusing on high-margin products, optimizing pricing strategies, and strengthening digital sales channels can significantly improve long-term profitability and operational efficiency.
+---
+
+## {{< fa chart-pie >}} Profit Distribution by Product
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show profit distribution code"
+#| fig-cap: "Share of total profit by product — Flight Tickets and Tablets account for nearly half of all profit."
+
+product_data = pd.DataFrame({
+    "Product": ["Flight Ticket", "Tablet", "Smartphone",
+                "Building Material", "Solar Panel", "Insurance Plan"],
+    "Profit": [2600, 2550, 1460, 1390, 1380, 1180]
+})
+
+fig3 = px.pie(
+    product_data,
+    values="Profit",
+    names="Product",
+    title="Profit Distribution by Product",
+    color_discrete_sequence=[
+        "#1a1a2e", "#c9a84c", "#2d6a4f",
+        "#0f3460", "#c0392b", "#533483"
+    ],
+    hole=0.4
+)
+
+fig3.update_traces(
+    textposition="outside",
+    textinfo="percent+label"
+)
+
+fig3.update_layout(
+    font_family="Georgia",
+    title_font_size=16,
+    showlegend=True
+)
+
+fig3
+```
+
+---
+
+## {{< fa globe >}} Net Revenue by Region
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show regional revenue code"
+#| fig-cap: "Net revenue share by region — Asia and North America lead, while Europe recorded negative profit."
+
+region_data = pd.DataFrame({
+    "Region": ["Asia", "North America", "South America", "Africa", "Europe"],
+    "Net_Revenue_Share": [22.41, 20.47, 19.43, 19.36, 18.33],
+    "Profit_Status": ["Positive", "Positive", "Positive", "Positive", "Negative"]
+})
+
+fig4 = px.bar(
+    region_data.sort_values("Net_Revenue_Share", ascending=True),
+    x="Net_Revenue_Share",
+    y="Region",
+    color="Profit_Status",
+    color_discrete_map={"Positive": "#2d6a4f", "Negative": "#c0392b"},
+    orientation="h",
+    title="Net Revenue Share by Region",
+    template="plotly_white",
+    text="Net_Revenue_Share"
+)
+
+fig4.update_traces(texttemplate="%{text:.1f}%", textposition="outside")
+fig4.update_layout(
+    font_family="Georgia",
+    title_font_size=16,
+    xaxis_title="Net Revenue Share (%)",
+    yaxis_title="",
+    legend_title_text="Profit Status"
+)
+
+fig4
+```
+
+::: {.callout-tip appearance="simple"}
+**Regional Insight:** Asia (22.41%) and North America (20.47%) are the strongest markets.
+Europe recorded negative profit despite an 18.33% revenue share — indicating high costs
+or unfavourable discount structures that require pricing strategy review.
+:::
+
+---
+
+## {{< fa users >}} Sales Representative Performance
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show sales rep performance code"
+#| fig-cap: "Sales vs profit by representative — Eve generated comparable sales to peers but recorded negative profit, highlighting the importance of margin management."
+
+rep_data = pd.DataFrame({
+    "Sales_Rep": ["Alice", "Charlie", "Diana", "Eve", "Bob"],
+    "Sales": [57000, 55000, 50000, 47000, 47000],
+    "Profit": [2700, 1100, 3000, -3200, 900]
+})
+
+fig5 = make_subplots(specs=[[{"secondary_y": True}]])
+
+fig5.add_trace(
+    go.Bar(
+        x=rep_data["Sales_Rep"],
+        y=rep_data["Sales"],
+        name="Total Sales (€)",
+        marker_color="#c9a84c",
+        opacity=0.85
+    ),
+    secondary_y=False
+)
+
+fig5.add_trace(
+    go.Scatter(
+        x=rep_data["Sales_Rep"],
+        y=rep_data["Profit"],
+        name="Net Profit (€)",
+        mode="lines+markers",
+        line=dict(color="#1a1a2e", width=2.5),
+        marker=dict(
+            size=10,
+            color=["#2d6a4f" if p > 0 else "#c0392b" for p in rep_data["Profit"]]
+        )
+    ),
+    secondary_y=True
+)
+
+fig5.add_hline(y=0, line_dash="dash", line_color="grey", secondary_y=True)
+
+fig5.update_layout(
+    title="Sales and Profit by Sales Representative",
+    template="plotly_white",
+    font_family="Georgia",
+    title_font_size=16
+)
+
+fig5.update_yaxes(title_text="Total Sales (€)", secondary_y=False)
+fig5.update_yaxes(title_text="Net Profit (€)", secondary_y=True)
+
+fig5
+```
+
+---
+
+## {{< fa wifi >}} Profit by Sales Channel
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show sales channel code"
+#| fig-cap: "Online channels generated 82.7% of total profit, confirming the primacy of digital sales for TechNova."
+
+channel_data = pd.DataFrame({
+    "Channel": ["Online", "Offline"],
+    "Profit_Share": [82.7, 17.3],
+    "Profit": [3795.31, 794.42]
+})
+
+fig6 = px.pie(
+    channel_data,
+    values="Profit_Share",
+    names="Channel",
+    title="Profit Distribution by Sales Channel",
+    color_discrete_map={"Online": "#1a1a2e", "Offline": "#c9a84c"},
+    hole=0.45
+)
+
+fig6.update_traces(
+    textposition="outside",
+    textinfo="percent+label"
+)
+
+fig6.update_layout(
+    font_family="Georgia",
+    title_font_size=16
+)
+
+fig6
+```
+
+---
+
+## {{< fa lightbulb >}} Key Insights
+
+| Finding | Business Implication |
+|---|---|
+| 2017 was peak revenue year (€31,229) | Operational strategies from 2017 should be revisited |
+| Losses recorded 2018–2022 | Cost control and market adaptation are critical |
+| Accessories, Automotive, Finance lead by category | Portfolio investment should focus here |
+| Flight Tickets and Tablets drive 48.8% of profit | High-margin product focus is warranted |
+| Eve: high sales, negative profit | High sales volume does not guarantee profitability |
+| Online channels: 82.7% of profit | Digital investment should remain a strategic priority |
+| Europe: negative profit | Pricing and discount strategy needs regional review |
+
+---
+
+## {{< fa flag >}} Recommendations
+
+::: {.callout-note appearance="simple"}
+**Strategic recommendations based on the analysis:**
+
+1. Continue investing in Accessories, Automotive, and Finance — the highest-revenue categories
+2. Review European pricing and discount strategies to restore regional profitability
+3. Replicate the cost management practices of Alice and Diana across the full sales team
+4. Prioritise online channel development — 82.7% of profit depends on digital operations
+5. Reduce average discount rate (currently 15.18%) where demand is inelastic to improve margins
+6. Investigate the 2024 revenue decline (lowest in ten years) as a strategic priority
+:::
+
+---
+
+## {{< fa book >}} References
+
+- TechNova Inc. (2024). *Global sales and customer preference 2015–2024* [Internal dataset]. Unpublished raw data.
+- Group 9. (2025). *TechNova Inc. sales and profit dashboard* [Power BI dashboard]. Unpublished, DCU BAA 1089.

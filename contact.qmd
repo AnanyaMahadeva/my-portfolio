@@ -1,11 +1,10 @@
 ---
-title: "Contact & References"
+title: "Get In Touch"
 format:
   html:
     toc: true
 ---
 
-## Get In Touch {.text-right}
 
 I'd love to connect! Whether you're reaching out about a job opportunity, collaboration, or just want to chat about data analytics.
 
@@ -41,19 +40,8 @@ I'd love to connect! Whether you're reaching out about a job opportunity, collab
 References available upon request. Please contact me via email or LinkedIn to request a reference letter or direct contact details.
 :::
 
-### Academic Reference
 
-**Module Lecturer** — ePortfolio & Professional Development
-University, Dublin | MSc Business Analytics Programme
-
-### Professional Reference
-
-**Previous Employer** — Food Service / Retail
-Available upon request
-
----
-
-## Send A Message {.text-right}
+## Let’s Connect {.text-right}
 
 The fastest way to reach me is via **email** at [ananyam461@gmail.com](mailto:ananyam461@gmail.com) or connect with me on **LinkedIn**.
 
@@ -64,4 +52,4 @@ I typically respond to messages within **24–48 hours**. I look forward to hear
 
 ---
 
-*This portfolio is built with [Quarto](https://quarto.org) and hosted on GitHub Pages.*
+

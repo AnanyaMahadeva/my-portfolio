@@ -1,0 +1,422 @@
+---
+title: "BERT vs Llama3 — Sentiment Analysis Comparison"
+description: "Comparing fine-tuned BERT and zero-shot Llama3 for movie review sentiment classification on SST-2."
+author: "Ananya Mahadeva"
+date: 2026-04-20
+image: "image/projects/images.jpg"
+categories: [Python, Machine Learning, NLP, Advanced Analytics]
+---
+
+## {{< fa circle-info >}} Project Overview
+
+This project compares two fundamentally different approaches to binary sentiment
+classification — **fine-tuned BERT** and **zero-shot Llama3** — evaluated on the
+Stanford Sentiment Treebank v2 (SST-2) dataset. The business context is a streaming
+platform requiring real-time audience sentiment monitoring at scale.
+
+::: {.callout-note appearance="simple"}
+**Business Problem:** Streaming platforms receive thousands of reviews daily. Manual
+sentiment analysis is neither scalable nor consistent. An automated system capable of
+classifying sentiment within hours of a title's release is essential for editorial
+intervention before reputational damage occurs.
+
+**Success Criteria:** ≥95% accuracy on negative sentiment · <4-hour classification
+latency · Deterministic, auditable outputs for regulatory compliance.
+:::
+
+---
+
+## {{< fa scale-balanced >}} Model Comparison
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show model comparison table code"
+#| fig-cap: "Key architectural and operational differences between BERT and Llama3."
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+comparison = pd.DataFrame({
+    "Characteristic": [
+        "Model Type", "Training Approach", "Labelled Data Required",
+        "Output Type", "Task Flexibility", "Explainability",
+        "GPU Memory", "Inference Cost (10K reviews/day)"
+    ],
+    "BERT": [
+        "Discriminative (encoder-only)",
+        "Supervised fine-tuning",
+        "Yes — 67,349 labelled examples",
+        "Deterministic class label",
+        "Low — one task per fine-tuned model",
+        "None",
+        "1–2 GB",
+        "~£4/year"
+    ],
+    "Llama3": [
+        "Generative (decoder-only)",
+        "Zero-shot prompting",
+        "No",
+        "Generated text (non-deterministic)",
+        "High — adaptable via prompt changes",
+        "Can generate natural-language reasons",
+        "7–8 GB",
+        "£120–250/month (GPU rental)"
+    ]
+})
+
+```
+
+```{=html}
+<div style="overflow-x:auto; margin: 1rem 0;">
+<table style="width:100%; border-collapse: collapse; font-family: Georgia; font-size: 0.9rem;">
+  <thead>
+    <tr style="background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff;">
+      <th style="padding: 10px 14px; text-align: left;">Characteristic</th>
+      <th style="padding: 10px 14px; text-align: left;">BERT</th>
+      <th style="padding: 10px 14px; text-align: left;">Llama3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:8px 14px; font-weight:600;">Model Type</td>
+      <td style="padding:8px 14px;">Discriminative (encoder-only)</td>
+      <td style="padding:8px 14px;">Generative (decoder-only)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 14px; font-weight:600;">Training Approach</td>
+      <td style="padding:8px 14px;">Supervised fine-tuning</td>
+      <td style="padding:8px 14px;">Zero-shot prompting — no task training</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:8px 14px; font-weight:600;">Labelled Data Required</td>
+      <td style="padding:8px 14px;">Yes — 67,349 examples</td>
+      <td style="padding:8px 14px;">No</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 14px; font-weight:600;">Output Type</td>
+      <td style="padding:8px 14px;">Deterministic class label</td>
+      <td style="padding:8px 14px;">Generated text (non-deterministic)</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:8px 14px; font-weight:600;">Explainability</td>
+      <td style="padding:8px 14px;">None</td>
+      <td style="padding:8px 14px;">Can generate natural-language reasons</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 14px; font-weight:600;">GPU Memory</td>
+      <td style="padding:8px 14px;">1–2 GB</td>
+      <td style="padding:8px 14px;">7–8 GB</td>
+    </tr>
+    <tr style="background:#f8f9fa;">
+      <td style="padding:8px 14px; font-weight:600;">Inference Cost (10K/day)</td>
+      <td style="padding:8px 14px;">~£4/year</td>
+      <td style="padding:8px 14px;">£120–250/month (GPU rental)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+```
+
+---
+
+## {{< fa database >}} Dataset
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show dataset summary code"
+
+dataset_info = pd.DataFrame({
+    "Split": ["Training", "Validation", "Shared Comparison Subset"],
+    "Size": [67349, 872, 150],
+    "Positive": [33674, 444, 86],
+    "Negative": [33675, 428, 64],
+    "Used For": [
+        "BERT fine-tuning",
+        "BERT full evaluation proxy",
+        "Fair BERT vs Llama3 comparison"
+    ]
+})
+
+dataset_info
+```
+
+::: {.callout-tip appearance="simple"}
+**Dataset:** Stanford Sentiment Treebank v2 (SST-2), part of the GLUE benchmark.
+Short movie-review sentences with binary labels (0 = negative, 1 = positive). A
+150-sample subset (random state=42) was used for direct model comparison to ensure
+identical evaluation conditions for both models.
+:::
+
+---
+
+## {{< fa code >}} Llama3 Zero-Shot Prompting Strategy
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show prompting strategy"
+
+# Llama3 prompt template used for all 150 predictions
+# Run locally via Ollama to avoid cloud API fees and data residency concerns
+
+prompt_template = """
+You are a sentiment classifier.
+
+Classify the sentiment of the following movie review.
+
+Reply using ONLY one word:
+
+Positive
+or
+Negative
+
+Review: {text}
+
+Answer:
+"""
+
+# Three design principles applied:
+# 1. Role framing  — establishes task context for the model
+# 2. Output constraint — eliminates verbose multi-word responses
+# 3. Explicit answer field — guides direct label generation
+
+# Post-processing: responses lowercased and matched
+# "positive" in answer → label 1
+# otherwise → label 0
+
+```
+
+---
+
+## {{< fa chart-bar >}} Performance Comparison
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show performance chart code"
+#| fig-cap: "BERT vs Llama3 across all four evaluation metrics on the shared 150-sample SST-2 subset."
+
+metrics = ["Accuracy", "Precision", "Recall", "F1 Score"]
+bert_scores = [0.9867, 0.9884, 0.9884, 0.9884]
+llama_scores = [0.9400, 0.9425, 0.9535, 0.9480]
+
+fig = go.Figure()
+
+fig.add_trace(go.Bar(
+    name="BERT (fine-tuned)",
+    x=metrics,
+    y=bert_scores,
+    marker_color="#1a1a2e",
+    text=[f"{v:.4f}" for v in bert_scores],
+    textposition="outside"
+))
+
+fig.add_trace(go.Bar(
+    name="Llama3 (zero-shot)",
+    x=metrics,
+    y=llama_scores,
+    marker_color="#c9a84c",
+    text=[f"{v:.4f}" for v in llama_scores],
+    textposition="outside"
+))
+
+fig.add_hline(
+    y=0.95,
+    line_dash="dash",
+    line_color="#c0392b",
+    annotation_text="Production threshold: 95%",
+    annotation_position="top right"
+)
+
+fig.update_layout(
+    title="BERT vs Llama3 — Performance on Shared 150-Sample Subset",
+    barmode="group",
+    template="plotly_white",
+    font_family="Georgia",
+    title_font_size=16,
+    yaxis=dict(range=[0.88, 1.02], title="Score"),
+    xaxis_title="Metric",
+    legend=dict(x=0.75, y=0.05)
+)
+
+fig
+```
+
+---
+
+## {{< fa table >}} Full Results Summary
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show results table code"
+#| fig-cap: "Model performance across all evaluation configurations."
+
+results = pd.DataFrame({
+    "Model": ["BERT (full, n=872)", "BERT (150-sample)", "Llama3 (150-sample)"],
+    "Approach": ["Fine-tuned", "Fine-tuned", "Zero-shot"],
+    "Accuracy": [0.9243, 0.9867, 0.9400],
+    "Precision": [0.9219, 0.9884, 0.9425],
+    "Recall": [0.9302, 0.9884, 0.9535],
+    "F1 Score": [0.9260, 0.9884, 0.9480],
+    "Meets 95% Threshold": ["No", "Yes", "Yes"]
+})
+
+results
+```
+
+::: {.callout-important appearance="simple"}
+**Key Finding:** BERT outperforms Llama3 across all metrics on the shared subset.
+However, Llama3's zero-shot accuracy of 94.0% — achieved with **no task-specific
+training data** — demonstrates the impressive general capability of large generative
+models. BERT's full validation accuracy (92.43%) falls marginally below the 95%
+production threshold, indicating additional training epochs are warranted before
+live deployment.
+:::
+
+---
+
+## {{< fa bug >}} Error Analysis
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show error analysis code"
+#| fig-cap: "Llama3 misclassification patterns — 9 errors out of 150 predictions."
+
+error_data = pd.DataFrame({
+    "Error Type": [
+        "Sarcasm / indirect negativity",
+        "Mixed sentiment",
+        "Mild positive reviews",
+        "Idioms and colloquialisms"
+    ],
+    "Count": [3, 2, 2, 2],
+    "Example (truncated)": [
+        "...there is nothing much to write home about it (True: Neg, Pred: Pos)",
+        "McConaughey is fun... not a lot of fire to the script (True: Pos, Pred: Neg)",
+        "Nothing exceptional... but sufficiently good (True: Pos, Pred: Neg)",
+        "Nothing is sacred in this gut-buster (True: Neg, Pred: Pos)"
+    ]
+})
+
+fig2 = px.bar(
+    error_data,
+    x="Count",
+    y="Error Type",
+    orientation="h",
+    title="Llama3 Misclassification Patterns (9 / 150 errors)",
+    template="plotly_white",
+    color="Count",
+    color_continuous_scale=["#c9a84c", "#c0392b"],
+    text="Count"
+)
+
+fig2.update_traces(textposition="outside")
+fig2.update_layout(
+    font_family="Georgia",
+    title_font_size=16,
+    xaxis_title="Number of Errors",
+    yaxis_title="",
+    showlegend=False,
+    coloraxis_showscale=False
+)
+
+fig2
+```
+
+---
+
+## {{< fa network-wired >}} Model Architecture Overview
+
+```{mermaid}
+flowchart LR
+    A[SST-2 Dataset\n67,349 labelled reviews] --> B[BERT Fine-Tuning\nGoogle Colab T4 GPU]
+    A --> C[150-sample subset\nrandom_state=42]
+    B --> D[BERT Inference\n150-sample evaluation]
+    C --> D
+    C --> E[Llama3 Zero-Shot\nOllama — Local Spyder]
+    D --> F[Performance Metrics\nAccuracy · Precision · Recall · F1]
+    E --> F
+    F --> G[Comparison & Deployment\nRecommendation]
+```
+
+---
+
+## {{< fa shield-halved >}} Ethical and Responsible AI
+
+::: {.callout-note appearance="simple"}
+**EU AI HLEG Trustworthy AI Framework — Key Considerations:**
+
+| Criterion | Implication for This Project |
+|---|---|
+| Human Agency | Neither model operates autonomously — human editors review all alerts |
+| Technical Robustness | BERT is deterministic; Llama3 is non-deterministic (temperature > 0) |
+| Privacy & Data Governance | Ollama local deployment reduces third-party data exposure |
+| Transparency | BERT has no explainability; Llama3 can generate reasons (with hallucination risk) |
+| Fairness | SST-2 is predominantly English and Western — stratified subgroup testing required |
+| Environmental Wellbeing | BERT: ~0.5 kWh per 10K reviews vs Llama3: ~4–5 kWh |
+| Accountability | Fixed random seeds and error logs support partial auditability |
+:::
+
+---
+
+## {{< fa rocket >}} Deployment Recommendation
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show cost comparison code"
+#| fig-cap: "Operational cost and scalability comparison between BERT and Llama3 for production deployment."
+
+cost_data = pd.DataFrame({
+    "Factor": [
+        "Training Cost", "Inference Cost\n(10K reviews/day)",
+        "GPU Memory (GB)", "Scalability Score\n(1-10)"
+    ],
+    "BERT": ["£50–150 one-time", "£4/year", "1–2 GB", "9/10"],
+    "Llama3": ["None", "£120–250/month", "7–8 GB", "3/10"]
+})
+
+```
+
+::: {.callout-tip appearance="simple"}
+**Recommended Hybrid Workflow:**
+
+1. **BERT** classifies all incoming reviews within 30 minutes of submission
+2. An automated alert fires when negative sentiment exceeds 30% within 6 hours of a title's release
+3. **Llama3** generates on-demand natural-language explanations for ambiguous or flagged cases
+4. All final intervention decisions remain with human editorial staff
+
+This hybrid approach balances BERT's determinism and cost efficiency with Llama3's
+qualitative explanation capability.
+:::
+
+---
+
+## {{< fa lightbulb >}} Key Insights
+
+| Finding | Implication |
+|---|---|
+| BERT achieves 98.67% on 150-sample subset | Strong task-specific performance with labelled data |
+| Llama3 achieves 94.00% with zero training data | Generative models are competitive without fine-tuning |
+| BERT full validation (92.43%) is below 95% threshold | Additional training epochs needed before production |
+| Llama3 struggles with sarcasm and idioms | Prompt engineering or few-shot examples could close this gap |
+| BERT costs ~£4/year vs Llama3 ~£250/month at scale | BERT is the clear production choice for high volume |
+| BERT is ~8–10× more energy efficient | Sustainability favours BERT for large-scale deployment |
+
+---
+
+## {{< fa book >}} References
+
+- Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. *arXiv:1810.04805*. <https://doi.org/10.48550/arXiv.1810.04805>
+- Meta AI. (2024). *The Llama 3 herd of models*. <https://ai.meta.com/research/publications/the-llama-3-herd-of-models/>
+- GLUE Benchmark. (2026). *General language understanding evaluation*. <https://gluebenchmark.com/>
+- Ollama. (2026). *Local large language model deployment*. <https://ollama.com>
+- European Commission. (2019). *Ethics guidelines for trustworthy AI*. <https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai>
+- Stanford NLP Group. (2026). *Deeply moving: Deep learning for sentiment analysis*. <http://nlp.stanford.edu/sentiment/index.html>
+- Hugging Face. (2026). *Transformers documentation*. <https://huggingface.co/docs/transformers/index>
