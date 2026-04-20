@@ -3,7 +3,7 @@ title: "BERT vs Llama3 — Sentiment Analysis Comparison"
 description: "Comparing fine-tuned BERT and zero-shot Llama3 for movie review sentiment classification on SST-2."
 author: "Ananya Mahadeva"
 date: 2026-04-20
-image: "image/projects/images.jpg"
+image: "../images.png"
 categories: [Python, Machine Learning, NLP, Advanced Analytics]
 ---
 

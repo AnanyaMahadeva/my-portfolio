@@ -3,7 +3,7 @@ title: "Fraud Detection and Risk Modeling"
 description: "Detecting fraudulent transactions using statistical methods and machine learning."
 author: "Ananya Mahadeva"
 date: 2025-12-25
-image: "image/projects/Fraud.jpg"
+image: "../image/Fraud.png"
 categories: [Python, Statistics, Machine Learning, Fraud Analytics]
 ---
 

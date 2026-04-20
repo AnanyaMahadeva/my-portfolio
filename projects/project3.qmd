@@ -3,7 +3,7 @@ title: "Sales and Profitability Analysis — TechNova Inc."
 description: "Business performance analysis of TechNova Inc. using interactive data visualisations."
 author: "Ananya Mahadeva"
 date: 2025-11-15
-image: "image/projects/powerbi_dashboard.png"
+image: "../image/powerbi_dashboard.png"
 categories: [Python, Power BI, Data Analysis, Business Intelligence]
 ---
 
