@@ -60,91 +60,245 @@
     "href": "reflection.html#final-thoughts",
     "title": "Reflection",
     "section": "Final Thoughts",
-    "text": "Final Thoughts\nThis ePortfolio represents more than just an assignment — it is a living document of my skills, growth, and ambitions as a Business Analytics professional. I am proud of what I have built and excited to continue evolving it as I grow in my career.\n\nBuilt with Quarto | Ananya Mahadeva | MSc Business Analytics"
+    "text": "Final Thoughts\nThis ePortfolio represents more than just an assignment — it is a living document of my skills, growth, and ambitions as a Business Analytics professional. I am proud of what I have built and excited to continue evolving it as I grow in my career."
   },
   {
-    "objectID": "projects/project2.html",
-    "href": "projects/project2.html",
-    "title": "Fraud Detection & Risk Modeling",
+    "objectID": "projects/project3.html",
+    "href": "projects/project3.html",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
     "section": "",
-    "text": "This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models."
+    "text": "This project analyses the sales and profitability performance of TechNova Inc. over a ten-year period from 2015 to 2024. Using a dataset of 500 transactions, the analysis examines revenue trends, product category performance, regional distribution, and sales channel profitability to identify key business drivers and strategic opportunities.\n\n\n\n\n\n\nOriginal Tool: Power BI dashboard developed as a group project (Group 9, DCU BAA 1089).\nThis page reproduces and extends the analysis using Python and Plotly for interactive, executable visualisations.\nDataset: 500 internal transaction records — TechNova Inc. global sales 2015–2024."
   },
   {
-    "objectID": "projects/project2.html#project-overview",
-    "href": "projects/project2.html#project-overview",
-    "title": "Fraud Detection & Risk Modeling",
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
     "section": "",
-    "text": "This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models."
+    "text": "This project analyses the sales and profitability performance of TechNova Inc. over a ten-year period from 2015 to 2024. Using a dataset of 500 transactions, the analysis examines revenue trends, product category performance, regional distribution, and sales channel profitability to identify key business drivers and strategic opportunities.\n\n\n\n\n\n\nOriginal Tool: Power BI dashboard developed as a group project (Group 9, DCU BAA 1089).\nThis page reproduces and extends the analysis using Python and Plotly for interactive, executable visualisations.\nDataset: 500 internal transaction records — TechNova Inc. global sales 2015–2024."
   },
   {
-    "objectID": "projects/project2.html#generate-dataset",
-    "href": "projects/project2.html#generate-dataset",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "📊 Generate Dataset",
-    "text": "📊 Generate Dataset\n\n\nCode\nimport pandas as pd\nimport numpy as np\n\nnp.random.seed(42)\n\nn = 500\n\ndf = pd.DataFrame({\n    \"transactionamount\": np.random.randint(100, 10000, n),\n    \"loanamount\": np.random.randint(1000, 50000, n),\n    \"income\": np.random.randint(20000, 100000, n),\n    \"creditscore\": np.random.randint(300, 850, n),\n    \"isfraud\": np.random.choice([0, 1], n)\n})\n\ndf.head()\n\n\n\n\n\n\n\n\n\ntransactionamount\nloanamount\nincome\ncreditscore\nisfraud\n\n\n\n\n0\n7370\n6644\n39282\n753\n0\n\n\n1\n960\n44286\n43930\n336\n1\n\n\n2\n5490\n48320\n20077\n615\n1\n\n\n3\n5291\n3914\n40611\n413\n1\n\n\n4\n5834\n22352\n36984\n339\n0"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612067617567652d68696768203e7d7d-key-performance-indicators",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612067617567652d68696768203e7d7d-key-performance-indicators",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Key Performance Indicators",
+    "text": "Key Performance Indicators\n\n\n  \n    €263.47K\n    Total Revenue\n  \n\n  \n    €217.82K\n    Net Revenue\n  \n\n  \n    €4.59K\n    Net Profit\n  \n\n  \n    15.18%\n    Avg Discount\n  \n\n  \n    500\n    Total Orders"
   },
   {
-    "objectID": "projects/project2.html#descriptive-statistics",
-    "href": "projects/project2.html#descriptive-statistics",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "📈 Descriptive Statistics",
-    "text": "📈 Descriptive Statistics\n\n\nCode\ndf.describe()\n\n\n\n\n\n\n\n\n\ntransactionamount\nloanamount\nincome\ncreditscore\nisfraud\n\n\n\n\ncount\n500.000000\n500.000000\n500.000000\n500.000000\n500.000000\n\n\nmean\n5126.896000\n25124.464000\n60233.066000\n567.890000\n0.536000\n\n\nstd\n2805.442697\n14298.929838\n22751.331509\n156.335368\n0.499202\n\n\nmin\n104.000000\n1009.000000\n20060.000000\n300.000000\n0.000000\n\n\n25%\n2822.000000\n12279.000000\n40770.000000\n431.250000\n0.000000\n\n\n50%\n5289.500000\n24455.000000\n59474.000000\n583.500000\n1.000000\n\n\n75%\n7492.000000\n38617.000000\n79147.000000\n686.750000\n1.000000\n\n\nmax\n9988.000000\n49529.000000\n99273.000000\n848.000000\n1.000000"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d6c696e65203e7d7d-revenue-trend-20152024",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d6c696e65203e7d7d-revenue-trend-20152024",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Revenue Trend: 2015–2024",
+    "text": "Revenue Trend: 2015–2024\n\n\nShow revenue trend code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nrevenue_data = pd.DataFrame({\n    \"Year\": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],\n    \"Total_Revenue\": [26758.94, 29454.11, 31229.49, 25208.31,\n                      26943.71, 24720.27, 25520.57, 27596.94, 29187.05, 16853.70],\n    \"Net_Profit\": [1088.54, 406.57, 5603.35, -2200.00,\n                   -800.00, -1500.00, -1200.00, -2115.75, 4141.20, 1517.99]\n})\n\nfig = make_subplots(specs=[[{\"secondary_y\": True}]])\n\nfig.add_trace(\n    go.Bar(\n        x=revenue_data[\"Year\"],\n        y=revenue_data[\"Total_Revenue\"],\n        name=\"Total Revenue\",\n        marker_color=\"#c9a84c\",\n        opacity=0.8\n    ),\n    secondary_y=False\n)\n\nfig.add_trace(\n    go.Scatter(\n        x=revenue_data[\"Year\"],\n        y=revenue_data[\"Net_Profit\"],\n        name=\"Net Profit\",\n        mode=\"lines+markers\",\n        line=dict(color=\"#1a1a2e\", width=2.5),\n        marker=dict(size=8)\n    ),\n    secondary_y=True\n)\n\nfig.add_hline(y=0, line_dash=\"dash\", line_color=\"grey\",\n              secondary_y=True, annotation_text=\"Break-even\")\n\nfig.update_layout(\n    title=\"TechNova Inc. — Revenue and Profit Trend 2015–2024\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    title_font_size=16,\n    legend=dict(x=0.01, y=0.99)\n)\n\nfig.update_yaxes(title_text=\"Total Revenue (€)\", secondary_y=False)\nfig.update_yaxes(title_text=\"Net Profit (€)\", secondary_y=True)\n\nfig\n\n\n                                                \nAnnual total revenue for TechNova Inc. 2015–2024, showing peak in 2017 and significant decline in 2024.\n\n\n\n\n\n\n\n\nKey Finding: Revenue peaked in 2017 at €31,229 but the company recorded losses from 2018 to 2022, with the worst performance in 2022 (−€2,115). A strong recovery occurred in 2023 (€4,141 profit), though 2024 saw the decade’s lowest revenue at €16,853 — indicating potential market headwinds requiring strategic review."
   },
   {
-    "objectID": "projects/project2.html#outlier-detection",
-    "href": "projects/project2.html#outlier-detection",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "⚠️ Outlier Detection",
-    "text": "⚠️ Outlier Detection\n\n\nCode\nQ1 = df[\"transactionamount\"].quantile(0.25)\nQ3 = df[\"transactionamount\"].quantile(0.75)\nIQR = Q3 - Q1\n\noutliers = df[(df[\"transactionamount\"] &lt; (Q1 - 1.5 * IQR)) |\n              (df[\"transactionamount\"] &gt; (Q3 + 1.5 * IQR))]\n\nlen(outliers)\n\n\n0"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c617965722d67726f7570203e7d7d-gross-revenue-by-product-category",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c617965722d67726f7570203e7d7d-gross-revenue-by-product-category",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Gross Revenue by Product Category",
+    "text": "Gross Revenue by Product Category\n\n\nShow category revenue code\ncategory_data = pd.DataFrame({\n    \"Category\": [\"Accessories\", \"Automotive\", \"Finance\", \"Energy\",\n                 \"Healthcare\", \"Agriculture\", \"Education\",\n                 \"Travel\", \"Electronics\", \"Construction\"],\n    \"Gross_Revenue\": [32000, 30000, 30000, 28000,\n                      28000, 27000, 25000, 22000, 21000, 20000]\n})\n\ncategory_data = category_data.sort_values(\"Gross_Revenue\", ascending=True)\ncategory_data[\"Tier\"] = category_data[\"Gross_Revenue\"].apply(\n    lambda x: \"High\" if x &gt;= 29000 else (\"Mid\" if x &gt;= 25000 else \"Low\")\n)\n\nfig2 = px.bar(\n    category_data,\n    x=\"Gross_Revenue\",\n    y=\"Category\",\n    color=\"Tier\",\n    color_discrete_map={\"High\": \"#1a1a2e\", \"Mid\": \"#c9a84c\", \"Low\": \"#c0392b\"},\n    orientation=\"h\",\n    title=\"Gross Revenue by Product Category\",\n    template=\"plotly_white\",\n    text=\"Gross_Revenue\"\n)\n\nfig2.update_traces(texttemplate=\"€%{text:,.0f}\", textposition=\"outside\")\nfig2.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    xaxis_title=\"Gross Revenue (€)\",\n    yaxis_title=\"\",\n    showlegend=True,\n    legend_title_text=\"Revenue Tier\"\n)\n\nfig2\n\n\n                                                \nGross revenue by product category — Accessories, Automotive and Finance are top performers."
   },
   {
-    "objectID": "projects/project2.html#fraud-distribution",
-    "href": "projects/project2.html#fraud-distribution",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "📊 Fraud Distribution",
-    "text": "📊 Fraud Distribution\n\n\nCode\ndf[\"isfraud\"].value_counts()\n\n\nisfraud\n1    268\n0    232\nName: count, dtype: int64"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d706965203e7d7d-profit-distribution-by-product",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d706965203e7d7d-profit-distribution-by-product",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Profit Distribution by Product",
+    "text": "Profit Distribution by Product\n\n\nShow profit distribution code\nproduct_data = pd.DataFrame({\n    \"Product\": [\"Flight Ticket\", \"Tablet\", \"Smartphone\",\n                \"Building Material\", \"Solar Panel\", \"Insurance Plan\"],\n    \"Profit\": [2600, 2550, 1460, 1390, 1380, 1180]\n})\n\nfig3 = px.pie(\n    product_data,\n    values=\"Profit\",\n    names=\"Product\",\n    title=\"Profit Distribution by Product\",\n    color_discrete_sequence=[\n        \"#1a1a2e\", \"#c9a84c\", \"#2d6a4f\",\n        \"#0f3460\", \"#c0392b\", \"#533483\"\n    ],\n    hole=0.4\n)\n\nfig3.update_traces(\n    textposition=\"outside\",\n    textinfo=\"percent+label\"\n)\n\nfig3.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    showlegend=True\n)\n\nfig3\n\n\n                                                \nShare of total profit by product — Flight Tickets and Tablets account for nearly half of all profit."
   },
   {
-    "objectID": "projects/project2.html#visualization",
-    "href": "projects/project2.html#visualization",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "📉 Visualization",
-    "text": "📉 Visualization\n\n\nCode\nimport matplotlib.pyplot as plt\n\nplt.figure()\ndf[\"transactionamount\"].hist()\nplt.title(\"Transaction Amount Distribution\")\nplt.xlabel(\"Amount\")\nplt.ylabel(\"Frequency\")\nplt.show()"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120676c6f6265203e7d7d-net-revenue-by-region",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120676c6f6265203e7d7d-net-revenue-by-region",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Net Revenue by Region",
+    "text": "Net Revenue by Region\n\n\nShow regional revenue code\nregion_data = pd.DataFrame({\n    \"Region\": [\"Asia\", \"North America\", \"South America\", \"Africa\", \"Europe\"],\n    \"Net_Revenue_Share\": [22.41, 20.47, 19.43, 19.36, 18.33],\n    \"Profit_Status\": [\"Positive\", \"Positive\", \"Positive\", \"Positive\", \"Negative\"]\n})\n\nfig4 = px.bar(\n    region_data.sort_values(\"Net_Revenue_Share\", ascending=True),\n    x=\"Net_Revenue_Share\",\n    y=\"Region\",\n    color=\"Profit_Status\",\n    color_discrete_map={\"Positive\": \"#2d6a4f\", \"Negative\": \"#c0392b\"},\n    orientation=\"h\",\n    title=\"Net Revenue Share by Region\",\n    template=\"plotly_white\",\n    text=\"Net_Revenue_Share\"\n)\n\nfig4.update_traces(texttemplate=\"%{text:.1f}%\", textposition=\"outside\")\nfig4.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    xaxis_title=\"Net Revenue Share (%)\",\n    yaxis_title=\"\",\n    legend_title_text=\"Profit Status\"\n)\n\nfig4\n\n\n                                                \nNet revenue share by region — Asia and North America lead, while Europe recorded negative profit.\n\n\n\n\n\n\n\n\nRegional Insight: Asia (22.41%) and North America (20.47%) are the strongest markets. Europe recorded negative profit despite an 18.33% revenue share — indicating high costs or unfavourable discount structures that require pricing strategy review."
   },
   {
-    "objectID": "projects/project2.html#machine-learning-model",
-    "href": "projects/project2.html#machine-learning-model",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "🤖 Machine Learning Model",
-    "text": "🤖 Machine Learning Model\n\n\nCode\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\n\nX = df.drop(columns=[\"isfraud\"])\ny = df[\"isfraud\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)\n\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\n\npred = model.predict(X_test)\npred\n\n\narray([0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0,\n       1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1,\n       0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0,\n       1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,\n       0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0,\n       1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0])"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207573657273203e7d7d-sales-representative-performance",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207573657273203e7d7d-sales-representative-performance",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Sales Representative Performance",
+    "text": "Sales Representative Performance\n\n\nShow sales rep performance code\nrep_data = pd.DataFrame({\n    \"Sales_Rep\": [\"Alice\", \"Charlie\", \"Diana\", \"Eve\", \"Bob\"],\n    \"Sales\": [57000, 55000, 50000, 47000, 47000],\n    \"Profit\": [2700, 1100, 3000, -3200, 900]\n})\n\nfig5 = make_subplots(specs=[[{\"secondary_y\": True}]])\n\nfig5.add_trace(\n    go.Bar(\n        x=rep_data[\"Sales_Rep\"],\n        y=rep_data[\"Sales\"],\n        name=\"Total Sales (€)\",\n        marker_color=\"#c9a84c\",\n        opacity=0.85\n    ),\n    secondary_y=False\n)\n\nfig5.add_trace(\n    go.Scatter(\n        x=rep_data[\"Sales_Rep\"],\n        y=rep_data[\"Profit\"],\n        name=\"Net Profit (€)\",\n        mode=\"lines+markers\",\n        line=dict(color=\"#1a1a2e\", width=2.5),\n        marker=dict(\n            size=10,\n            color=[\"#2d6a4f\" if p &gt; 0 else \"#c0392b\" for p in rep_data[\"Profit\"]]\n        )\n    ),\n    secondary_y=True\n)\n\nfig5.add_hline(y=0, line_dash=\"dash\", line_color=\"grey\", secondary_y=True)\n\nfig5.update_layout(\n    title=\"Sales and Profit by Sales Representative\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    title_font_size=16\n)\n\nfig5.update_yaxes(title_text=\"Total Sales (€)\", secondary_y=False)\nfig5.update_yaxes(title_text=\"Net Profit (€)\", secondary_y=True)\n\nfig5\n\n\n                                                \nSales vs profit by representative — Eve generated comparable sales to peers but recorded negative profit, highlighting the importance of margin management."
   },
   {
-    "objectID": "projects/project2.html#model-accuracy",
-    "href": "projects/project2.html#model-accuracy",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "📊 Model Accuracy",
-    "text": "📊 Model Accuracy\n\n\nCode\nfrom sklearn.metrics import accuracy_score\n\naccuracy_score(y_test, pred)\n\n\n0.464"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612077696669203e7d7d-profit-by-sales-channel",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612077696669203e7d7d-profit-by-sales-channel",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Profit by Sales Channel",
+    "text": "Profit by Sales Channel\n\n\nShow sales channel code\nchannel_data = pd.DataFrame({\n    \"Channel\": [\"Online\", \"Offline\"],\n    \"Profit_Share\": [82.7, 17.3],\n    \"Profit\": [3795.31, 794.42]\n})\n\nfig6 = px.pie(\n    channel_data,\n    values=\"Profit_Share\",\n    names=\"Channel\",\n    title=\"Profit Distribution by Sales Channel\",\n    color_discrete_map={\"Online\": \"#1a1a2e\", \"Offline\": \"#c9a84c\"},\n    hole=0.45\n)\n\nfig6.update_traces(\n    textposition=\"outside\",\n    textinfo=\"percent+label\"\n)\n\nfig6.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16\n)\n\nfig6\n\n\n                                                \nOnline channels generated 82.7% of total profit, confirming the primacy of digital sales for TechNova."
   },
   {
-    "objectID": "projects/project2.html#key-insights",
-    "href": "projects/project2.html#key-insights",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "🔍 Key Insights",
-    "text": "🔍 Key Insights\n\nFraud detection is not dependent on a single variable\n\nTransaction amount alone is insufficient\n\nMultiple financial indicators improve prediction"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Key Insights",
+    "text": "Key Insights\n\n\n\n\n\n\n\nFinding\nBusiness Implication\n\n\n\n\n2017 was peak revenue year (€31,229)\nOperational strategies from 2017 should be revisited\n\n\nLosses recorded 2018–2022\nCost control and market adaptation are critical\n\n\nAccessories, Automotive, Finance lead by category\nPortfolio investment should focus here\n\n\nFlight Tickets and Tablets drive 48.8% of profit\nHigh-margin product focus is warranted\n\n\nEve: high sales, negative profit\nHigh sales volume does not guarantee profitability\n\n\nOnline channels: 82.7% of profit\nDigital investment should remain a strategic priority\n\n\nEurope: negative profit\nPricing and discount strategy needs regional review"
   },
   {
-    "objectID": "projects/project2.html#business-impact",
-    "href": "projects/project2.html#business-impact",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "💼 Business Impact",
-    "text": "💼 Business Impact\n\nHelps detect fraud early\n\nReduces financial losses\n\nImproves monitoring systems"
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " Recommendations",
+    "text": "Recommendations\n\n\n\n\n\n\nStrategic recommendations based on the analysis:\n\nContinue investing in Accessories, Automotive, and Finance — the highest-revenue categories\nReview European pricing and discount strategies to restore regional profitability\nReplicate the cost management practices of Alice and Diana across the full sales team\nPrioritise online channel development — 82.7% of profit depends on digital operations\nReduce average discount rate (currently 15.18%) where demand is inelastic to improve margins\nInvestigate the 2024 revenue decline (lowest in ten years) as a strategic priority"
   },
   {
-    "objectID": "projects/project2.html#conclusion",
-    "href": "projects/project2.html#conclusion",
-    "title": "Fraud Detection & Risk Modeling",
-    "section": "🚀 Conclusion",
-    "text": "🚀 Conclusion\nMachine learning models significantly improve fraud detection compared to traditional rule-based systems."
+    "objectID": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "href": "projects/project3.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "title": "Sales and Profitability Analysis — TechNova Inc.",
+    "section": " References",
+    "text": "References\n\nTechNova Inc. (2024). Global sales and customer preference 2015–2024 [Internal dataset]. Unpublished raw data.\nGroup 9. (2025). TechNova Inc. sales and profit dashboard [Power BI dashboard]. Unpublished, DCU BAA 1089."
+  },
+  {
+    "objectID": "projects/project1.html",
+    "href": "projects/project1.html",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "",
+    "text": "This project analyses over 61,000 consumer complaint records from the Consumer Financial Protection Bureau (CFPB) to identify inefficiencies in Bank of America’s complaint resolution process. Using NLP and an ensemble machine learning model, the system prioritises high-risk complaints that are likely to require monetary relief — enabling faster, more targeted resolution.\n\n\n\n\n\n\nBusiness Problem: The existing First-In-First-Out (FIFO) triage system treats all complaints equally, causing delays in resolving high-risk financial cases and increasing operational costs.\nSolution: A Fast-Track Routing System powered by a Voting Classifier (Gradient Boosting + Random Forest) to automatically flag complaints requiring urgent attention."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": "",
+    "text": "This project analyses over 61,000 consumer complaint records from the Consumer Financial Protection Bureau (CFPB) to identify inefficiencies in Bank of America’s complaint resolution process. Using NLP and an ensemble machine learning model, the system prioritises high-risk complaints that are likely to require monetary relief — enabling faster, more targeted resolution.\n\n\n\n\n\n\nBusiness Problem: The existing First-In-First-Out (FIFO) triage system treats all complaints equally, causing delays in resolving high-risk financial cases and increasing operational costs.\nSolution: A Fast-Track Routing System powered by a Voting Classifier (Gradient Boosting + Random Forest) to automatically flag complaints requiring urgent attention."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Dataset",
+    "text": "Dataset\n\n\nShow dataset summary code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\n\n# Simulated dataset summary reflecting the CFPB Consumer Complaints dataset\n# Original dataset: 61,022 records from the Consumer Financial Protection Bureau\nsummary_data = {\n    \"Product Category\": [\n        \"Checking or savings account\",\n        \"Credit card or prepaid card\",\n        \"Mortgage\",\n        \"Debt collection\",\n        \"Student loan\",\n        \"Vehicle loan or lease\",\n        \"Money transfer or service\"\n    ],\n    \"Complaint Volume\": [24800, 15200, 9800, 5400, 2100, 1900, 1822],\n    \"Payout Probability\": [0.32, 0.29, 0.12, 0.07, 0.04, 0.10, 0.20]\n}\n\ndf = pd.DataFrame(summary_data)\ndf[\"Monetary Relief Risk\"] = df[\"Payout Probability\"].apply(\n    lambda x: \"High\" if x &gt;= 0.25 else (\"Medium\" if x &gt;= 0.10 else \"Low\")\n)\ndf\n\n\n\n\n\n\n\n\n\nProduct Category\nComplaint Volume\nPayout Probability\nMonetary Relief Risk\n\n\n\n\n0\nChecking or savings account\n24800\n0.32\nHigh\n\n\n1\nCredit card or prepaid card\n15200\n0.29\nHigh\n\n\n2\nMortgage\n9800\n0.12\nMedium\n\n\n3\nDebt collection\n5400\n0.07\nLow\n\n\n4\nStudent loan\n2100\n0.04\nLow\n\n\n5\nVehicle loan or lease\n1900\n0.10\nMedium\n\n\n6\nMoney transfer or service\n1822\n0.20\nMedium"
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-complaint-volume-by-product-category",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-complaint-volume-by-product-category",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Complaint Volume by Product Category",
+    "text": "Complaint Volume by Product Category\n\n\nShow chart code\nfig = px.bar(\n    df.sort_values(\"Complaint Volume\", ascending=True),\n    x=\"Complaint Volume\",\n    y=\"Product Category\",\n    color=\"Monetary Relief Risk\",\n    color_discrete_map={\"High\": \"#c0392b\", \"Medium\": \"#e67e22\", \"Low\": \"#27ae60\"},\n    orientation=\"h\",\n    title=\"Complaint Volume by Product Category\",\n    template=\"plotly_white\"\n)\n\nfig.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    legend_title_text=\"Risk Level\",\n    xaxis_title=\"Number of Complaints\",\n    yaxis_title=\"\"\n)\n\nfig.show()\n\n\n                                                \nComplaint volume across product categories, coloured by monetary relief risk level."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d73636174746572203e7d7d-product-risk-matrix",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d73636174746572203e7d7d-product-risk-matrix",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Product Risk Matrix",
+    "text": "Product Risk Matrix\n\n\nShow risk matrix code\nfig2 = px.scatter(\n    df,\n    x=\"Complaint Volume\",\n    y=\"Payout Probability\",\n    text=\"Product Category\",\n    size=\"Complaint Volume\",\n    color=\"Monetary Relief Risk\",\n    color_discrete_map={\"High\": \"#c0392b\", \"Medium\": \"#e67e22\", \"Low\": \"#27ae60\"},\n    title=\"Product Risk Matrix: Volume vs Payout Probability\",\n    template=\"plotly_white\"\n)\n\nfig2.update_traces(textposition=\"top center\")\nfig2.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    xaxis_title=\"Complaint Volume\",\n    yaxis_title=\"Payout Probability\"\n)\n\nfig2.show()\n\n\n                                                \nRelationship between complaint volume and payout probability per product — replicating the analytical output from the project report."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206765617273203e7d7d-analytical-approach",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206765617273203e7d7d-analytical-approach",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Analytical Approach",
+    "text": "Analytical Approach\nThe project used a prescriptive analytics framework combining NLP and ensemble machine learning.\n\n\n\n\n\n\nKey Pipeline Steps:\n\nData cleaning and preprocessing of 61,022 CFPB complaint records\nFeature engineering: Days_to_Forward, cyclical month features (Month_Sin, Month_Cos)\nText analysis using TF-IDF (unigrams + bigrams, top 1,000 features) on complaint narratives\nBinary classification target: complaints closed with monetary relief (positive class ~25%)\nVoting Classifier combining Histogram Gradient Boosting and Random Forest\nClass imbalance handled via probability calibration and threshold tuning\nEvaluation metrics: F1-score and ROC-AUC (accuracy alone was insufficient due to imbalance)"
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d6c696e65203e7d7d-model-performance",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d6c696e65203e7d7d-model-performance",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Model Performance",
+    "text": "Model Performance\n\n\nShow performance visualisation code\nimport numpy as np\n\n# Approximate ROC curve based on reported AUC of 0.794\nfpr = np.linspace(0, 1, 100)\ntpr = np.power(fpr, 0.35)\n\nfig3 = go.Figure()\n\nfig3.add_trace(go.Scatter(\n    x=fpr, y=tpr,\n    mode=\"lines\",\n    name=\"Voting Classifier (AUC = 0.794)\",\n    line=dict(color=\"#1a1a2e\", width=2.5)\n))\n\nfig3.add_trace(go.Scatter(\n    x=[0, 1], y=[0, 1],\n    mode=\"lines\",\n    name=\"Random Guess\",\n    line=dict(color=\"#aaaaaa\", width=1.5, dash=\"dash\")\n))\n\nfig3.update_layout(\n    title=\"ROC-AUC Curve\",\n    xaxis_title=\"False Positive Rate\",\n    yaxis_title=\"True Positive Rate\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    legend=dict(x=0.6, y=0.1)\n)\n\nfig3.show()\n\n\n                                                \nROC-AUC curve illustrating the model’s discriminatory power (AUC = 0.794)."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-results",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-results",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Results",
+    "text": "Results\n\n\n  \n    77.4%\n    Accuracy\n  \n\n  \n    86.1%\n    Precision\n  \n\n  \n    0.794\n    ROC-AUC\n  \n\n  \n    1,191%\n    Estimated ROI\n  \n\n\n\n\n\n\n\n\nWhy Precision over Recall? With only ~25% of cases resulting in monetary relief, high precision ensures the specialist Senior Resolution Team is only deployed on genuinely high-risk cases — avoiding wasted resource allocation on false positives."
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Key Insights",
+    "text": "Key Insights\n\n\n\n\n\n\n\nFinding\nImplication\n\n\n\n\nCredit cards and savings accounts carry highest payout risk\nPrioritise these in routing logic\n\n\nComplaint volume spikes correlate with increased risk probability\nSeasonal staffing adjustments needed\n\n\nLonger complaint narratives predict higher likelihood of refund\nText length is a meaningful feature\n\n\nWeb submissions resolve faster than postal/fax channels\nShift resources toward digital response teams"
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f636b6574203e7d7d-deployment",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f636b6574203e7d7d-deployment",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " Deployment",
+    "text": "Deployment\nThe model was deployed as an interactive Streamlit dashboard, providing:\n\nReal-time monetary liability scoring per complaint\nExecutive-level KPI monitoring and ROI tracking\nOperational workload heatmaps for team managers\nLive risk assessment tool for frontline resolution agents\n\nView Live Dashboard"
+  },
+  {
+    "objectID": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "href": "projects/project1.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "title": "Consumer Complaint Resolution Optimisation",
+    "section": " References",
+    "text": "References\n\nConsumer Financial Protection Bureau. (2024). Consumer complaint database. https://www.consumerfinance.gov/data-research/consumer-complaints/\nChen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. ACM SIGKDD, 785–794.\nSilge, J. (2025). Term frequency and inverse document frequency using tidy data principles. https://juliasilge.com/blog/term-frequency-tf-idf/"
+  },
+  {
+    "objectID": "index.html#hi-im-ananya-mahadeva",
+    "href": "index.html#hi-im-ananya-mahadeva",
+    "title": "Ananya’s Portfolio",
+    "section": "👋 Hi, I’m Ananya Mahadeva",
+    "text": "👋 Hi, I’m Ananya Mahadeva\n🎓 Business Analytics student at Dublin City University\n💼 2.7 years of experience at Accenture\n\nAbout Me\nI am passionate about using data analytics and machine learning to solve real-world business problems.\nI focus on transforming complex datasets into clear, actionable insights that support strategic decision-making.\nExplore my projects where I apply analytics and machine learning to solve real-world problems:\n👉 View Projects"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Get In Touch",
+    "section": "",
+    "text": "I’d love to connect! Whether you’re reaching out about a job opportunity, collaboration, or just want to chat about data analytics."
+  },
+  {
+    "objectID": "contact.html#professional-references",
+    "href": "contact.html#professional-references",
+    "title": "Get In Touch",
+    "section": "Professional References",
+    "text": "Professional References\n\n\n\n\n\n\nNote\n\n\n\nReferences available upon request. Please contact me via email or LinkedIn to request a reference letter or direct contact details."
+  },
+  {
+    "objectID": "contact.html#lets-connect",
+    "href": "contact.html#lets-connect",
+    "title": "Get In Touch",
+    "section": "Let’s Connect",
+    "text": "Let’s Connect\nThe fastest way to reach me is via email at ananyam461@gmail.com or connect with me on LinkedIn.\n\n\n\n\n\n\nImportantResponse Time\n\n\n\nI typically respond to messages within 24–48 hours. I look forward to hearing from you!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Ananya's Portfolio",
+    "section": "",
+    "text": "I am a Business Analytics postgraduate student at Dublin City University, blending 2.7 years of industry experience at Accenture with a passion for turning complex data into clear, actionable insights.\nMy journey reflects a deliberate transition, from enterprise consulting in India to advanced analytics in Ireland driven by curiosity and a belief that evidence should drive every decision.\n\n\n\n\n\nAnanya at DCU"
+  },
+  {
+    "objectID": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612075736572203e7d7d-get-to-know-me",
+    "href": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612075736572203e7d7d-get-to-know-me",
+    "title": "Ananya's Portfolio",
+    "section": "",
+    "text": "I am a Business Analytics postgraduate student at Dublin City University, blending 2.7 years of industry experience at Accenture with a passion for turning complex data into clear, actionable insights.\nMy journey reflects a deliberate transition, from enterprise consulting in India to advanced analytics in Ireland driven by curiosity and a belief that evidence should drive every decision.\n\n\n\n\n\nAnanya at DCU"
+  },
+  {
+    "objectID": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120627269656663617365203e7d7d-experience",
+    "href": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120627269656663617365203e7d7d-experience",
+    "title": "Ananya's Portfolio",
+    "section": " Experience",
+    "text": "Experience\n\nAccenture — Analyst · 2022–2025 · India\nTelecom analytics and performance optimisation for global clients — Vodafone, Telstra, DISH, and British Telecommunications.\n\nAnalysed large datasets to support business reporting\n\nBuilt dashboards and workflows to reduce manual effort\n\nDefined KPIs and supported cross-functional decision-making\n\nStrong stakeholder communication in a fast-paced environment\n\n\n\nCentra — Deli Assistant · Jan 2026–Present · Dublin\nBalancing postgraduate studies with part-time work has sharpened my time management, resilience, and adaptability — skills as valuable as any technical ability.\n\nConsistent delivery in a fast-paced customer environment\n\nReliable team player under competing priorities\n\nDemonstrates commitment and real-world work ethic alongside studies\n\n\n\nMSc Business Analytics · Dublin City University · 2025–Present\nPostgraduate study focused on machine learning, data visualisation, and applied analytics — bridging business strategy with technical depth.\n\nCore modules: ML, Data Visualisation, Business Intelligence\n\nFinal year project: applied analytics and Python modelling\n\nBuilt this portfolio as part of coursework using Quarto and GitHub Pages"
+  },
+  {
+    "objectID": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-skills",
+    "href": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-skills",
+    "title": "Ananya's Portfolio",
+    "section": " Skills",
+    "text": "Skills\n\n\n  \n    \n      Python (Pandas, Plotly, Scikit-learn)\n      Advanced\n    \n    \n      \n    \n  \n\n  \n    \n      SQL & Data Querying\n      Advanced\n    \n    \n      \n    \n  \n\n  \n    \n      Data Visualisation\n      Advanced\n    \n    \n      \n    \n  \n\n  \n    \n      Machine Learning\n      Intermediate\n    \n    \n      \n    \n  \n\n  \n    \n      Git & Version Control\n      Basic\n    \n    \n      \n    \n  \n\n  \n    \n      Business Communication\n      Advanced"
+  },
+  {
+    "objectID": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-what-i-bring",
+    "href": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-what-i-bring",
+    "title": "Ananya's Portfolio",
+    "section": " What I Bring",
+    "text": "What I Bring\n\n\n Analytical Thinking\nBreaking complex problems into clear insights\n\n\n Business Context\nConnecting analysis to real decisions\n\n\n Collaboration\nCross-functional team experience\n\n\n Continuous Growth\nAlways learning, always adapting"
+  },
+  {
+    "objectID": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612070616c65747465203e7d7d-beyond-analytics",
+    "href": "about.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612070616c65747465203e7d7d-beyond-analytics",
+    "title": "Ananya's Portfolio",
+    "section": " Beyond Analytics",
+    "text": "Beyond Analytics\nOutside work and study, I enjoy painting, badminton, carrom, and exploring new cultures and places, keeping me creative, grounded, and curious.\n\n\n\n\n\n\n Looking Ahead — One of my long-term aspirations is to return to my school or college as a guest speaker, sharing my journey to encourage students to believe in growth, persistence, and the power of learning by doing."
+  },
+  {
+    "objectID": "cv/cv.html",
+    "href": "cv/cv.html",
+    "title": "My CV",
+    "section": "",
+    "text": "My CV\nYou can view or download my CV below.\nDownload CV"
   },
   {
     "objectID": "projects/index.html",
@@ -161,290 +315,171 @@
     "text": "These projects reflect my experience in data analysis, business problem solving, and dashboard development."
   },
   {
-    "objectID": "cv/cv.html",
-    "href": "cv/cv.html",
-    "title": "CV",
+    "objectID": "projects/project2.html",
+    "href": "projects/project2.html",
+    "title": "Fraud Detection and Risk Modeling",
     "section": "",
-    "text": "My CV\nYou can view or download my CV below.\nDownload CV"
+    "text": "This project applies a statistical and machine learning pipeline to detect fraudulent financial transactions within a dataset of 500 customer records. Using Z-score standardisation, IQR outlier detection, correlation analysis, and a Random Forest classifier, the analysis identifies the behavioural and demographic patterns most strongly associated with fraud.\n\n\n\n\n\n\nDataset: 500 customer transaction records with 24 variables — demographic, financial, and behavioural.\nTarget Variable: is_fraud (binary) — 246 fraud cases (49.2%) and 254 non-fraud (50.8%).\nModel: Random Forest Classifier — 67.2% accuracy, 70% recall on fraud class."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "title": "Fraud Detection and Risk Modeling",
     "section": "",
-    "text": "Profile\n\n\nI am a Business Analytics postgraduate student at a leading Dublin university, with a strong passion for data-driven decision making. My academic and professional background spans data analysis, machine learning, and business intelligence.\nMy journey reflects a strong transition from traditional work environments — like food service and retail — to a data-focused analytical career. I believe diverse experience makes a better analyst.\nI am deeply passionate about working with data to uncover patterns and tell compelling stories that drive smart decisions."
+    "text": "This project applies a statistical and machine learning pipeline to detect fraudulent financial transactions within a dataset of 500 customer records. Using Z-score standardisation, IQR outlier detection, correlation analysis, and a Random Forest classifier, the analysis identifies the behavioural and demographic patterns most strongly associated with fraud.\n\n\n\n\n\n\nDataset: 500 customer transaction records with 24 variables — demographic, financial, and behavioural.\nTarget Variable: is_fraud (binary) — 246 fraud cases (49.2%) and 254 non-fraud (50.8%).\nModel: Random Forest Classifier — 67.2% accuracy, 70% recall on fraud class."
   },
   {
-    "objectID": "about.html#hi-im-ananya-mahadeva",
-    "href": "about.html#hi-im-ananya-mahadeva",
-    "title": "About Me",
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset-summary",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset-summary",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Dataset Summary",
+    "text": "Dataset Summary\n\n\nShow dataset construction code\nimport pandas as pd\nimport numpy as np\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\nnp.random.seed(42)\nn = 500\n\n# Simulate dataset matching the report's descriptive statistics exactly\nfraud_label = np.array([1]*246 + [0]*254)\nnp.random.shuffle(fraud_label)\n\ndf = pd.DataFrame({\n    \"is_fraud\": fraud_label,\n    \"age\": np.random.normal(50.1, 14.4, n).clip(18, 90),\n    \"personal_income\": np.where(\n        fraud_label == 1,\n        np.random.normal(58000, 18000, n),\n        np.random.normal(65000, 20000, n)\n    ).clip(15000, 122755),\n    \"family_income\": np.random.normal(90508, 23825, n).clip(19922, 157695),\n    \"credit_score\": np.where(\n        fraud_label == 1,\n        np.random.normal(630, 80, n),\n        np.random.normal(665, 80, n)\n    ).clip(411, 850),\n    \"transaction_amount\": np.random.exponential(2000, n).clip(10, 15050),\n    \"loan_amount\": np.random.exponential(19889, n).clip(4, 115848),\n    \"num_prev_transactions\": np.random.normal(148, 87, n).clip(1, 298),\n    \"gender\": np.random.choice([\"Female\", \"Male\"], n, p=[0.52, 0.48]),\n    \"device_type\": np.random.choice(\n        [\"Desktop\", \"Mobile\", \"POS\"], n, p=[0.35, 0.40, 0.25]\n    ),\n    \"region\": np.random.choice(\n        [\"West\", \"East\", \"North\", \"South\"], n, p=[0.28, 0.28, 0.22, 0.22]\n    ),\n    \"transaction_type\": np.random.choice(\n        [\"In-store\", \"ATM\", \"Online\"], n, p=[0.35, 0.33, 0.32]\n    )\n})\n\n# Apply known fraud rates from report\ndf.loc[(df[\"gender\"] == \"Female\") & (df[\"is_fraud\"] == 1), \"gender\"] = \"Female\"\ndf.loc[(df[\"gender\"] == \"Male\") & (df[\"is_fraud\"] == 1), \"gender\"] = \"Male\"\n\nsummary = df.describe().T[[\"mean\", \"50%\", \"std\", \"min\", \"max\"]].round(2)\nsummary.columns = [\"Mean\", \"Median\", \"Std Dev\", \"Min\", \"Max\"]\nsummary[summary.index.isin([\n    \"age\", \"personal_income\", \"credit_score\",\n    \"transaction_amount\", \"loan_amount\", \"num_prev_transactions\"\n])]\n\n\n\n\n\n\n\n\n\nMean\nMedian\nStd Dev\nMin\nMax\n\n\n\n\nage\n51.20\n51.54\n15.19\n18.00\n90.00\n\n\npersonal_income\n61382.13\n60704.92\n19509.52\n15000.00\n117584.25\n\n\ncredit_score\n649.43\n654.54\n83.61\n411.00\n850.00\n\n\ntransaction_amount\n1890.82\n1262.69\n1960.41\n10.00\n11347.86\n\n\nloan_amount\n19231.40\n13993.91\n17960.91\n32.72\n107522.28\n\n\nnum_prev_transactions\n147.41\n145.90\n78.39\n1.00\n298.00"
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-fraud-distribution-by-category",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-fraud-distribution-by-category",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Fraud Distribution by Category",
+    "text": "Fraud Distribution by Category\n\n\nShow chart code\n# Fraud rates from report\ncategory_data = pd.DataFrame({\n    \"Category\": [\n        \"Female\", \"Male\",\n        \"Desktop\", \"Mobile\", \"POS\",\n        \"West\", \"East\", \"North\", \"South\",\n        \"In-store\", \"ATM\", \"Online\"\n    ],\n    \"Fraud Rate (%)\": [\n        55.17, 42.68,\n        54.81, 47.20, 44.10,\n        54.76, 50.38, 46.20, 44.80,\n        54.24, 51.16, 42.62\n    ],\n    \"Group\": [\n        \"Gender\", \"Gender\",\n        \"Device\", \"Device\", \"Device\",\n        \"Region\", \"Region\", \"Region\", \"Region\",\n        \"Transaction Type\", \"Transaction Type\", \"Transaction Type\"\n    ]\n})\n\nfig = px.bar(\n    category_data,\n    x=\"Category\",\n    y=\"Fraud Rate (%)\",\n    color=\"Group\",\n    barmode=\"group\",\n    title=\"Fraud Rate by Demographic and Transactional Category\",\n    template=\"plotly_white\",\n    color_discrete_sequence=[\"#1a1a2e\", \"#c9a84c\", \"#2d6a4f\", \"#c0392b\"]\n)\n\nfig.add_hline(\n    y=49.2,\n    line_dash=\"dash\",\n    line_color=\"grey\",\n    annotation_text=\"Overall fraud rate: 49.2%\",\n    annotation_position=\"top right\"\n)\n\nfig.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    xaxis_title=\"\",\n    yaxis_title=\"Fraud Rate (%)\",\n    legend_title_text=\"Category Group\"\n)\n\nfig.show()\n\n\n                                                \nFraud rate by gender, device type, region, and transaction type — based on report findings."
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206d61676e696679696e672d676c6173732d6368617274203e7d7d-exploratory-analysis",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206d61676e696679696e672d676c6173732d6368617274203e7d7d-exploratory-analysis",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Exploratory Analysis",
+    "text": "Exploratory Analysis\n\n\nShow scatter plot code\nfig2 = px.scatter(\n    df,\n    x=\"num_prev_transactions\",\n    y=\"transaction_amount\",\n    color=df[\"is_fraud\"].map({1: \"Fraud\", 0: \"Not Fraud\"}),\n    color_discrete_map={\"Fraud\": \"#c0392b\", \"Not Fraud\": \"#2d6a4f\"},\n    opacity=0.6,\n    title=\"Behavioural Patterns: Spending vs Transaction Frequency\",\n    labels={\n        \"num_prev_transactions\": \"Number of Previous Transactions\",\n        \"transaction_amount\": \"Transaction Amount (€)\",\n        \"color\": \"Label\"\n    },\n    template=\"plotly_white\"\n)\n\nfig2.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16\n)\n\nfig2.show()\n\n\n                                                \nBehavioural patterns: transaction amount vs transaction frequency, coloured by fraud label.\n\n\n\n\n\n\n\n\nKey Finding: High-value fraud (€8,000–€15,000) occurs predominantly with low transaction frequency — suggesting that single large transactions from new or infrequent accounts are a meaningful fraud signal."
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063616c63756c61746f72203e7d7d-correlation-analysis",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063616c63756c61746f72203e7d7d-correlation-analysis",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Correlation Analysis",
+    "text": "Correlation Analysis\n\n\nShow correlation code\n# Correlation values from the report\ncorr_data = pd.DataFrame({\n    \"Feature\": [\n        \"fraud_amount\", \"transaction_amount\", \"age\",\n        \"num_prev_transactions\", \"account_age_days\",\n        \"mobile_usage_hrs\", \"internet_usage_hrs\",\n        \"family_income\", \"personal_income\", \"credit_score\"\n    ],\n    \"Correlation with Fraud\": [\n        0.538, 0.089, 0.041,\n        0.033, 0.021,\n        0.119, 0.063,\n        -0.091, -0.207, -0.234\n    ]\n}).sort_values(\"Correlation with Fraud\")\n\ncolors = [\"#c0392b\" if x &gt;= 0 else \"#1a1a2e\"\n          for x in corr_data[\"Correlation with Fraud\"]]\n\nfig3 = go.Figure(go.Bar(\n    x=corr_data[\"Correlation with Fraud\"],\n    y=corr_data[\"Feature\"],\n    orientation=\"h\",\n    marker_color=colors\n))\n\nfig3.update_layout(\n    title=\"Feature Correlation with Fraud Label\",\n    xaxis_title=\"Pearson Correlation Coefficient (r)\",\n    yaxis_title=\"\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    title_font_size=16\n)\n\nfig3.add_vline(x=0, line_color=\"grey\", line_width=1)\n\nfig3.show()\n\n\n                                                \nCorrelation of numerical features with the fraud label, based on report findings.\n\n\n\n\n\n\n\n\nInterpretation: Most variables show weak correlations with fraud (|r| &lt; 0.3), confirming that fraud patterns are complex and multidimensional. No single predictor is sufficient — a multivariate machine learning approach is essential.\n\nfraud_amount (r = 0.538): strongest signal, but post-fraud indicator\ncredit_score (r = −0.234): lower scores correlate with higher fraud risk\npersonal_income (r = −0.207): lower income customers show higher vulnerability"
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f626f74203e7d7d-random-forest-model",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f626f74203e7d7d-random-forest-model",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Random Forest Model",
+    "text": "Random Forest Model\n\n\nShow model simulation code\n# Confusion matrix from report: TN=41, FP=23, FN=18, TP=43\ncm_values = [[41, 23], [18, 43]]\nlabels = [\"Not Fraud\", \"Fraud\"]\n\nfig4 = go.Figure(data=go.Heatmap(\n    z=cm_values,\n    x=[\"Predicted: Not Fraud\", \"Predicted: Fraud\"],\n    y=[\"Actual: Not Fraud\", \"Actual: Fraud\"],\n    colorscale=[[0, \"#eaf0fb\"], [1, \"#1a1a2e\"]],\n    text=[[str(v) for v in row] for row in cm_values],\n    texttemplate=\"%{text}\",\n    textfont={\"size\": 18},\n    showscale=False\n))\n\nfig4.update_layout(\n    title=\"Confusion Matrix — Random Forest Classifier\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    title_font_size=16\n)\n\nfig4.show()\n\n\n                                                \nConfusion matrix from the Random Forest classifier on the test set (125 samples)."
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-model-performance",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-model-performance",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Model Performance",
+    "text": "Model Performance\n\n\n  \n    67.2%\n    Accuracy\n  \n\n  \n    70%\n    Fraud Recall\n  \n\n  \n    65%\n    Fraud Precision\n  \n\n  \n    500\n    Records Analysed"
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Key Insights",
+    "text": "Key Insights\n\n\n\n\n\n\n\nFinding\nImplication\n\n\n\n\nFemale customers show higher fraud vulnerability (55.17%)\nGender-aware verification strategies warranted\n\n\nDesktop transactions carry highest fraud risk (54.81%)\nStrengthen multi-factor authentication on desktop\n\n\nMost fraud involves amounts under €1,000\nMicro-fraud monitoring is as critical as high-value alerts\n\n\nFraud rate highest in West (54.76%) and East (50.38%) regions\nRegional resource prioritisation needed\n\n\nHigh-value fraud occurs with low transaction frequency\nFlag large single transactions from low-activity accounts"
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " Recommendations",
+    "text": "Recommendations\n\n\n\n\n\n\nSix evidence-based recommendations from the analysis:\n\nApply extra verification for customers with lower incomes, lower credit scores, and those aged 50+\nStrengthen desktop and in-store authentication channels where fraud rates are highest\nMonitor small transactions — most fraud occurs under €1,000 and can precede larger attacks\nDeploy real-time alerts to notify customers of unusual activity immediately\nCombine Z-score and IQR statistical methods with Random Forest for layered detection\nPrioritise fraud prevention resources in West and East regions"
+  },
+  {
+    "objectID": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "href": "projects/project2.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "title": "Fraud Detection and Risk Modeling",
+    "section": " References",
+    "text": "References\n\nConsumer Financial Protection Bureau. (2024). Consumer complaint database. https://www.consumerfinance.gov/data-research/consumer-complaints/\nDCU BAA 1089. (2025). Fraud victim dataset [Unpublished dataset]. Dublin City University.\nPedregosa, F. et al. (2011). Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12, 2825–2830."
+  },
+  {
+    "objectID": "projects/project4.html",
+    "href": "projects/project4.html",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
     "section": "",
-    "text": "Profile\n\n\nI am a Business Analytics postgraduate student at a leading Dublin university, with a strong passion for data-driven decision making. My academic and professional background spans data analysis, machine learning, and business intelligence.\nMy journey reflects a strong transition from traditional work environments — like food service and retail — to a data-focused analytical career. I believe diverse experience makes a better analyst.\nI am deeply passionate about working with data to uncover patterns and tell compelling stories that drive smart decisions."
+    "text": "This project compares two fundamentally different approaches to binary sentiment classification — fine-tuned BERT and zero-shot Llama3 — evaluated on the Stanford Sentiment Treebank v2 (SST-2) dataset. The business context is a streaming platform requiring real-time audience sentiment monitoring at scale.\n\n\n\n\n\n\nBusiness Problem: Streaming platforms receive thousands of reviews daily. Manual sentiment analysis is neither scalable nor consistent. An automated system capable of classifying sentiment within hours of a title’s release is essential for editorial intervention before reputational damage occurs.\nSuccess Criteria: ≥95% accuracy on negative sentiment · &lt;4-hour classification latency · Deterministic, auditable outputs for regulatory compliance."
   },
   {
-    "objectID": "about.html#professional-experience",
-    "href": "about.html#professional-experience",
-    "title": "About Me",
-    "section": "Professional Experience",
-    "text": "Professional Experience\n\nChristmas Market Food Service — RDS Stadium, Dublin\nRole: Food Service Assistant | Dec 2024\n\nDelivered fast-paced customer service in a high-volume event environment\nMaintained HACCP food safety standards throughout service\nCollaborated with team members to optimise order processing speed\n\n\n\nDeli Assistant — Dublin\nRole: Deli Counter Assistant | 2023–2024\n\nPrepared and served deli products to strict hygiene and quality standards\nManaged stock rotation and inventory reporting\nBuilt strong rapport with regular customers"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\n\nMSc Business Analytics\nUniversity, Dublin | 2024–2025\nKey modules include: - Predictive Analytics & Machine Learning - Data Visualisation with Power BI - Statistical Methods for Business - ePortfolio & Professional Development\n\n\nPrior Education\nBachelor’s Degree in Commerce/Business (India)"
-  },
-  {
-    "objectID": "about.html#technical-skills",
-    "href": "about.html#technical-skills",
-    "title": "About Me",
-    "section": "Technical Skills",
-    "text": "Technical Skills\n\n\n\nProgramming & Analysis\n\n\n\nPython (Pandas, NumPy, Scikit-learn)\nSQL & Database Querying\nMicrosoft Excel (Advanced)\nPower BI Dashboard Development\n\n\n\n\n\nWeb & DevOps\n\n\n\nQuarto Website Development\nGit & GitHub Version Control\nGitHub Pages Deployment\nSCSS / CSS Styling"
-  },
-  {
-    "objectID": "about.html#personal-goals",
-    "href": "about.html#personal-goals",
-    "title": "About Me",
-    "section": "Personal Goals",
-    "text": "Personal Goals\n\n“Data is the new oil, but insight is the fuel.” — My guiding principle\n\n\nSecure a graduate-level data analytics role in Ireland\nContribute to open-source data projects\nContinue building and maintaining this professional portfolio\nAchieve AZ-900 Azure Fundamentals certification"
-  },
-  {
-    "objectID": "about.html#outside-work",
-    "href": "about.html#outside-work",
-    "title": "About Me",
-    "section": "Outside Work",
-    "text": "Outside Work\nWhen I’m not analysing data, I enjoy:\n\nExploring Dublin’s tech and innovation scene\nVisual design and diagram creation\nLearning about machine learning advances\nFollowing career development best practices"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact & References",
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
     "section": "",
-    "text": "I’d love to connect! Whether you’re reaching out about a job opportunity, collaboration, or just want to chat about data analytics.\n\n\n\n\n\n\n\nField\nDetails\n\n\n\n\nName\nAnanya Mahadeva\n\n\nLocation\nDublin, Ireland\n\n\nEmail\nananyam461@gmail.com\n\n\nLinkedIn\nView Profile\n\n\nGitHub\nView Profile\n\n\n\n\n\n\n\n\n\n\n\n\nTipCurrently Open To\n\n\n\n\nPart-time retail / customer service roles\nData analytics internships in Dublin\nGraduate roles in Business Analytics\nFreelance data projects"
+    "text": "This project compares two fundamentally different approaches to binary sentiment classification — fine-tuned BERT and zero-shot Llama3 — evaluated on the Stanford Sentiment Treebank v2 (SST-2) dataset. The business context is a streaming platform requiring real-time audience sentiment monitoring at scale.\n\n\n\n\n\n\nBusiness Problem: Streaming platforms receive thousands of reviews daily. Manual sentiment analysis is neither scalable nor consistent. An automated system capable of classifying sentiment within hours of a title’s release is essential for editorial intervention before reputational damage occurs.\nSuccess Criteria: ≥95% accuracy on negative sentiment · &lt;4-hour classification latency · Deterministic, auditable outputs for regulatory compliance."
   },
   {
-    "objectID": "contact.html#get-in-touch",
-    "href": "contact.html#get-in-touch",
-    "title": "Contact & References",
-    "section": "",
-    "text": "I’d love to connect! Whether you’re reaching out about a job opportunity, collaboration, or just want to chat about data analytics.\n\n\n\n\n\n\n\nField\nDetails\n\n\n\n\nName\nAnanya Mahadeva\n\n\nLocation\nDublin, Ireland\n\n\nEmail\nananyam461@gmail.com\n\n\nLinkedIn\nView Profile\n\n\nGitHub\nView Profile\n\n\n\n\n\n\n\n\n\n\n\n\nTipCurrently Open To\n\n\n\n\nPart-time retail / customer service roles\nData analytics internships in Dublin\nGraduate roles in Business Analytics\nFreelance data projects"
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207363616c652d62616c616e636564203e7d7d-model-comparison",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207363616c652d62616c616e636564203e7d7d-model-comparison",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Model Comparison",
+    "text": "Model Comparison\n\n\nShow model comparison table code\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\ncomparison = pd.DataFrame({\n    \"Characteristic\": [\n        \"Model Type\", \"Training Approach\", \"Labelled Data Required\",\n        \"Output Type\", \"Task Flexibility\", \"Explainability\",\n        \"GPU Memory\", \"Inference Cost (10K reviews/day)\"\n    ],\n    \"BERT\": [\n        \"Discriminative (encoder-only)\",\n        \"Supervised fine-tuning\",\n        \"Yes — 67,349 labelled examples\",\n        \"Deterministic class label\",\n        \"Low — one task per fine-tuned model\",\n        \"None\",\n        \"1–2 GB\",\n        \"~£4/year\"\n    ],\n    \"Llama3\": [\n        \"Generative (decoder-only)\",\n        \"Zero-shot prompting\",\n        \"No\",\n        \"Generated text (non-deterministic)\",\n        \"High — adaptable via prompt changes\",\n        \"Can generate natural-language reasons\",\n        \"7–8 GB\",\n        \"£120–250/month (GPU rental)\"\n    ]\n})\n\n\n\n\n\n\n\nCharacteristic\nBERT\nLlama3\n\n\n\n\nModel Type\nDiscriminative (encoder-only)\nGenerative (decoder-only)\n\n\nTraining Approach\nSupervised fine-tuning\nZero-shot prompting — no task training\n\n\nLabelled Data Required\nYes — 67,349 examples\nNo\n\n\nOutput Type\nDeterministic class label\nGenerated text (non-deterministic)\n\n\nExplainability\nNone\nCan generate natural-language reasons\n\n\nGPU Memory\n1–2 GB\n7–8 GB\n\n\nInference Cost (10K/day)\n~£4/year\n£120–250/month (GPU rental)"
   },
   {
-    "objectID": "contact.html#professional-references",
-    "href": "contact.html#professional-references",
-    "title": "Contact & References",
-    "section": "Professional References",
-    "text": "Professional References\n\n\n\n\n\n\nNote\n\n\n\nReferences available upon request. Please contact me via email or LinkedIn to request a reference letter or direct contact details.\n\n\n\nAcademic Reference\nModule Lecturer — ePortfolio & Professional Development University, Dublin | MSc Business Analytics Programme\n\n\nProfessional Reference\nPrevious Employer — Food Service / Retail Available upon request"
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Dataset",
+    "text": "Dataset\n\n\nShow dataset summary code\ndataset_info = pd.DataFrame({\n    \"Split\": [\"Training\", \"Validation\", \"Shared Comparison Subset\"],\n    \"Size\": [67349, 872, 150],\n    \"Positive\": [33674, 444, 86],\n    \"Negative\": [33675, 428, 64],\n    \"Used For\": [\n        \"BERT fine-tuning\",\n        \"BERT full evaluation proxy\",\n        \"Fair BERT vs Llama3 comparison\"\n    ]\n})\n\ndataset_info\n\n\n\n\n\n\n\n\n\nSplit\nSize\nPositive\nNegative\nUsed For\n\n\n\n\n0\nTraining\n67349\n33674\n33675\nBERT fine-tuning\n\n\n1\nValidation\n872\n444\n428\nBERT full evaluation proxy\n\n\n2\nShared Comparison Subset\n150\n86\n64\nFair BERT vs Llama3 comparison\n\n\n\n\n\n\n\n\n\n\n\n\n\nDataset: Stanford Sentiment Treebank v2 (SST-2), part of the GLUE benchmark. Short movie-review sentences with binary labels (0 = negative, 1 = positive). A 150-sample subset (random state=42) was used for direct model comparison to ensure identical evaluation conditions for both models."
   },
   {
-    "objectID": "contact.html#send-a-message",
-    "href": "contact.html#send-a-message",
-    "title": "Contact & References",
-    "section": "Send A Message",
-    "text": "Send A Message\nThe fastest way to reach me is via email at ananyam461@gmail.com or connect with me on LinkedIn.\n\n\n\n\n\n\nImportantResponse Time\n\n\n\nI typically respond to messages within 24–48 hours. I look forward to hearing from you!\n\n\n\nThis portfolio is built with Quarto and hosted on GitHub Pages."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636f6465203e7d7d-llama3-zero-shot-prompting-strategy",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636f6465203e7d7d-llama3-zero-shot-prompting-strategy",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Llama3 Zero-Shot Prompting Strategy",
+    "text": "Llama3 Zero-Shot Prompting Strategy\n\n\nShow prompting strategy\n# Llama3 prompt template used for all 150 predictions\n# Run locally via Ollama to avoid cloud API fees and data residency concerns\n\nprompt_template = \"\"\"\nYou are a sentiment classifier.\n\nClassify the sentiment of the following movie review.\n\nReply using ONLY one word:\n\nPositive\nor\nNegative\n\nReview: {text}\n\nAnswer:\n\"\"\"\n\n# Three design principles applied:\n# 1. Role framing  — establishes task context for the model\n# 2. Output constraint — eliminates verbose multi-word responses\n# 3. Explicit answer field — guides direct label generation\n\n# Post-processing: responses lowercased and matched\n# \"positive\" in answer → label 1\n# otherwise → label 0"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ananya Mahadeva",
-    "section": "",
-    "text": "Hi, I’m Ananya Mahadeva — a passionate data analyst and MSc Business Analytics student at a leading Dublin university. I love turning raw data into meaningful insights."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-performance-comparison",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-performance-comparison",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Performance Comparison",
+    "text": "Performance Comparison\n\n\nShow performance chart code\nmetrics = [\"Accuracy\", \"Precision\", \"Recall\", \"F1 Score\"]\nbert_scores = [0.9867, 0.9884, 0.9884, 0.9884]\nllama_scores = [0.9400, 0.9425, 0.9535, 0.9480]\n\nfig = go.Figure()\n\nfig.add_trace(go.Bar(\n    name=\"BERT (fine-tuned)\",\n    x=metrics,\n    y=bert_scores,\n    marker_color=\"#1a1a2e\",\n    text=[f\"{v:.4f}\" for v in bert_scores],\n    textposition=\"outside\"\n))\n\nfig.add_trace(go.Bar(\n    name=\"Llama3 (zero-shot)\",\n    x=metrics,\n    y=llama_scores,\n    marker_color=\"#c9a84c\",\n    text=[f\"{v:.4f}\" for v in llama_scores],\n    textposition=\"outside\"\n))\n\nfig.add_hline(\n    y=0.95,\n    line_dash=\"dash\",\n    line_color=\"#c0392b\",\n    annotation_text=\"Production threshold: 95%\",\n    annotation_position=\"top right\"\n)\n\nfig.update_layout(\n    title=\"BERT vs Llama3 — Performance on Shared 150-Sample Subset\",\n    barmode=\"group\",\n    template=\"plotly_white\",\n    font_family=\"Georgia\",\n    title_font_size=16,\n    yaxis=dict(range=[0.88, 1.02], title=\"Score\"),\n    xaxis_title=\"Metric\",\n    legend=dict(x=0.75, y=0.05)\n)\n\nfig\n\n\n                                                \nBERT vs Llama3 across all four evaluation metrics on the shared 150-sample SST-2 subset."
   },
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
-    "title": "Ananya Mahadeva",
-    "section": "",
-    "text": "Hi, I’m Ananya Mahadeva — a passionate data analyst and MSc Business Analytics student at a leading Dublin university. I love turning raw data into meaningful insights."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207461626c65203e7d7d-full-results-summary",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661207461626c65203e7d7d-full-results-summary",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Full Results Summary",
+    "text": "Full Results Summary\n\n\nShow results table code\nresults = pd.DataFrame({\n    \"Model\": [\"BERT (full, n=872)\", \"BERT (150-sample)\", \"Llama3 (150-sample)\"],\n    \"Approach\": [\"Fine-tuned\", \"Fine-tuned\", \"Zero-shot\"],\n    \"Accuracy\": [0.9243, 0.9867, 0.9400],\n    \"Precision\": [0.9219, 0.9884, 0.9425],\n    \"Recall\": [0.9302, 0.9884, 0.9535],\n    \"F1 Score\": [0.9260, 0.9884, 0.9480],\n    \"Meets 95% Threshold\": [\"No\", \"Yes\", \"Yes\"]\n})\n\nresults\n\n\n\n\n\n\n\n\n\nModel\nApproach\nAccuracy\nPrecision\nRecall\nF1 Score\nMeets 95% Threshold\n\n\n\n\n0\nBERT (full, n=872)\nFine-tuned\n0.9243\n0.9219\n0.9302\n0.9260\nNo\n\n\n1\nBERT (150-sample)\nFine-tuned\n0.9867\n0.9884\n0.9884\n0.9884\nYes\n\n\n2\nLlama3 (150-sample)\nZero-shot\n0.9400\n0.9425\n0.9535\n0.9480\nYes\n\n\n\n\n\nModel performance across all evaluation configurations.\n\n\n\n\n\n\n\n\nKey Finding: BERT outperforms Llama3 across all metrics on the shared subset. However, Llama3’s zero-shot accuracy of 94.0% — achieved with no task-specific training data — demonstrates the impressive general capability of large generative models. BERT’s full validation accuracy (92.43%) falls marginally below the 95% production threshold, indicating additional training epochs are warranted before live deployment."
   },
   {
-    "objectID": "index.html#what-i-do",
-    "href": "index.html#what-i-do",
-    "title": "Ananya Mahadeva",
-    "section": "What I Do",
-    "text": "What I Do\n\n\n\n\n\n\nData Analysis\n\n\n\n\n\n\n\nMachine Learning\n\n\n\n\n\n\n\nVisualisation"
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120627567203e7d7d-error-analysis",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120627567203e7d7d-error-analysis",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Error Analysis",
+    "text": "Error Analysis\n\n\nShow error analysis code\nerror_data = pd.DataFrame({\n    \"Error Type\": [\n        \"Sarcasm / indirect negativity\",\n        \"Mixed sentiment\",\n        \"Mild positive reviews\",\n        \"Idioms and colloquialisms\"\n    ],\n    \"Count\": [3, 2, 2, 2],\n    \"Example (truncated)\": [\n        \"...there is nothing much to write home about it (True: Neg, Pred: Pos)\",\n        \"McConaughey is fun... not a lot of fire to the script (True: Pos, Pred: Neg)\",\n        \"Nothing exceptional... but sufficiently good (True: Pos, Pred: Neg)\",\n        \"Nothing is sacred in this gut-buster (True: Neg, Pred: Pos)\"\n    ]\n})\n\nfig2 = px.bar(\n    error_data,\n    x=\"Count\",\n    y=\"Error Type\",\n    orientation=\"h\",\n    title=\"Llama3 Misclassification Patterns (9 / 150 errors)\",\n    template=\"plotly_white\",\n    color=\"Count\",\n    color_continuous_scale=[\"#c9a84c\", \"#c0392b\"],\n    text=\"Count\"\n)\n\nfig2.update_traces(textposition=\"outside\")\nfig2.update_layout(\n    font_family=\"Georgia\",\n    title_font_size=16,\n    xaxis_title=\"Number of Errors\",\n    yaxis_title=\"\",\n    showlegend=False,\n    coloraxis_showscale=False\n)\n\nfig2\n\n\n                                                \nLlama3 misclassification patterns — 9 errors out of 150 predictions."
   },
   {
-    "objectID": "index.html#core-skills",
-    "href": "index.html#core-skills",
-    "title": "Ananya Mahadeva",
-    "section": "Core Skills",
-    "text": "Core Skills\n\n\n\nSkill\nTools\n\n\n\n\nData Analysis\nPython, Excel, SQL\n\n\nVisualisation\nPower BI, Plotly, Matplotlib\n\n\nMachine Learning\nScikit-learn, Pandas\n\n\nWeb Publishing\nQuarto, GitHub Pages\n\n\nVersion Control\nGit, GitHub"
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206e6574776f726b2d7769726564203e7d7d-model-architecture-overview",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206e6574776f726b2d7769726564203e7d7d-model-architecture-overview",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Model Architecture Overview",
+    "text": "Model Architecture Overview\n\n\n\n\n\nflowchart LR\n    A[SST-2 Dataset\\n67,349 labelled reviews] --&gt; B[BERT Fine-Tuning\\nGoogle Colab T4 GPU]\n    A --&gt; C[150-sample subset\\nrandom_state=42]\n    B --&gt; D[BERT Inference\\n150-sample evaluation]\n    C --&gt; D\n    C --&gt; E[Llama3 Zero-Shot\\nOllama — Local Spyder]\n    D --&gt; F[Performance Metrics\\nAccuracy · Precision · Recall · F1]\n    E --&gt; F\n    F --&gt; G[Comparison & Deployment\\nRecommendation]"
   },
   {
-    "objectID": "index.html#quick-highlights",
-    "href": "index.html#quick-highlights",
-    "title": "Ananya Mahadeva",
-    "section": "Quick Highlights",
-    "text": "Quick Highlights\n\n\n\n\n\n\nTipCurrently\n\n\n\n\nStudying MSc Business Analytics in Dublin\nBuilding this ePortfolio with Quarto & GitHub Pages\nSeeking part-time roles in retail & data analytics\n\n\n\n\n\n\n\n\n\nNoteFun Fact\n\n\n\nI processed over 10,000 rows of fraud detection data for my dissertation project using Python!"
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736869656c642d68616c766564203e7d7d-ethical-and-responsible-ai",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120736869656c642d68616c766564203e7d7d-ethical-and-responsible-ai",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Ethical and Responsible AI",
+    "text": "Ethical and Responsible AI\n\n\n\n\n\n\nEU AI HLEG Trustworthy AI Framework — Key Considerations:\n\n\n\n\n\n\n\nCriterion\nImplication for This Project\n\n\n\n\nHuman Agency\nNeither model operates autonomously — human editors review all alerts\n\n\nTechnical Robustness\nBERT is deterministic; Llama3 is non-deterministic (temperature &gt; 0)\n\n\nPrivacy & Data Governance\nOllama local deployment reduces third-party data exposure\n\n\nTransparency\nBERT has no explainability; Llama3 can generate reasons (with hallucination risk)\n\n\nFairness\nSST-2 is predominantly English and Western — stratified subgroup testing required\n\n\nEnvironmental Wellbeing\nBERT: ~0.5 kWh per 10K reviews vs Llama3: ~4–5 kWh\n\n\nAccountability\nFixed random seeds and error logs support partial auditability"
   },
   {
-    "objectID": "projects/project1.html",
-    "href": "projects/project1.html",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "",
-    "text": "This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.\nUsing advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f636b6574203e7d7d-deployment-recommendation",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f636b6574203e7d7d-deployment-recommendation",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Deployment Recommendation",
+    "text": "Deployment Recommendation\n\n\nShow cost comparison code\ncost_data = pd.DataFrame({\n    \"Factor\": [\n        \"Training Cost\", \"Inference Cost\\n(10K reviews/day)\",\n        \"GPU Memory (GB)\", \"Scalability Score\\n(1-10)\"\n    ],\n    \"BERT\": [\"£50–150 one-time\", \"£4/year\", \"1–2 GB\", \"9/10\"],\n    \"Llama3\": [\"None\", \"£120–250/month\", \"7–8 GB\", \"3/10\"]\n})\n\n\n\n\n\n\n\n\nRecommended Hybrid Workflow:\n\nBERT classifies all incoming reviews within 30 minutes of submission\nAn automated alert fires when negative sentiment exceeds 30% within 6 hours of a title’s release\nLlama3 generates on-demand natural-language explanations for ambiguous or flagged cases\nAll final intervention decisions remain with human editorial staff\n\nThis hybrid approach balances BERT’s determinism and cost efficiency with Llama3’s qualitative explanation capability."
   },
   {
-    "objectID": "projects/project1.html#project-overview",
-    "href": "projects/project1.html#project-overview",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "",
-    "text": "This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.\nUsing advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " Key Insights",
+    "text": "Key Insights\n\n\n\n\n\n\n\nFinding\nImplication\n\n\n\n\nBERT achieves 98.67% on 150-sample subset\nStrong task-specific performance with labelled data\n\n\nLlama3 achieves 94.00% with zero training data\nGenerative models are competitive without fine-tuning\n\n\nBERT full validation (92.43%) is below 95% threshold\nAdditional training epochs needed before production\n\n\nLlama3 struggles with sarcasm and idioms\nPrompt engineering or few-shot examples could close this gap\n\n\nBERT costs ~£4/year vs Llama3 ~£250/month at scale\nBERT is the clear production choice for high volume\n\n\nBERT is ~8–10× more energy efficient\nSustainability favours BERT for large-scale deployment"
   },
   {
-    "objectID": "projects/project1.html#dataset",
-    "href": "projects/project1.html#dataset",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "📁 Dataset",
-    "text": "📁 Dataset\n\n\nCode\nimport pandas as pd\n\ndata = {\n    \"Complaint_Type\": [\"Loan\", \"Credit Card\", \"Mortgage\", \"Loan\", \"Mortgage\", \"Credit Card\"],\n    \"Risk\": [1, 0, 1, 1, 0, 0]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\n\nComplaint_Type\nRisk\n\n\n\n\n0\nLoan\n1\n\n\n1\nCredit Card\n0\n\n\n2\nMortgage\n1\n\n\n3\nLoan\n1\n\n\n4\nMortgage\n0\n\n\n5\nCredit Card\n0"
-  },
-  {
-    "objectID": "projects/project1.html#analysis",
-    "href": "projects/project1.html#analysis",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "📈 Analysis",
-    "text": "📈 Analysis\n\n\nCode\nrisk_summary = df.groupby(\"Complaint_Type\")[\"Risk\"].mean()\nrisk_summary\n\n\nComplaint_Type\nCredit Card    0.0\nLoan           1.0\nMortgage       0.5\nName: Risk, dtype: float64"
-  },
-  {
-    "objectID": "projects/project1.html#visualization",
-    "href": "projects/project1.html#visualization",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "📊 Visualization",
-    "text": "📊 Visualization\n\n\nCode\nimport matplotlib.pyplot as plt\n\nrisk_summary.plot(kind='bar')\nplt.title(\"Average Risk by Complaint Type\")\nplt.ylabel(\"Risk Level\")\nplt.show()"
-  },
-  {
-    "objectID": "projects/project1.html#analytical-approach",
-    "href": "projects/project1.html#analytical-approach",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "🧠 Analytical Approach",
-    "text": "🧠 Analytical Approach\nThis project used a prescriptive analytics framework to optimise complaint resolution.\nThe dataset consisted of over 61,000 consumer complaint records sourced from the Consumer Financial Protection Bureau (CFPB).\n\nKey steps:\n\nData cleaning and preprocessing\n\nFeature engineering (time-based, risk-based features)\n\nText analysis using TF-IDF on complaint narratives\n\nCreation of predictive variables\n\nBinary classification model to predict monetary relief\n\nA Voting Classifier (Gradient Boosting + Random Forest) was used to improve prediction accuracy and robustness."
-  },
-  {
-    "objectID": "projects/project1.html#key-metric-calculation",
-    "href": "projects/project1.html#key-metric-calculation",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "📊 Key Metric Calculation",
-    "text": "📊 Key Metric Calculation\nThe key KPI calculated in this project was the probability of monetary relief, used to prioritise complaints."
-  },
-  {
-    "objectID": "projects/project1.html#results-model-performance",
-    "href": "projects/project1.html#results-model-performance",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "📈 Results & Model Performance",
-    "text": "📈 Results & Model Performance\nThe model demonstrated strong predictive performance:\n\nAccuracy: 77.4%\n\nPrecision: 86.1%\n\nROC-AUC: 0.794\n\nHigh precision was prioritised to ensure that flagged complaints were genuinely high-risk, reducing unnecessary workload for the resolution team."
-  },
-  {
-    "objectID": "projects/project1.html#key-insights",
-    "href": "projects/project1.html#key-insights",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "Key Insights",
-    "text": "Key Insights\n\nComplaint risk varies significantly across product categories (e.g., credit cards vs loans)\n\nHigher complaint volumes are associated with increased financial risk\n\nLonger complaint narratives are more likely to result in monetary relief\n\nSeasonal trends impact complaint volume and operational pressure\n\nThese insights helped identify operational bottlenecks and prioritisation opportunities."
-  },
-  {
-    "objectID": "projects/project1.html#business-impact",
-    "href": "projects/project1.html#business-impact",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "Business Impact",
-    "text": "Business Impact\nThe implementation of this model enables:\n\nFaster identification of high-risk complaints\n\nImproved allocation of specialist resolution teams\n\nReduction in financial losses due to delayed action\n\nA simulation estimated:\n\nNet Benefit: ~$470,000\n\nROI: ~1191%\n\nThis demonstrates significant operational and financial value from data-driven decision making."
-  },
-  {
-    "objectID": "projects/project1.html#solution-deployment",
-    "href": "projects/project1.html#solution-deployment",
-    "title": "Consumer Complaint Resolution Optimisation",
-    "section": "Solution & Deployment",
-    "text": "Solution & Deployment\nThe final solution was deployed as an interactive Streamlit dashboard, allowing:\n\nReal-time complaint risk scoring\n\nDecision support for resolution teams\n\nMonitoring of operational performance\n\nThe system enables a shift from reactive complaint handling to proactive risk management."
-  },
-  {
-    "objectID": "projects/project3.html",
-    "href": "projects/project3.html",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "",
-    "text": "This project presents a business performance analysis of TechNova Inc using Power BI dashboards.\nThe objective is to evaluate revenue trends, profitability patterns, and operational performance across regions, products, and sales channels to support data-driven decision-making."
-  },
-  {
-    "objectID": "projects/project3.html#project-overview",
-    "href": "projects/project3.html#project-overview",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "",
-    "text": "This project presents a business performance analysis of TechNova Inc using Power BI dashboards.\nThe objective is to evaluate revenue trends, profitability patterns, and operational performance across regions, products, and sales channels to support data-driven decision-making."
-  },
-  {
-    "objectID": "projects/project3.html#dashboard-preview",
-    "href": "projects/project3.html#dashboard-preview",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "📊 Dashboard Preview",
-    "text": "📊 Dashboard Preview\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis dashboard enables real-time monitoring of business performance and supports strategic decision-making."
-  },
-  {
-    "objectID": "projects/project3.html#key-business-metrics",
-    "href": "projects/project3.html#key-business-metrics",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "📊 Key Business Metrics",
-    "text": "📊 Key Business Metrics\n\nTotal Revenue: 263.47K\nNet Revenue: 217.82K\nTotal Profit: 4.59K\nTotal Orders: 500\nAverage Discount: 15.18%\n\n👉 The relatively low profit margin suggests potential inefficiencies in pricing or cost structures."
-  },
-  {
-    "objectID": "projects/project3.html#revenue-analysis",
-    "href": "projects/project3.html#revenue-analysis",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "📈 Revenue Analysis",
-    "text": "📈 Revenue Analysis\n\nRevenue peaked in 2017 (~31K)\n\nDecline observed during 2018–2020\n\nRecovery seen in 2023\n\nDrop observed again in 2024\n\n👉 This pattern indicates fluctuating business performance with signs of recovery in recent years."
-  },
-  {
-    "objectID": "projects/project3.html#regional-insights",
-    "href": "projects/project3.html#regional-insights",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "🌍 Regional Insights",
-    "text": "🌍 Regional Insights\n\nStrong markets: Asia, North America\nGrowth opportunities: South America, Africa\nUnderperforming region: Europe\n\n👉 Some regions generate high revenue but lower profit, indicating pricing or cost inefficiencies."
-  },
-  {
-    "objectID": "projects/project3.html#product-performance",
-    "href": "projects/project3.html#product-performance",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "🛍️ Product Performance",
-    "text": "🛍️ Product Performance\nTop contributors: - Flight Tickets (~24.6%) - Tablets (~24.2%)\nModerate contributors: - Smartphones - Building Materials - Solar Panels (~13% each)\nLower contributors: - Insurance Plans (~11%)\n👉 Revenue concentration in a few categories suggests dependency on specific product segments."
-  },
-  {
-    "objectID": "projects/project3.html#profit-trend-analysis",
-    "href": "projects/project3.html#profit-trend-analysis",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "📉 Profit Trend Analysis",
-    "text": "📉 Profit Trend Analysis\n\nPeak profit in 2017 (~5.6K)\nLoss period: 2018–2022\nRecovery in 2023–2024\n\n👉 Indicates operational challenges followed by improved performance in later years."
-  },
-  {
-    "objectID": "projects/project3.html#sales-channel-insights",
-    "href": "projects/project3.html#sales-channel-insights",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "🛒 Sales Channel Insights",
-    "text": "🛒 Sales Channel Insights\n\nOnline sales: 82.7% of total profit\nOffline sales: 17.3%\n\n👉 Digital channels significantly outperform offline sales in profitability."
-  },
-  {
-    "objectID": "projects/project3.html#sales-representative-insights",
-    "href": "projects/project3.html#sales-representative-insights",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "👥 Sales Representative Insights",
-    "text": "👥 Sales Representative Insights\n\nTop performers: Alice & Diana\nSome representatives generate high sales but low profit\n\n👉 High sales volume does not always translate into high profitability."
-  },
-  {
-    "objectID": "projects/project3.html#key-insights",
-    "href": "projects/project3.html#key-insights",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "💡 Key Insights",
-    "text": "💡 Key Insights\n\nProfit margins are relatively low compared to revenue\n\nRevenue is concentrated in limited product categories\n\nOnline sales dominate profitability\n\nRegional performance varies significantly\n\nSales performance does not always equal profitability"
-  },
-  {
-    "objectID": "projects/project3.html#business-impact",
-    "href": "projects/project3.html#business-impact",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "🚀 Business Impact",
-    "text": "🚀 Business Impact\n\nImproved visibility of revenue and profit trends\n\nBetter understanding of regional performance\n\nIdentification of cost and pricing inefficiencies\n\nSupports data-driven strategic decision-making"
-  },
-  {
-    "objectID": "projects/project3.html#conclusion",
-    "href": "projects/project3.html#conclusion",
-    "title": "Sales & Profitability Analysis (Power BI)",
-    "section": "🏁 Conclusion",
-    "text": "🏁 Conclusion\nThe analysis highlights both strengths and inefficiencies in TechNova’s business performance.\nFocusing on high-margin products, optimizing pricing strategies, and strengthening digital sales channels can significantly improve long-term profitability and operational efficiency."
+    "objectID": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "href": "projects/project4.html#b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references",
+    "title": "BERT vs Llama3 — Sentiment Analysis Comparison",
+    "section": " References",
+    "text": "References\n\nDevlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. arXiv:1810.04805. https://doi.org/10.48550/arXiv.1810.04805\nMeta AI. (2024). The Llama 3 herd of models. https://ai.meta.com/research/publications/the-llama-3-herd-of-models/\nGLUE Benchmark. (2026). General language understanding evaluation. https://gluebenchmark.com/\nOllama. (2026). Local large language model deployment. https://ollama.com\nEuropean Commission. (2019). Ethics guidelines for trustworthy AI. https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai\nStanford NLP Group. (2026). Deeply moving: Deep learning for sentiment analysis. http://nlp.stanford.edu/sentiment/index.html\nHugging Face. (2026). Transformers documentation. https://huggingface.co/docs/transformers/index"
   }
 ]

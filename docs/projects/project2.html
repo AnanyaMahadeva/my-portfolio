@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ananya Mahadeva">
-<meta name="dcterms.date" content="2026-04-20">
-<meta name="description" content="Detecting fraudulent transactions using statistical and machine learning techniques.">
+<meta name="dcterms.date" content="2025-12-25">
+<meta name="description" content="Detecting fraudulent transactions using statistical methods and machine learning.">
 
-<title>Fraud Detection &amp; Risk Modeling – Ananya’s Portfolio</title>
+<title>Fraud Detection and Risk Modeling – Ananya’s Portfolio</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -78,10 +78,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9cdbd49fb92a4d7f9d8c4f710986121f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,12 +114,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.35.2.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 <link rel="stylesheet" href="../styles.scss">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -151,24 +169,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../cv/cv.html" target="_blank"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/AnanyaMahadeva" target="_blank"> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../reflection.html"> 
 <span class="menu-text">Reflection</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../contact.html"> 
 <span class="menu-text">Contact</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../cv/cv.pdf" target="_blank"> <i class="bi bi-file-earmark-person" role="img">
-</i> 
-<span class="menu-text">CV</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://github.com/" target="_blank"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text">GitHub</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -181,31 +195,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">📌 Project Overview</a></li>
-  <li><a href="#generate-dataset" id="toc-generate-dataset" class="nav-link" data-scroll-target="#generate-dataset">📊 Generate Dataset</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">📈 Descriptive Statistics</a></li>
-  <li><a href="#outlier-detection" id="toc-outlier-detection" class="nav-link" data-scroll-target="#outlier-detection">⚠️ Outlier Detection</a></li>
-  <li><a href="#fraud-distribution" id="toc-fraud-distribution" class="nav-link" data-scroll-target="#fraud-distribution">📊 Fraud Distribution</a></li>
-  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">📉 Visualization</a></li>
-  <li><a href="#machine-learning-model" id="toc-machine-learning-model" class="nav-link" data-scroll-target="#machine-learning-model">🤖 Machine Learning Model</a></li>
-  <li><a href="#model-accuracy" id="toc-model-accuracy" class="nav-link" data-scroll-target="#model-accuracy">📊 Model Accuracy</a></li>
-  <li><a href="#key-insights" id="toc-key-insights" class="nav-link" data-scroll-target="#key-insights">🔍 Key Insights</a></li>
-  <li><a href="#business-impact" id="toc-business-impact" class="nav-link" data-scroll-target="#business-impact">💼 Business Impact</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">🚀 Conclusion</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Fraud Detection &amp; Risk Modeling</h1>
+<h1 class="title">Fraud Detection and Risk Modeling</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Python</div>
     <div class="quarto-category">Statistics</div>
@@ -216,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Detecting fraudulent transactions using statistical and machine learning techniques.
+    Detecting fraudulent transactions using statistical methods and machine learning.
   </div>
 </div>
 
@@ -233,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 20, 2026</p>
+      <p class="date">December 25, 2025</p>
     </div>
   </div>
   
@@ -245,32 +241,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-overview" class="level2">
-<h2 class="anchored" data-anchor-id="project-overview">📌 Project Overview</h2>
-<p>This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models.</p>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120636972636c652d696e666f203e7d7d-project-overview"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> Project Overview</h2>
+<p>This project applies a statistical and machine learning pipeline to detect fraudulent financial transactions within a dataset of <strong>500 customer records</strong>. Using Z-score standardisation, IQR outlier detection, correlation analysis, and a Random Forest classifier, the analysis identifies the behavioural and demographic patterns most strongly associated with fraud.</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Dataset:</strong> 500 customer transaction records with 24 variables — demographic, financial, and behavioural.</p>
+<p><strong>Target Variable:</strong> <code>is_fraud</code> (binary) — 246 fraud cases (49.2%) and 254 non-fraud (50.8%).</p>
+<p><strong>Model:</strong> Random Forest Classifier — 67.2% accuracy, 70% recall on fraud class.</p>
+</div>
+</div>
+</div>
 <hr>
 </section>
-<section id="generate-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="generate-dataset">📊 Generate Dataset</h2>
-<div id="b43ad7a5" class="cell" data-execution_count="1">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset-summary" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206461746162617365203e7d7d-dataset-summary"><i class="fa-solid fa-database" aria-label="database"></i> Dataset Summary</h2>
+<div id="acaf736a" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show dataset construction code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"transactionamount"</span>: np.random.randint(<span class="dv">100</span>, <span class="dv">10000</span>, n),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"loanamount"</span>: np.random.randint(<span class="dv">1000</span>, <span class="dv">50000</span>, n),</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"income"</span>: np.random.randint(<span class="dv">20000</span>, <span class="dv">100000</span>, n),</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"creditscore"</span>: np.random.randint(<span class="dv">300</span>, <span class="dv">850</span>, n),</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"isfraud"</span>: np.random.choice([<span class="dv">0</span>, <span class="dv">1</span>], n)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly.subplots <span class="im">import</span> make_subplots</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate dataset matching the report's descriptive statistics exactly</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>fraud_label <span class="op">=</span> np.array([<span class="dv">1</span>]<span class="op">*</span><span class="dv">246</span> <span class="op">+</span> [<span class="dv">0</span>]<span class="op">*</span><span class="dv">254</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>np.random.shuffle(fraud_label)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"is_fraud"</span>: fraud_label,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>: np.random.normal(<span class="fl">50.1</span>, <span class="fl">14.4</span>, n).clip(<span class="dv">18</span>, <span class="dv">90</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"personal_income"</span>: np.where(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        fraud_label <span class="op">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        np.random.normal(<span class="dv">58000</span>, <span class="dv">18000</span>, n),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        np.random.normal(<span class="dv">65000</span>, <span class="dv">20000</span>, n)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    ).clip(<span class="dv">15000</span>, <span class="dv">122755</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"family_income"</span>: np.random.normal(<span class="dv">90508</span>, <span class="dv">23825</span>, n).clip(<span class="dv">19922</span>, <span class="dv">157695</span>),</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"credit_score"</span>: np.where(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        fraud_label <span class="op">==</span> <span class="dv">1</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        np.random.normal(<span class="dv">630</span>, <span class="dv">80</span>, n),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        np.random.normal(<span class="dv">665</span>, <span class="dv">80</span>, n)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    ).clip(<span class="dv">411</span>, <span class="dv">850</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"transaction_amount"</span>: np.random.exponential(<span class="dv">2000</span>, n).clip(<span class="dv">10</span>, <span class="dv">15050</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"loan_amount"</span>: np.random.exponential(<span class="dv">19889</span>, n).clip(<span class="dv">4</span>, <span class="dv">115848</span>),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"num_prev_transactions"</span>: np.random.normal(<span class="dv">148</span>, <span class="dv">87</span>, n).clip(<span class="dv">1</span>, <span class="dv">298</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"gender"</span>: np.random.choice([<span class="st">"Female"</span>, <span class="st">"Male"</span>], n, p<span class="op">=</span>[<span class="fl">0.52</span>, <span class="fl">0.48</span>]),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"device_type"</span>: np.random.choice(</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"Desktop"</span>, <span class="st">"Mobile"</span>, <span class="st">"POS"</span>], n, p<span class="op">=</span>[<span class="fl">0.35</span>, <span class="fl">0.40</span>, <span class="fl">0.25</span>]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region"</span>: np.random.choice(</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"West"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"South"</span>], n, p<span class="op">=</span>[<span class="fl">0.28</span>, <span class="fl">0.28</span>, <span class="fl">0.22</span>, <span class="fl">0.22</span>]</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">"transaction_type"</span>: np.random.choice(</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        [<span class="st">"In-store"</span>, <span class="st">"ATM"</span>, <span class="st">"Online"</span>], n, p<span class="op">=</span>[<span class="fl">0.35</span>, <span class="fl">0.33</span>, <span class="fl">0.32</span>]</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply known fraud rates from report</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>df.loc[(df[<span class="st">"gender"</span>] <span class="op">==</span> <span class="st">"Female"</span>) <span class="op">&amp;</span> (df[<span class="st">"is_fraud"</span>] <span class="op">==</span> <span class="dv">1</span>), <span class="st">"gender"</span>] <span class="op">=</span> <span class="st">"Female"</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>df.loc[(df[<span class="st">"gender"</span>] <span class="op">==</span> <span class="st">"Male"</span>) <span class="op">&amp;</span> (df[<span class="st">"is_fraud"</span>] <span class="op">==</span> <span class="dv">1</span>), <span class="st">"gender"</span>] <span class="op">=</span> <span class="st">"Male"</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> df.describe().T[[<span class="st">"mean"</span>, <span class="st">"50%"</span>, <span class="st">"std"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>]].<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>summary.columns <span class="op">=</span> [<span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"Std Dev"</span>, <span class="st">"Min"</span>, <span class="st">"Max"</span>]</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>summary[summary.index.isin([</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age"</span>, <span class="st">"personal_income"</span>, <span class="st">"credit_score"</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">"transaction_amount"</span>, <span class="st">"loan_amount"</span>, <span class="st">"num_prev_transactions"</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>])]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
@@ -280,53 +324,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">transactionamount</th>
-<th data-quarto-table-cell-role="th">loanamount</th>
-<th data-quarto-table-cell-role="th">income</th>
-<th data-quarto-table-cell-role="th">creditscore</th>
-<th data-quarto-table-cell-role="th">isfraud</th>
+<th data-quarto-table-cell-role="th">Mean</th>
+<th data-quarto-table-cell-role="th">Median</th>
+<th data-quarto-table-cell-role="th">Std Dev</th>
+<th data-quarto-table-cell-role="th">Min</th>
+<th data-quarto-table-cell-role="th">Max</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>7370</td>
-<td>6644</td>
-<td>39282</td>
-<td>753</td>
-<td>0</td>
+<th data-quarto-table-cell-role="th">age</th>
+<td>51.20</td>
+<td>51.54</td>
+<td>15.19</td>
+<td>18.00</td>
+<td>90.00</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>960</td>
-<td>44286</td>
-<td>43930</td>
-<td>336</td>
-<td>1</td>
+<th data-quarto-table-cell-role="th">personal_income</th>
+<td>61382.13</td>
+<td>60704.92</td>
+<td>19509.52</td>
+<td>15000.00</td>
+<td>117584.25</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>5490</td>
-<td>48320</td>
-<td>20077</td>
-<td>615</td>
-<td>1</td>
+<th data-quarto-table-cell-role="th">credit_score</th>
+<td>649.43</td>
+<td>654.54</td>
+<td>83.61</td>
+<td>411.00</td>
+<td>850.00</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>5291</td>
-<td>3914</td>
-<td>40611</td>
-<td>413</td>
-<td>1</td>
+<th data-quarto-table-cell-role="th">transaction_amount</th>
+<td>1890.82</td>
+<td>1262.69</td>
+<td>1960.41</td>
+<td>10.00</td>
+<td>11347.86</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>5834</td>
-<td>22352</td>
-<td>36984</td>
-<td>339</td>
-<td>0</td>
+<th data-quarto-table-cell-role="th">loan_amount</th>
+<td>19231.40</td>
+<td>13993.91</td>
+<td>17960.91</td>
+<td>32.72</td>
+<td>107522.28</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">num_prev_transactions</th>
+<td>147.41</td>
+<td>145.90</td>
+<td>78.39</td>
+<td>1.00</td>
+<td>298.00</td>
 </tr>
 </tbody>
 </table>
@@ -336,231 +388,406 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="descriptive-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="descriptive-statistics">📈 Descriptive Statistics</h2>
-<div id="a1f6ea61" class="cell" data-execution_count="2">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-fraud-distribution-by-category" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063686172742d626172203e7d7d-fraud-distribution-by-category"><i class="fa-solid fa-chart-bar" aria-label="chart-bar"></i> Fraud Distribution by Category</h2>
+<div id="f376dbb6" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">transactionamount</th>
-<th data-quarto-table-cell-role="th">loanamount</th>
-<th data-quarto-table-cell-role="th">income</th>
-<th data-quarto-table-cell-role="th">creditscore</th>
-<th data-quarto-table-cell-role="th">isfraud</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">count</th>
-<td>500.000000</td>
-<td>500.000000</td>
-<td>500.000000</td>
-<td>500.000000</td>
-<td>500.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">mean</th>
-<td>5126.896000</td>
-<td>25124.464000</td>
-<td>60233.066000</td>
-<td>567.890000</td>
-<td>0.536000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">std</th>
-<td>2805.442697</td>
-<td>14298.929838</td>
-<td>22751.331509</td>
-<td>156.335368</td>
-<td>0.499202</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">min</th>
-<td>104.000000</td>
-<td>1009.000000</td>
-<td>20060.000000</td>
-<td>300.000000</td>
-<td>0.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">25%</th>
-<td>2822.000000</td>
-<td>12279.000000</td>
-<td>40770.000000</td>
-<td>431.250000</td>
-<td>0.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">50%</th>
-<td>5289.500000</td>
-<td>24455.000000</td>
-<td>59474.000000</td>
-<td>583.500000</td>
-<td>1.000000</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">75%</th>
-<td>7492.000000</td>
-<td>38617.000000</td>
-<td>79147.000000</td>
-<td>686.750000</td>
-<td>1.000000</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">max</th>
-<td>9988.000000</td>
-<td>49529.000000</td>
-<td>99273.000000</td>
-<td>848.000000</td>
-<td>1.000000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="outlier-detection" class="level2">
-<h2 class="anchored" data-anchor-id="outlier-detection">⚠️ Outlier Detection</h2>
-<div id="aec345d9" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Q1 <span class="op">=</span> df[<span class="st">"transactionamount"</span>].quantile(<span class="fl">0.25</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Q3 <span class="op">=</span> df[<span class="st">"transactionamount"</span>].quantile(<span class="fl">0.75</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> df[(df[<span class="st">"transactionamount"</span>] <span class="op">&lt;</span> (Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR)) <span class="op">|</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              (df[<span class="st">"transactionamount"</span>] <span class="op">&gt;</span> (Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR))]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(outliers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>0</code></pre>
-</div>
-</div>
-<hr>
-</section>
-<section id="fraud-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="fraud-distribution">📊 Fraud Distribution</h2>
-<div id="fd326e06" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"isfraud"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>isfraud
-1    268
-0    232
-Name: count, dtype: int64</code></pre>
-</div>
-</div>
-<hr>
-</section>
-<section id="visualization" class="level2">
-<h2 class="anchored" data-anchor-id="visualization">📉 Visualization</h2>
-<div id="91919caa" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"transactionamount"</span>].hist()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Transaction Amount Distribution"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Amount"</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show chart code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fraud rates from report</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>category_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Category"</span>: [</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Female"</span>, <span class="st">"Male"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Desktop"</span>, <span class="st">"Mobile"</span>, <span class="st">"POS"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"West"</span>, <span class="st">"East"</span>, <span class="st">"North"</span>, <span class="st">"South"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"In-store"</span>, <span class="st">"ATM"</span>, <span class="st">"Online"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fraud Rate (%)"</span>: [</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="fl">55.17</span>, <span class="fl">42.68</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="fl">54.81</span>, <span class="fl">47.20</span>, <span class="fl">44.10</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="fl">54.76</span>, <span class="fl">50.38</span>, <span class="fl">46.20</span>, <span class="fl">44.80</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="fl">54.24</span>, <span class="fl">51.16</span>, <span class="fl">42.62</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Group"</span>: [</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Gender"</span>, <span class="st">"Gender"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Device"</span>, <span class="st">"Device"</span>, <span class="st">"Device"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Region"</span>, <span class="st">"Region"</span>, <span class="st">"Region"</span>, <span class="st">"Region"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Transaction Type"</span>, <span class="st">"Transaction Type"</span>, <span class="st">"Transaction Type"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    category_data,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"Category"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"Fraud Rate (%)"</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"Group"</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    barmode<span class="op">=</span><span class="st">"group"</span>,</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Fraud Rate by Demographic and Transactional Category"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">"plotly_white"</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    color_discrete_sequence<span class="op">=</span>[<span class="st">"#1a1a2e"</span>, <span class="st">"#c9a84c"</span>, <span class="st">"#2d6a4f"</span>, <span class="st">"#c0392b"</span>]</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>fig.add_hline(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="fl">49.2</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    line_dash<span class="op">=</span><span class="st">"dash"</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    line_color<span class="op">=</span><span class="st">"grey"</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    annotation_text<span class="op">=</span><span class="st">"Overall fraud rate: 49.2%"</span>,</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    annotation_position<span class="op">=</span><span class="st">"top right"</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Georgia"</span>,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">16</span>,</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">""</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">"Fraud Rate (%)"</span>,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    legend_title_text<span class="op">=</span><span class="st">"Category Group"</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="project2_files/figure-html/cell-6-output-1.png" width="585" height="449" class="figure-img"></p>
-</figure>
-</div>
+<div>                            <div id="d2305c9e-1796-4f50-8053-686068a2e25b" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("d2305c9e-1796-4f50-8053-686068a2e25b")) {                    Plotly.newPlot(                        "d2305c9e-1796-4f50-8053-686068a2e25b",                        [{"alignmentgroup":"True","hovertemplate":"Group=Gender\u003cbr\u003eCategory=%{x}\u003cbr\u003eFraud Rate (%)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Gender","marker":{"color":"#1a1a2e","pattern":{"shape":""}},"name":"Gender","offsetgroup":"Gender","orientation":"v","showlegend":true,"textposition":"auto","x":["Female","Male"],"xaxis":"x","y":[55.17,42.68],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Group=Device\u003cbr\u003eCategory=%{x}\u003cbr\u003eFraud Rate (%)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Device","marker":{"color":"#c9a84c","pattern":{"shape":""}},"name":"Device","offsetgroup":"Device","orientation":"v","showlegend":true,"textposition":"auto","x":["Desktop","Mobile","POS"],"xaxis":"x","y":[54.81,47.2,44.1],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Group=Region\u003cbr\u003eCategory=%{x}\u003cbr\u003eFraud Rate (%)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Region","marker":{"color":"#2d6a4f","pattern":{"shape":""}},"name":"Region","offsetgroup":"Region","orientation":"v","showlegend":true,"textposition":"auto","x":["West","East","North","South"],"xaxis":"x","y":[54.76,50.38,46.2,44.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Group=Transaction Type\u003cbr\u003eCategory=%{x}\u003cbr\u003eFraud Rate (%)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Transaction Type","marker":{"color":"#c0392b","pattern":{"shape":""}},"name":"Transaction Type","offsetgroup":"Transaction Type","orientation":"v","showlegend":true,"textposition":"auto","x":["In-store","ATM","Online"],"xaxis":"x","y":[54.24,51.16,42.62],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":""}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Fraud Rate (%)"}},"legend":{"title":{"text":"Category Group"},"tracegroupgap":0},"title":{"text":"Fraud Rate by Demographic and Transactional Category","font":{"size":16}},"barmode":"group","shapes":[{"line":{"color":"grey","dash":"dash"},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":49.2,"y1":49.2,"yref":"y"}],"annotations":[{"showarrow":false,"text":"Overall fraud rate: 49.2%","x":1,"xanchor":"right","xref":"x domain","y":49.2,"yanchor":"bottom","yref":"y"}],"font":{"family":"Georgia"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d2305c9e-1796-4f50-8053-686068a2e25b');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+<p>Fraud rate by gender, device type, region, and transaction type — based on report findings.</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="machine-learning-model" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-model">🤖 Machine Learning Model</h2>
-<div id="95d8afff" class="cell" data-execution_count="6">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206d61676e696679696e672d676c6173732d6368617274203e7d7d-exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206d61676e696679696e672d676c6173732d6368617274203e7d7d-exploratory-analysis"><i class="fa-solid fa-magnifying-glass-chart" aria-label="magnifying-glass-chart"></i> Exploratory Analysis</h2>
+<div id="9ba58025" class="cell" data-execution_count="3">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"isfraud"</span>])</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"isfraud"</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.25</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> RandomForestClassifier()</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>pred</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show scatter plot code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> px.scatter(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    df,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"num_prev_transactions"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"transaction_amount"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span>df[<span class="st">"is_fraud"</span>].<span class="bu">map</span>({<span class="dv">1</span>: <span class="st">"Fraud"</span>, <span class="dv">0</span>: <span class="st">"Not Fraud"</span>}),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    color_discrete_map<span class="op">=</span>{<span class="st">"Fraud"</span>: <span class="st">"#c0392b"</span>, <span class="st">"Not Fraud"</span>: <span class="st">"#2d6a4f"</span>},</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.6</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Behavioural Patterns: Spending vs Transaction Frequency"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    labels<span class="op">=</span>{</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"num_prev_transactions"</span>: <span class="st">"Number of Previous Transactions"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"transaction_amount"</span>: <span class="st">"Transaction Amount (€)"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"color"</span>: <span class="st">"Label"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">"plotly_white"</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>fig2.update_layout(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Georgia"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">16</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>fig2.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>array([0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0,
-       1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1,
-       0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0,
-       1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1,
-       0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0,
-       1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0])</code></pre>
+<div class="cell-output cell-output-display">
+<div>                            <div id="bc60ede0-26ec-4b8f-9ac8-c37c3d304998" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bc60ede0-26ec-4b8f-9ac8-c37c3d304998")) {                    Plotly.newPlot(                        "bc60ede0-26ec-4b8f-9ac8-c37c3d304998",                        [{"hovertemplate":"Label=Not Fraud\u003cbr\u003eNumber of Previous Transactions=%{x}\u003cbr\u003eTransaction Amount (\u20ac)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Not Fraud","marker":{"color":"#2d6a4f","opacity":0.6,"symbol":"circle"},"mode":"markers","name":"Not Fraud","orientation":"v","showlegend":true,"x":[115.76649151683407,113.47507479521587,182.05948846235356,96.94987643267478,160.30532462433186,127.83112327590464,266.8831372838722,143.48773048791622,134.1696500835204,39.25978916533161,197.05609569641882,206.27881656400348,165.5343281565497,81.52801700133566,55.34510221550397,99.23256968121633,60.490739866840144,33.24144405080786,233.60127328447385,182.28423877987132,173.6076833228007,224.01816365624524,122.10509614713561,185.02161241258216,82.01372227991138,244.0910637335091,194.76401232275,1.0,103.40661380234675,298.0,173.84385211979614,128.56046684190784,241.93226481084676,65.27498116439811,132.43960442877724,120.70450887017671,184.55333657680688,100.64036840870875,229.0266603169212,154.20521550283053,186.51666394175996,234.68253592039824,298.0,247.32171119666558,130.19794795040795,114.32052290776258,135.14818207777236,6.13068505958438,119.2134283086532,264.3891616221303,64.1589650538905,55.24640538182199,153.3254763113437,138.10474413293642,117.47302469427707,37.005734488903116,211.03993869049435,192.80975249265308,169.9175066078902,269.11826845426026,149.8416285640928,142.25321509591947,232.6313725063764,158.25370274553666,130.62902092604637,255.26413526911048,76.25111214895914,127.30263459608173,246.98910657471475,96.58185390314172,160.78171606749987,79.01356773215075,186.92863216556844,121.21249622245782,101.72562589734716,124.87889577197842,142.5738674690111,132.5432967258196,257.9477156068265,84.08083581057863,99.6147822384799,106.70988973147128,107.14439488607898,167.579818861236,121.12320794157277,62.84023806586886,11.329259030406234,91.54986004333959,244.13660418009007,298.0,298.0,105.87226131107015,121.44185344423626,110.5314228845917,183.89886420673116,95.59105887431059,286.7609502722629,199.50750059295507,117.18870727534872,231.44456493831666,197.61976503215337,1.0,163.57869234678446,186.50379475976942,15.894531669863028,140.2362360108093,194.9499497870949,170.25717941379224,227.1000825978584,78.46214289363441,1.0,62.37247010420877,31.9723123152083,52.86665416932088,204.22236941072123,37.07574379644842,94.22559380349028,247.20726710522692,1.0,298.0,164.01955125296135,108.74879985962619,298.0,143.85156723401326,183.29757008499354,131.27706877366882,74.07250410208684,92.22636490665748,1.0,40.661762784666664,200.60751643461538,63.912464119345444,80.12147575412304,224.6611347539926,94.7511082976832,213.81707457306925,147.78425469228503,245.10836160574482,57.2990680689891,123.55253767938403,117.15353850336008,174.01779150943077,184.2765704423898,127.43040033307646,56.665178583922625,132.15971507169306,215.08724437719866,261.58952825641677,234.62663258547536,16.649636495583593,249.68938949403653,112.12255765237106,143.9014199401001,189.76437331643515,298.0,127.27041971085609,292.17139444870986,171.7135131967138,151.42308829369858,239.26731579632735,171.0214044339346,214.0848686070591,29.371831106694202,184.48227287033484,177.8613404608066,247.14632582988963,14.904536986315492,194.1537239526101,185.33455895243966,85.64633188421915,54.38427818796778,166.77629417001847,298.0,95.34398863650912,77.58851396566546,127.74482684678006,153.58808253218945,298.0,289.3609968849712,219.6965657296489,182.31249760390722,154.28678538473713,55.315794611624725,129.033755653267,190.70963535661934,104.49552376521393,233.35754335708873,175.86626817522344,79.26470408397807,165.0771575998842,1.0,233.4149423851548,165.99697490287366,99.83901789052481,197.843908119227,204.2899017012773,147.6536399940481,106.60058571637201,141.97072344471317,36.41575388453714,145.99704611611932,92.89168011484779,205.848824731807,81.44745745606208,187.32867695332754,123.44966480913591,1.0,122.63764595017786,171.5079473377331,32.70870453834107,189.28474914250125,28.161205588792498,80.64058812053882,101.90944703667387,62.66531603108665,150.88097119108076,27.63616358951667,210.87672521242428,191.20553831816,156.09357690462784,93.25371889347761,69.99882956582782,88.1061163768499,184.79045966753978,128.19625425082216,53.37167674122243,102.26815645471592,146.75244523233525,129.34616803151766,69.47345314313732,172.75078537282297,94.78212948143087,70.9622928668572,298.0,201.2642437508262,53.15539711881986,204.31732819721356,114.09463055317384,1.0,164.47831336782187,156.5971693868077,98.98509914839255,134.69908162429837,82.76941454728279,51.27007453489318,103.87814637882195,161.9475293044687,204.94470593496152,90.0311063904295,77.38374427176018,77.31672382904304,257.8585960338446,224.2806912461939,88.51829268289735],"xaxis":"x","y":[2194.8331764799655,511.66337853231056,297.0359497208235,169.02234214552487,1037.4638051285447,4438.661981396738,771.4053060683195,1294.2885419349316,766.343214442711,3925.898544685312,1794.454064163263,2372.6179501601828,907.2235888459304,2682.686951387161,2196.927108735442,1700.2704115673885,593.4281336043284,10474.130427900347,194.12439084123642,3031.420356620415,2239.8867762438817,1354.762199440952,3184.2622818801206,1482.841990147011,707.859290087375,1285.5329307258426,1481.3710879955647,1573.9147705035152,291.6436638686538,4481.762170834189,155.1414650518796,2410.8263433576108,5680.0862207622085,1508.8283732825191,2636.4375550207897,5156.8805173166165,7392.20906251449,3581.9718161673754,721.9899723166856,6795.258503157674,5336.961300060282,2254.671938973979,1599.113279457602,765.4000738419809,3383.13414067745,1257.4476837410493,159.65158725009752,363.16970800789903,126.1025462007079,1383.5080869097803,224.85373019825502,242.39263952362867,5662.072273091825,8509.776184712775,1903.729377687796,1916.4567875182126,1011.5036112051639,1215.3454648434658,2622.3179523109566,440.3938452612827,1489.9693250617572,235.78576488963418,705.8255774797307,354.75874896643995,2251.6872963312026,903.998518575626,700.4428388124859,1796.7589060133228,4220.119045894221,1634.4856153142741,1269.43721954884,756.7031659807358,4948.84138709174,891.9308510731474,2269.4605329533993,780.4625734649272,3235.7900785750944,1267.941011974978,21.098175247151392,3082.860296628765,1924.311047434513,4140.962895300989,25.982500051156105,866.3168863856293,271.85994003908684,4719.133024667736,1163.7503326127635,444.8166377240209,1400.5328507515178,141.07890091248817,492.2469823151453,1255.1544805054298,4024.200443841803,359.7573140305582,1072.7140528284415,28.86917006964874,42.49039231846354,666.3746685460411,3630.9229294115976,1822.651741085144,972.5997179050405,3859.3659525528474,4300.839537423399,631.1208270107113,431.7472553426719,1286.5624043656644,14.722355897575293,1611.6941926789304,10436.053023119477,450.8969997461239,3008.456016361261,4661.224170180941,1488.4598856990804,1211.2926350056885,5526.952374971083,8274.276282969024,3184.0251322609356,121.84920297244034,2609.6958426351757,5263.616343142862,372.3521785080494,804.3804203824486,2904.6253920481126,1067.7746206121128,1733.1881346775604,44.93806131652743,84.62138920948591,1596.4118318022786,6602.2893164014495,1348.2917845218492,465.84093233787354,238.38814578793003,1976.3545804536282,2085.1706936272253,3712.6605448107293,785.8564319870387,2324.993647930205,6520.219091926884,2620.469929411398,1992.386389762819,1894.921856752155,3326.3970986866925,636.6967534463405,2630.2714991402827,930.813112764505,1475.8051689289582,140.78763288891423,399.893286757119,6302.292466197288,4417.06146547337,2252.550568267429,1927.86712670624,1681.2177560088603,122.00066248279164,2003.7114598114035,10259.396740191401,1138.506777833532,721.4516725527234,2412.7882753396802,1778.4218976919167,861.117833690024,558.903899918798,443.3244503829149,756.7035595829185,143.3219290499497,587.5090595724873,88.56276188677678,1063.4280862328903,125.72778788833227,2368.45417498284,555.670136972512,191.49991858457335,275.30026534084953,1705.93057043595,62.83867960804213,2506.424849264778,897.7280113642098,585.0214790720784,2054.927924860803,259.5234289707134,3304.6374069781164,359.7383644159554,399.7620944883744,971.3965414833868,1803.0479263490283,139.50818983499266,3562.1232278125485,2567.9928402777214,893.7479632513358,980.2536457267834,3982.566770374421,694.962648592356,2455.2697404200826,2172.7820533302656,3297.582596583419,3386.498383242378,38.25433382551521,2662.9908842370014,467.39705324228464,117.62649884698482,296.1411161681998,10.0,4670.704797265051,49.85214655493327,470.0673426965155,1076.6087287015127,881.8881974552935,5367.631689854023,3256.785205980519,174.877346379696,4348.176492885453,329.48084292653436,796.6557275380519,402.9061022178235,2590.0666221189076,914.4477806068192,318.52394748328265,751.6178928064235,2021.57879402843,13.676047975515718,1482.1855802154869,3488.3557416989124,782.328190455472,2897.989859359275,2144.2298148722593,2052.0357943304484,3102.0562698892422,4671.21072336799,622.352567980353,1832.4207615101157,1578.979332577062,4100.779285249698,639.5800056796094,110.54410708717894,526.0567835239046,730.7025673011555,131.60614469644514,10.305761804662096,1179.050626932742,2295.516444010229,537.3879226962329,5749.655572873231,4099.790759015423,683.4062939286259,3057.702594548697,171.04112592403885,1961.5505002786697,733.8709446113603,3927.6535868189567,491.06595106725047,432.6711395218866,1724.6847951323196,735.9748800274288,1297.112898281919],"yaxis":"y","type":"scatter"},{"hovertemplate":"Label=Fraud\u003cbr\u003eNumber of Previous Transactions=%{x}\u003cbr\u003eTransaction Amount (\u20ac)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Fraud","marker":{"color":"#c0392b","opacity":0.6,"symbol":"circle"},"mode":"markers","name":"Fraud","orientation":"v","showlegend":true,"x":[8.473571157029255,188.78123123542986,136.08665599098182,234.5072389493798,1.0,265.35259019955123,278.29977089560725,32.620760459069075,70.32164624363743,23.394366995869305,1.0,204.6670160747152,292.881887007228,36.13517083638635,298.0,114.87088449088878,100.81917475707121,129.82495769784836,63.58591979758215,274.8637904897041,46.77883802470072,167.4086177531035,239.8880201474703,95.65624101021473,130.06192234555866,113.18316541174957,14.453367648068877,151.34981717022836,273.3309020123635,76.38115653477621,242.71660059973954,248.85337107472583,152.0952367522862,208.32577441085408,140.24250739775775,1.0,217.14231188381171,1.0,47.770635556950324,183.55924334278797,157.74977464050676,109.53251758942274,146.43710690422742,157.67293347208027,180.8394305576968,154.25218230787502,141.7889074569734,1.0,70.32905125042628,176.38547111476908,225.97670453136277,278.13850783583246,1.0,176.23737553405016,137.02895466918483,196.194176096158,222.6302392135264,177.31838324781316,56.96663953384615,1.0,264.0134994569409,298.0,20.89654487743543,91.58801897475293,199.25378344707374,162.66457221292907,209.7702835362237,298.0,199.31098837148744,298.0,178.41103284138035,207.80948020994524,102.97001343543421,122.05142460360301,74.67669560495806,181.59545786990395,175.07451431441729,178.03255461896381,273.4545043958558,153.86431215488884,61.311809464530725,199.25847157551993,112.16419192630302,253.90293282047915,151.95077206123466,108.22708317102388,222.55371942347546,178.889896206786,10.167301341482045,166.81779188096274,198.08411846058488,122.30066817317288,194.73296362710317,180.79107792149694,160.50794496149283,228.3116372960671,100.70741563604182,81.69771020972831,155.4056189849099,158.62624212444214,279.95657906659466,252.57892429273755,238.52419402937207,126.25218207848758,147.82516001265438,176.72728465240667,147.5330299017671,85.33670849828329,15.142394396490374,83.02950059029347,117.41847323476262,105.5829862621305,48.639193198788945,150.51663717335492,23.283240410900873,242.2849709306992,77.37698640538409,73.4713950672608,135.6363028787717,191.3421943762855,102.49402011664301,133.64435956112825,242.1934659775803,298.0,67.58627208580829,1.0,298.0,160.81956076346228,36.65757520760607,109.32858454571216,178.02815003316036,141.28771957109484,189.93032749054862,133.66753908094313,228.56793738702825,17.690229280982606,121.91622924372635,298.0,147.95160226932933,98.57591860682354,69.43349819864761,130.7682147153445,298.0,298.0,122.83719200062696,20.208521856658663,171.33991976168878,40.02933545528332,274.90163201977015,132.19762760615444,244.18834082653893,107.72281907306296,26.87197226553633,94.50339299687064,4.138355940639485,218.30561887277747,252.70768262588226,137.9346040685573,87.59426349182178,130.54799010100896,194.54893167824787,238.38749824496972,220.71643297906263,238.9420944190445,118.47420045206438,135.1292807340397,259.98359800403915,42.71633889193019,243.72275948109436,146.43961318996284,148.6606723778968,298.0,132.32902659448956,194.3197844957437,43.82639902519807,157.96400523343266,261.3563445488256,298.0,244.4268922655997,218.01503540475767,203.75876230005946,113.4734370923671,39.530292438105775,136.63310470029614,197.22231187146951,133.5681746514461,142.57514614871613,209.4444492111963,246.45251641114316,205.83327365991693,233.62813549418954,52.504915486585986,239.76162614341627,87.73495761333106,163.27896681564116,4.804625359196564,242.74381123554124,87.20547718811142,237.17043738624744,205.06951745148882,208.05317672804392,195.92191264932265,228.99345787225576,145.80001169783569,259.0100247316152,3.1181101550455708,129.17281537649177,195.33129353931878,298.0,156.07989895864554,143.14149362841877,237.28430908557567,194.4321784842715,298.0,1.0,73.65063218581628,105.00395142863499,120.13523868933416,85.65145784566377,1.0,56.51491629840058,55.42673564755623,210.78759710476518,84.08055573442775,175.87206509346854,1.0,162.0842722029023,207.90890067103263,141.10119079502513,106.32821390442146,115.59370742903417,31.85046769786004,238.87683099332725,133.4225114720934,213.74316129627204,156.50845326603581,134.8905303998573,132.32490058144805,298.0,90.94855438460489,130.55471378099122,189.30966581409743,1.0,194.55964290690275,171.95784143907247,214.4939330416501],"xaxis":"x","y":[8990.037978031243,988.2639699526545,1308.0351635383092,3540.655942308748,7526.720958370841,183.46282211477282,136.15464008688664,1246.5492578601063,1342.911403232012,254.6715310181608,3260.2576985834826,1110.0347334320775,2917.7200484999585,734.9801356505716,529.3413064912006,512.4525924400551,1601.6917588106564,663.3026688891765,651.0314153780256,2952.5437155615027,2110.535941403528,3572.5552450089863,7415.963763638331,138.0440611215366,98.57442722135717,701.0024789803514,5392.576964768016,634.3220532626215,1018.8758225391224,1825.5693077335109,2116.5708642908594,334.2815636021026,7547.278506831584,4766.1902051850175,11347.85886189104,2943.2446047751664,822.8743201306927,1978.3655937814692,734.1403230963865,924.1487751301224,3121.436849713752,1733.721383672166,848.1493750818969,4121.711813960095,1203.2760557990723,10.0,1222.9244658752543,1072.1516068082078,290.8735279588737,398.1662487109812,608.8986139643894,4052.473439813692,77.66108380655201,1935.0026113355818,2395.9710655656963,483.9304748172668,85.74000017969196,207.59953572142942,247.6778328511083,586.7598326078579,1509.9189641185524,2268.843020701557,321.183545408764,377.6920678471145,4079.4854687049487,928.9865147627437,1905.909471035704,1483.2611310112368,768.7486505650784,1396.2827690306237,448.21546887049493,3134.766960221771,733.3705675594027,434.31591299319865,8804.383436286293,788.1152493223608,1002.1996355158798,1849.3223137429902,1098.6341229455866,10869.572926202873,4508.8338416096385,323.01729398595086,836.636571353219,514.1522381700213,1673.5399958082442,1885.1538906507062,48.81120405145561,247.63500655850527,419.6740687961469,1229.89766522421,2789.6912345813134,3608.1402339226843,438.5218762813592,614.3328421427443,5478.405730123466,1178.9677021366035,29.34859506678111,568.4421294648623,1301.461165805582,3425.2632553319463,3484.268079261052,3099.907300477644,1566.135603786738,936.1968389963516,1963.4190657780332,24.8356582913758,308.54342203756335,2711.8681732590176,559.8553875946595,6090.488248011697,52.29659854614629,1469.8117446435924,597.0922237579019,241.04000069312224,4990.956901434167,3455.757332568898,1200.0175927974742,802.1240528273062,1779.3687537922585,1201.3751618049168,2827.3976348985857,2282.360123466053,363.22326330133836,2347.0573649757985,96.22406960835927,191.12983127177458,673.4660358027575,2231.861662047313,114.02108389535391,2116.7049344648017,8937.782874608189,6871.7477003709555,243.7785079681678,371.4645538639301,104.64001523330809,1922.2054928452378,1771.9936147904577,806.8937066086279,3043.1522431192,1149.1343361424126,1346.1812365757442,2691.7095342314587,33.63284042743493,433.26334361572407,2112.6873208329034,1231.0564058442753,2929.9830019021456,22.28075359457319,2619.951892185739,1696.2799040616467,272.94611489665306,1052.166694960479,875.0796406244475,2625.1930050674564,5582.803184909947,2133.6651890522576,508.75880121959295,3514.7014953433372,1281.2138406186457,2403.5468910634468,802.6304684355293,2730.9196530755303,435.704167722063,1439.7014648243944,279.684378355806,1161.5634890321635,763.4155555269951,4859.918598955228,403.62332019893216,768.5183269398622,1074.045116691772,4772.261460660782,767.4745644829377,221.13916427010906,125.67073526675226,267.9209104234185,644.647981478535,1364.4980638793659,1773.9184624100642,759.8218813594849,1972.184473981039,1891.6781281994815,701.2368224754168,590.7396326097255,793.2712818615995,3127.8882736356904,1145.3849648659468,1781.506684863071,390.39188206973927,2962.713838697803,2509.8272977418537,1730.1387012767761,29.433518653736364,1856.9261774803035,738.658706761667,618.4862148940528,809.2735094575393,1630.2001353649346,4341.605379124593,285.2666198446925,2034.9244275915455,770.5697965860468,4854.616542183153,82.24604993104293,1435.75988938867,2281.8674543630273,1937.122966179944,975.3236785960925,936.6409234675302,328.26674935205426,112.01096363173971,6716.829800539869,1117.8758250248884,1999.449077951211,462.80768813325943,1015.9279413708559,5089.654532587831,3343.4524518038734,3170.0567052244387,309.01132054350705,51.804776281568124,3346.7875979912724,172.00044264036268,1329.6904340042433,5212.9340721954395,3075.0128600311823,4856.719095740309,205.1902246342106,3839.129544429017,795.470339481921,2213.4319756900422,558.2935396461335,389.9071578748647,176.03549897350243,3251.590989018889,8619.503351352249,1821.8104537773193,2081.652440938243,2034.159964631777,6411.533400059181,184.5642857785344,3435.7411652787982,2258.0067174835876,2021.462962350674,1027.637313880217,3150.682033928195],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Number of Previous Transactions"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Transaction Amount (\u20ac)"}},"legend":{"title":{"text":"Label"},"tracegroupgap":0},"title":{"text":"Behavioural Patterns: Spending vs Transaction Frequency","font":{"size":16}},"font":{"family":"Georgia"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('bc60ede0-26ec-4b8f-9ac8-c37c3d304998');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+<p>Behavioural patterns: transaction amount vs transaction frequency, coloured by fraud label.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Key Finding:</strong> High-value fraud (€8,000–€15,000) occurs predominantly with low transaction frequency — suggesting that single large transactions from new or infrequent accounts are a meaningful fraud signal.</p>
+</div>
 </div>
 </div>
 <hr>
 </section>
-<section id="model-accuracy" class="level2">
-<h2 class="anchored" data-anchor-id="model-accuracy">📊 Model Accuracy</h2>
-<div id="b6e36ba6" class="cell" data-execution_count="7">
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063616c63756c61746f72203e7d7d-correlation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612063616c63756c61746f72203e7d7d-correlation-analysis"><i class="fa-solid fa-calculator" aria-label="calculator"></i> Correlation Analysis</h2>
+<div id="cabf00a5" class="cell" data-execution_count="4">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>accuracy_score(y_test, pred)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show correlation code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation values from the report</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>corr_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Feature"</span>: [</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"fraud_amount"</span>, <span class="st">"transaction_amount"</span>, <span class="st">"age"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"num_prev_transactions"</span>, <span class="st">"account_age_days"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"mobile_usage_hrs"</span>, <span class="st">"internet_usage_hrs"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"family_income"</span>, <span class="st">"personal_income"</span>, <span class="st">"credit_score"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Correlation with Fraud"</span>: [</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.538</span>, <span class="fl">0.089</span>, <span class="fl">0.041</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.033</span>, <span class="fl">0.021</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.119</span>, <span class="fl">0.063</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">-</span><span class="fl">0.091</span>, <span class="op">-</span><span class="fl">0.207</span>, <span class="op">-</span><span class="fl">0.234</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>}).sort_values(<span class="st">"Correlation with Fraud"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">"#c0392b"</span> <span class="cf">if</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"#1a1a2e"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>          <span class="cf">for</span> x <span class="kw">in</span> corr_data[<span class="st">"Correlation with Fraud"</span>]]</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>fig3 <span class="op">=</span> go.Figure(go.Bar(</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>corr_data[<span class="st">"Correlation with Fraud"</span>],</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>corr_data[<span class="st">"Feature"</span>],</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    orientation<span class="op">=</span><span class="st">"h"</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    marker_color<span class="op">=</span>colors</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>fig3.update_layout(</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Feature Correlation with Fraud Label"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">"Pearson Correlation Coefficient (r)"</span>,</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">""</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">"plotly_white"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Georgia"</span>,</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">16</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>fig3.add_vline(x<span class="op">=</span><span class="dv">0</span>, line_color<span class="op">=</span><span class="st">"grey"</span>, line_width<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>fig3.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>0.464</code></pre>
+<div class="cell-output cell-output-display">
+<div>                            <div id="69c22aa1-22d1-4391-81e9-598a499ef6dd" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("69c22aa1-22d1-4391-81e9-598a499ef6dd")) {                    Plotly.newPlot(                        "69c22aa1-22d1-4391-81e9-598a499ef6dd",                        [{"marker":{"color":["#1a1a2e","#1a1a2e","#1a1a2e","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b","#c0392b"]},"orientation":"h","x":[-0.234,-0.207,-0.091,0.021,0.033,0.041,0.063,0.089,0.119,0.538],"y":["credit_score","personal_income","family_income","account_age_days","num_prev_transactions","age","internet_usage_hrs","transaction_amount","mobile_usage_hrs","fraud_amount"],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"family":"Georgia"},"title":{"text":"Feature Correlation with Fraud Label","font":{"size":16}},"xaxis":{"title":{"text":"Pearson Correlation Coefficient (r)"}},"yaxis":{"title":{"text":""}},"shapes":[{"line":{"color":"grey","width":1},"type":"line","x0":0,"x1":0,"xref":"x","y0":0,"y1":1,"yref":"y domain"}]},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('69c22aa1-22d1-4391-81e9-598a499ef6dd');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+<p>Correlation of numerical features with the fraud label, based on report findings.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Interpretation:</strong> Most variables show weak correlations with fraud (|r| &lt; 0.3), confirming that fraud patterns are complex and multidimensional. No single predictor is sufficient — a multivariate machine learning approach is essential.</p>
+<ul>
+<li><code>fraud_amount</code> (r = 0.538): strongest signal, but post-fraud indicator</li>
+<li><code>credit_score</code> (r = −0.234): lower scores correlate with higher fraud risk</li>
+<li><code>personal_income</code> (r = −0.207): lower income customers show higher vulnerability</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f626f74203e7d7d-random-forest-model" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120726f626f74203e7d7d-random-forest-model"><i class="fa-solid fa-robot" aria-label="robot"></i> Random Forest Model</h2>
+<div id="f567b793" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Show model simulation code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confusion matrix from report: TN=41, FP=23, FN=18, TP=43</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cm_values <span class="op">=</span> [[<span class="dv">41</span>, <span class="dv">23</span>], [<span class="dv">18</span>, <span class="dv">43</span>]]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">"Not Fraud"</span>, <span class="st">"Fraud"</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig4 <span class="op">=</span> go.Figure(data<span class="op">=</span>go.Heatmap(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span>cm_values,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[<span class="st">"Predicted: Not Fraud"</span>, <span class="st">"Predicted: Fraud"</span>],</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>[<span class="st">"Actual: Not Fraud"</span>, <span class="st">"Actual: Fraud"</span>],</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    colorscale<span class="op">=</span>[[<span class="dv">0</span>, <span class="st">"#eaf0fb"</span>], [<span class="dv">1</span>, <span class="st">"#1a1a2e"</span>]],</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>[[<span class="bu">str</span>(v) <span class="cf">for</span> v <span class="kw">in</span> row] <span class="cf">for</span> row <span class="kw">in</span> cm_values],</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    texttemplate<span class="op">=</span><span class="st">"%</span><span class="sc">{text}</span><span class="st">"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    textfont<span class="op">=</span>{<span class="st">"size"</span>: <span class="dv">18</span>},</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    showscale<span class="op">=</span><span class="va">False</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>fig4.update_layout(</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Confusion Matrix — Random Forest Classifier"</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">"plotly_white"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    font_family<span class="op">=</span><span class="st">"Georgia"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    title_font_size<span class="op">=</span><span class="dv">16</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>fig4.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>                            <div id="97ccba1b-6037-495a-a356-e3fc58cf036f" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("97ccba1b-6037-495a-a356-e3fc58cf036f")) {                    Plotly.newPlot(                        "97ccba1b-6037-495a-a356-e3fc58cf036f",                        [{"colorscale":[[0,"#eaf0fb"],[1,"#1a1a2e"]],"showscale":false,"text":[["41","23"],["18","43"]],"textfont":{"size":18},"texttemplate":"%{text}","x":["Predicted: Not Fraud","Predicted: Fraud"],"y":["Actual: Not Fraud","Actual: Fraud"],"z":[[41,23],[18,43]],"type":"heatmap"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"font":{"family":"Georgia"},"title":{"text":"Confusion Matrix \u2014 Random Forest Classifier","font":{"size":16}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('97ccba1b-6037-495a-a356-e3fc58cf036f');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+<p>Confusion matrix from the Random Forest classifier on the test set (125 samples).</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="key-insights" class="level2">
-<h2 class="anchored" data-anchor-id="key-insights">🔍 Key Insights</h2>
-<ul>
-<li>Fraud detection is not dependent on a single variable<br>
-</li>
-<li>Transaction amount alone is insufficient<br>
-</li>
-<li>Multiple financial indicators improve prediction</li>
-</ul>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074726f706879203e7d7d-model-performance"><i class="fa-solid fa-trophy" aria-label="trophy"></i> Model Performance</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+
+  <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.8rem; font-weight: 700;">67.2%</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Accuracy</div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #0f3460, #533483); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.8rem; font-weight: 700;">70%</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Fraud Recall</div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #2d6a4f, #1b4332); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.8rem; font-weight: 700;">65%</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Fraud Precision</div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #7b2d00, #c0392b); color:#fff; border-radius: 12px; padding: 1.2rem; text-align: center;">
+    <div style="font-size: 1.8rem; font-weight: 700;">500</div>
+    <div style="font-size: 0.85rem; opacity: 0.8; margin-top: 4px;">Records Analysed</div>
+  </div>
+
+</div>
 <hr>
 </section>
-<section id="business-impact" class="level2">
-<h2 class="anchored" data-anchor-id="business-impact">💼 Business Impact</h2>
-<ul>
-<li>Helps detect fraud early<br>
-</li>
-<li>Reduces financial losses<br>
-</li>
-<li>Improves monitoring systems</li>
-</ul>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206661206c6967687462756c62203e7d7d-key-insights"><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> Key Insights</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Finding</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Female customers show higher fraud vulnerability (55.17%)</td>
+<td>Gender-aware verification strategies warranted</td>
+</tr>
+<tr class="even">
+<td>Desktop transactions carry highest fraud risk (54.81%)</td>
+<td>Strengthen multi-factor authentication on desktop</td>
+</tr>
+<tr class="odd">
+<td>Most fraud involves amounts under €1,000</td>
+<td>Micro-fraud monitoring is as critical as high-value alerts</td>
+</tr>
+<tr class="even">
+<td>Fraud rate highest in West (54.76%) and East (50.38%) regions</td>
+<td>Regional resource prioritisation needed</td>
+</tr>
+<tr class="odd">
+<td>High-value fraud occurs with low transaction frequency</td>
+<td>Flag large single transactions from low-activity accounts</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">🚀 Conclusion</h2>
-<p>Machine learning models significantly improve fraud detection compared to traditional rule-based systems.</p>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120666c6167203e7d7d-recommendations"><i class="fa-solid fa-flag" aria-label="flag"></i> Recommendations</h2>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Six evidence-based recommendations from the analysis:</strong></p>
+<ol type="1">
+<li>Apply extra verification for customers with lower incomes, lower credit scores, and those aged 50+</li>
+<li>Strengthen desktop and in-store authentication channels where fraud rates are highest</li>
+<li>Monitor small transactions — most fraud occurs under €1,000 and can precede larger attacks</li>
+<li>Deploy real-time alerts to notify customers of unusual activity immediately</li>
+<li>Combine Z-score and IQR statistical methods with Random Forest for layered detection</li>
+<li>Prioritise fraud prevention resources in West and East regions</li>
+</ol>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references" class="level2">
+<h2 class="anchored" data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c20666120626f6f6b203e7d7d-references"><i class="fa-solid fa-book" aria-label="book"></i> References</h2>
+<ul>
+<li>Consumer Financial Protection Bureau. (2024). <em>Consumer complaint database</em>. <a href="https://www.consumerfinance.gov/data-research/consumer-complaints/" class="uri">https://www.consumerfinance.gov/data-research/consumer-complaints/</a></li>
+<li>DCU BAA 1089. (2025). <em>Fraud victim dataset</em> [Unpublished dataset]. Dublin City University.</li>
+<li>Pedregosa, F. et al.&nbsp;(2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research</em>, 12, 2825–2830.</li>
+</ul>
 
 
 </section>
@@ -973,7 +1200,7 @@ Name: count, dtype: int64</code></pre>
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2026 Ananya Mahadeva | Built with <a href="https://quarto.org">Quarto</a></p>
+<p>© 2026 Ananya Mahadeva | Built with Quarto</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
