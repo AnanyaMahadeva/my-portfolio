@@ -5,6 +5,7 @@ project:
 website:
   title: "Ananya's Portfolio"
   favicon: favicon.ico
+  site-url: https://ananyamahadeva.github.io/my-portfolio/
   navbar:
     logo: image/logo.png
     left:
