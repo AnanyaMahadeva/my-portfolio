@@ -1,0 +1,12 @@
+---
+title: "Projects"
+listing:
+  contents: .
+  type: grid
+  categories: true
+  sort: "date desc"
+---
+
+## My Projects
+
+These projects reflect my experience in data analysis, business problem solving, and dashboard development.

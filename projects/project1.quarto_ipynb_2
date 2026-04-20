@@ -1,0 +1,175 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Consumer Complaint Resolution Optimisation\"\n",
+        "description: \"Predicting high-risk financial complaints using NLP and machine learning.\"\n",
+        "author: \"Ananya Mahadeva\"\n",
+        "date: 2025-11-26\n",
+        "image: \"https://images.unsplash.com/photo-1551288049-bebda4e38f71\"\n",
+        "categories: [Python, Analytics,Machine Learning, NLP]\n",
+        "---\n",
+        "\n",
+        "## Project Overview\n",
+        "\n",
+        "This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.\n",
+        "\n",
+        "Using advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making.\n",
+        "\n",
+        "\n",
+        "\n",
+        "## 📁 Dataset"
+      ],
+      "id": "165ef6a3"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "    \"Complaint_Type\": [\"Loan\", \"Credit Card\", \"Mortgage\", \"Loan\", \"Mortgage\", \"Credit Card\"],\n",
+        "    \"Risk\": [1, 0, 1, 1, 0, 0]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "df"
+      ],
+      "id": "b1f3a5e1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 📈 Analysis"
+      ],
+      "id": "90eb9627"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "risk_summary = df.groupby(\"Complaint_Type\")[\"Risk\"].mean()\n",
+        "risk_summary"
+      ],
+      "id": "6e91a532",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 📊 Visualization"
+      ],
+      "id": "5297d4bb"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "\n",
+        "risk_summary.plot(kind='bar')\n",
+        "plt.title(\"Average Risk by Complaint Type\")\n",
+        "plt.ylabel(\"Risk Level\")\n",
+        "plt.show()"
+      ],
+      "id": "739ce0ee",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 🧠 Analytical Approach\n",
+        "\n",
+        "This project used a **prescriptive analytics framework** to optimise complaint resolution.\n",
+        "\n",
+        "The dataset consisted of over **61,000 consumer complaint records** sourced from the Consumer Financial Protection Bureau (CFPB).\n",
+        "\n",
+        "### Key steps:\n",
+        "\n",
+        "- Data cleaning and preprocessing  \n",
+        "- Feature engineering (time-based, risk-based features)  \n",
+        "- Text analysis using **TF-IDF** on complaint narratives  \n",
+        "- Creation of predictive variables  \n",
+        "- Binary classification model to predict monetary relief  \n",
+        "\n",
+        "A **Voting Classifier (Gradient Boosting + Random Forest)** was used to improve prediction accuracy and robustness.\n",
+        "\n",
+        "\n",
+        "## 📊 Key Metric Calculation\n",
+        "\n",
+        "The key KPI calculated in this project was the **probability of monetary relief**, used to prioritise complaints.\n",
+        "\n",
+        "\n",
+        "#  logic used in the model\n",
+        "data[\"resolution_probability\"] = model.predict_proba(X)[:, 1]\n",
+        "\n",
+        "\n",
+        "## 📈 Results & Model Performance\n",
+        "\n",
+        "The model demonstrated strong predictive performance:\n",
+        "\n",
+        "- Accuracy: 77.4%  \n",
+        "- Precision: 86.1%  \n",
+        "- ROC-AUC: 0.794  \n",
+        "\n",
+        "High precision was prioritised to ensure that flagged complaints were genuinely high-risk, reducing unnecessary workload for the resolution team.\n",
+        "\n",
+        "## Key Insights\n",
+        "\n",
+        "- Complaint risk varies significantly across product categories (e.g., credit cards vs loans)  \n",
+        "- Higher complaint volumes are associated with increased financial risk  \n",
+        "- Longer complaint narratives are more likely to result in monetary relief  \n",
+        "- Seasonal trends impact complaint volume and operational pressure  \n",
+        "\n",
+        "These insights helped identify operational bottlenecks and prioritisation opportunities.\n",
+        "\n",
+        "## Business Impact\n",
+        "\n",
+        "The implementation of this model enables:\n",
+        "\n",
+        "- Faster identification of high-risk complaints  \n",
+        "- Improved allocation of specialist resolution teams  \n",
+        "- Reduction in financial losses due to delayed action  \n",
+        "\n",
+        "A simulation estimated:\n",
+        "\n",
+        "- Net Benefit: ~$470,000  \n",
+        "- ROI: ~1191%  \n",
+        "\n",
+        "This demonstrates significant operational and financial value from data-driven decision making.\n",
+        "\n",
+        "## Solution & Deployment\n",
+        "\n",
+        "The final solution was deployed as an interactive Streamlit dashboard, allowing:\n",
+        "\n",
+        "- Real-time complaint risk scoring  \n",
+        "- Decision support for resolution teams  \n",
+        "- Monitoring of operational performance  \n",
+        "\n",
+        "The system enables a shift from reactive complaint handling to proactive risk management."
+      ],
+      "id": "97f6c84f"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\Ananya M\\anaconda3\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

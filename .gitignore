@@ -1,0 +1,33 @@
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Quarto cache
+.quarto/
+_site/
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# VS Code
+.vscode/settings.json
+
+# Sensitive data
+*.pem
+*.key
+secrets/
+
+# Large files
+*.zip
+*.tar.gz
+*.mp4
+
+# Node
+node_modules/
+
+/.quarto/
+**/*.quarto_ipynb

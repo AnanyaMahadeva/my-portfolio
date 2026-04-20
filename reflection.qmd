@@ -1,0 +1,70 @@
+---
+title: "Reflection"
+format:
+  html:
+    toc: true
+---
+
+## My Learning Journey {.text-right}
+
+This module gave me a practical understanding of how to build and deploy professional digital projects using modern tools like **Quarto**, **Git**, and **GitHub Pages**. It bridged the gap between academic work and real-world software development practices.
+
+## Hands-On Learning {.text-left}
+
+The hands-on learning approach played a key role in my development. By building a portfolio website from scratch, I learned not just the tools, but how to think like a developer — planning structure, writing clean code, and iterating based on feedback.
+
+::: {.callout-tip}
+## Key Insight
+Building something real is far more valuable than reading about it. Every bug I fixed taught me more than any lecture could.
+:::
+
+## Guest Lectures & Inspiration {.text-right}
+
+The guest lectures were another valuable part of this experience. Hearing from professionals who use data analytics and web technologies daily gave me a sense of what the industry expects — and motivated me to go beyond the minimum requirements.
+
+## Module Overview Video {.text-left}
+
+Here is a short overview of what Quarto is and how it enables reproducible publishing:
+
+{{< video https://www.youtube.com/watch?v=_f3latmOhew width="100%" height="400" >}}
+
+::: {.callout-note}
+## Why Quarto?
+Quarto allows seamless integration of Python code, markdown text, and HTML output — making it perfect for a data analytics portfolio.
+:::
+
+## Skills I Developed {.text-right}
+
+| Skill | Tool Used | Proficiency Gained |
+|---|---|---|
+| Version Control | Git & GitHub | Committing, branching, pushing |
+| Web Publishing | GitHub Pages | Live deployment from docs/ |
+| Reproducible Reports | Quarto | .qmd files with Python chunks |
+| Styling | SCSS / Bootswatch | Custom themes and variables |
+| Data Visualisation | Python / Plotly | Interactive charts |
+
+## Challenges I Overcame {.text-left}
+
+> "The only way to learn is to do." — The experience of troubleshooting deployment issues taught me more about web hosting than any tutorial.
+
+- Setting up the correct `output-dir: docs` in `_quarto.yml`
+- Writing descriptive Git commit messages consistently
+- Ensuring Python code chunks executed correctly in each project page
+- Balancing academic workload with portfolio development
+
+## Future Goals {.text-right}
+
+This module has strengthened my ability to present analytical work professionally. Going forward, I plan to:
+
+- [ ] Deploy more advanced data science projects
+- [ ] Contribute to open-source repositories
+- [ ] Build interactive dashboards with Plotly and Dash
+- [ ] Pursue certifications in cloud platforms (Azure / AWS)
+- [ ] Apply Business Analytics skills in a professional setting in Ireland
+
+## Final Thoughts {.text-left}
+
+This ePortfolio represents more than just an assignment — it is a **living document** of my skills, growth, and ambitions as a Business Analytics professional. I am proud of what I have built and excited to continue evolving it as I grow in my career.
+
+---
+*Built with [Quarto](https://quarto.org) | Ananya Mahadeva | MSc Business Analytics*

@@ -1,0 +1,132 @@
+---
+title: "Fraud Detection & Risk Modeling"
+description: "Detecting fraudulent transactions using statistical and machine learning techniques."
+author: "Ananya Mahadeva"
+date: today
+categories: [Python,Statistics, Machine Learning, Fraud Analytics]
+---
+
+## 📌 Project Overview
+
+This project simulates customer transaction data to detect fraudulent behavior using statistical techniques and machine learning models.
+
+---
+
+## 📊 Generate Dataset
+
+```{python}
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+
+n = 500
+
+df = pd.DataFrame({
+    "transactionamount": np.random.randint(100, 10000, n),
+    "loanamount": np.random.randint(1000, 50000, n),
+    "income": np.random.randint(20000, 100000, n),
+    "creditscore": np.random.randint(300, 850, n),
+    "isfraud": np.random.choice([0, 1], n)
+})
+
+df.head()
+```
+
+---
+
+## 📈 Descriptive Statistics
+
+```{python}
+df.describe()
+```
+
+---
+
+## ⚠️ Outlier Detection
+
+```{python}
+Q1 = df["transactionamount"].quantile(0.25)
+Q3 = df["transactionamount"].quantile(0.75)
+IQR = Q3 - Q1
+
+outliers = df[(df["transactionamount"] < (Q1 - 1.5 * IQR)) |
+              (df["transactionamount"] > (Q3 + 1.5 * IQR))]
+
+len(outliers)
+```
+
+---
+
+## 📊 Fraud Distribution
+
+```{python}
+df["isfraud"].value_counts()
+```
+
+---
+
+## 📉 Visualization
+
+```{python}
+import matplotlib.pyplot as plt
+
+plt.figure()
+df["transactionamount"].hist()
+plt.title("Transaction Amount Distribution")
+plt.xlabel("Amount")
+plt.ylabel("Frequency")
+plt.show()
+```
+
+---
+
+## 🤖 Machine Learning Model
+
+```{python}
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+
+X = df.drop(columns=["isfraud"])
+y = df["isfraud"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+pred = model.predict(X_test)
+pred
+```
+
+---
+
+## 📊 Model Accuracy
+
+```{python}
+from sklearn.metrics import accuracy_score
+
+accuracy_score(y_test, pred)
+```
+
+---
+
+## 🔍 Key Insights
+
+- Fraud detection is not dependent on a single variable  
+- Transaction amount alone is insufficient  
+- Multiple financial indicators improve prediction  
+
+---
+
+## 💼 Business Impact
+
+- Helps detect fraud early  
+- Reduces financial losses  
+- Improves monitoring systems  
+
+---
+
+## 🚀 Conclusion
+
+Machine learning models significantly improve fraud detection compared to traditional rule-based systems.

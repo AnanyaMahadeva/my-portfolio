@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ananya's Portfolio"
+  favicon: favicon.ico
+  navbar:
+    logo: image/logo.png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About Me
+      - href: projects/index.qmd
+        text: Projects
+      - href: reflection.qmd
+        text: Reflection
+      - href: contact.qmd
+        text: Contact
+    right:
+      - href: cv/cv.pdf
+        text: CV
+        target: _blank
+        icon: file-earmark-person
+      - href: https://github.com/
+        text: GitHub
+        target: _blank
+        icon: github
+
+  page-footer:
+    center: |
+      &copy; 2026 Ananya Mahadeva | Built with [Quarto](https://quarto.org)
+
+format:
+  html:
+    theme: cosmo
+    css: styles.scss
+    toc: true
+    code-fold: true
+    highlight-style: github

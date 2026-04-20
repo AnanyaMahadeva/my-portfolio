@@ -1,0 +1,61 @@
+---
+title: "Ananya Mahadeva"
+subtitle: "MSc Business Analytics | Data Enthusiast | Dublin, Ireland"
+image: image/ananya.png
+about:
+  template: trestles
+  image-width: 16em
+  image-shape: round
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ananya-mahadeva/
+      target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:ananya@example.com
+---
+
+## Welcome {.text-right}
+
+Hi, I'm **Ananya Mahadeva** — a passionate data analyst and MSc Business Analytics student at a leading Dublin university. I love turning raw data into meaningful insights.
+
+## What I Do {.text-left}
+
+::: {layout-ncol=3}
+
+![Data Analysis](image/data-analysis.png){fig-alt="Data Analysis" width=100%}
+
+![Machine Learning](image/ml.png){fig-alt="Machine Learning" width=100%}
+
+![Visualisation](image/viz.png){fig-alt="Visualisation" width=100%}
+
+:::
+
+## Core Skills {.text-right}
+
+| Skill | Tools |
+|---|---|
+| Data Analysis | Python, Excel, SQL |
+| Visualisation | Power BI, Plotly, Matplotlib |
+| Machine Learning | Scikit-learn, Pandas |
+| Web Publishing | Quarto, GitHub Pages |
+| Version Control | Git, GitHub |
+
+## Quick Highlights {.text-left}
+
+::: {.callout-tip}
+## Currently
+- Studying **MSc Business Analytics** in Dublin
+- Building this ePortfolio with Quarto & GitHub Pages
+- Seeking part-time roles in retail & data analytics
+:::
+
+::: {.callout-note}
+## Fun Fact
+I processed over 10,000 rows of fraud detection data for my dissertation project using Python!
+:::

@@ -1,0 +1,94 @@
+---
+title: "About Me"
+format:
+  html:
+    toc: true
+---
+
+## Hi, I'm Ananya Mahadeva {.text-right}
+
+![Profile](image/ananya.png){fig-alt="Ananya Mahadeva" width=200px style="border-radius: 50%; border: 4px solid #c59d5f; float: right; margin-left: 20px;"}
+
+I am a Business Analytics postgraduate student at a leading Dublin university, with a strong passion for data-driven decision making. My academic and professional background spans data analysis, machine learning, and business intelligence.
+
+My journey reflects a strong transition from traditional work environments — like food service and retail — to a data-focused analytical career. I believe diverse experience makes a better analyst.
+
+I am deeply passionate about working with data to uncover patterns and tell compelling stories that drive smart decisions.
+
+---
+
+## Professional Experience {.text-left}
+
+### Christmas Market Food Service — RDS Stadium, Dublin
+**Role:** Food Service Assistant | *Dec 2024*
+
+- Delivered fast-paced customer service in a high-volume event environment
+- Maintained HACCP food safety standards throughout service
+- Collaborated with team members to optimise order processing speed
+
+### Deli Assistant — Dublin
+**Role:** Deli Counter Assistant | *2023–2024*
+
+- Prepared and served deli products to strict hygiene and quality standards
+- Managed stock rotation and inventory reporting
+- Built strong rapport with regular customers
+
+---
+
+## Education {.text-right}
+
+### MSc Business Analytics
+**University, Dublin** | *2024–2025*
+
+Key modules include:
+- Predictive Analytics & Machine Learning
+- Data Visualisation with Power BI
+- Statistical Methods for Business
+- ePortfolio & Professional Development
+
+### Prior Education
+Bachelor's Degree in Commerce/Business (India)
+
+---
+
+## Technical Skills {.text-left}
+
+::: {layout-ncol=2}
+
+**Programming & Analysis**
+
+- Python (Pandas, NumPy, Scikit-learn)
+- SQL & Database Querying
+- Microsoft Excel (Advanced)
+- Power BI Dashboard Development
+
+**Web & DevOps**
+
+- Quarto Website Development
+- Git & GitHub Version Control
+- GitHub Pages Deployment
+- SCSS / CSS Styling
+
+:::
+
+---
+
+## Personal Goals {.text-right}
+
+> "Data is the new oil, but insight is the fuel." — My guiding principle
+
+- Secure a graduate-level data analytics role in Ireland
+- Contribute to open-source data projects
+- Continue building and maintaining this professional portfolio
+- Achieve AZ-900 Azure Fundamentals certification
+
+---
+
+## Outside Work {.text-left}
+
+When I'm not analysing data, I enjoy:
+
+- Exploring Dublin's tech and innovation scene
+- Visual design and diagram creation
+- Learning about machine learning advances
+- Following career development best practices

@@ -1,0 +1,11 @@
+---
+title: "CV"
+---
+
+# My CV
+
+You can view or download my CV below.
+
+[Download CV](Ananya_Mahadeva_Resume.pdf){target="_blank"}
+
+<iframe src="Ananya_Mahadeva_Resume.pdf" width="100%" height="600px"></iframe>

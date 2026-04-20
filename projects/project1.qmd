@@ -1,0 +1,117 @@
+---
+title: "Consumer Complaint Resolution Optimisation"
+description: "Predicting high-risk financial complaints using NLP and machine learning."
+author: "Ananya Mahadeva"
+date: 2025-11-26
+image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+categories: [Python, Analytics,Machine Learning, NLP]
+---
+
+## Project Overview
+
+This project focuses on analysing large-scale consumer complaint data to identify inefficiencies and improve resolution processes.
+
+Using advanced analytics and machine learning, the project aims to prioritise high-risk complaints and optimise operational decision-making.
+
+
+
+## 📁 Dataset
+
+```{python}
+import pandas as pd
+
+data = {
+    "Complaint_Type": ["Loan", "Credit Card", "Mortgage", "Loan", "Mortgage", "Credit Card"],
+    "Risk": [1, 0, 1, 1, 0, 0]
+}
+
+df = pd.DataFrame(data)
+df
+```
+## 📈 Analysis
+
+```{python}
+risk_summary = df.groupby("Complaint_Type")["Risk"].mean()
+risk_summary
+```
+
+## 📊 Visualization
+
+```{python}
+import matplotlib.pyplot as plt
+
+risk_summary.plot(kind='bar')
+plt.title("Average Risk by Complaint Type")
+plt.ylabel("Risk Level")
+plt.show()
+```
+
+## 🧠 Analytical Approach
+
+This project used a **prescriptive analytics framework** to optimise complaint resolution.
+
+The dataset consisted of over **61,000 consumer complaint records** sourced from the Consumer Financial Protection Bureau (CFPB).
+
+### Key steps:
+
+- Data cleaning and preprocessing  
+- Feature engineering (time-based, risk-based features)  
+- Text analysis using **TF-IDF** on complaint narratives  
+- Creation of predictive variables  
+- Binary classification model to predict monetary relief  
+
+A **Voting Classifier (Gradient Boosting + Random Forest)** was used to improve prediction accuracy and robustness.
+
+
+## 📊 Key Metric Calculation
+
+The key KPI calculated in this project was the **probability of monetary relief**, used to prioritise complaints.
+
+
+#  logic used in the model
+data["resolution_probability"] = model.predict_proba(X)[:, 1]
+
+
+## 📈 Results & Model Performance
+
+The model demonstrated strong predictive performance:
+
+- Accuracy: 77.4%  
+- Precision: 86.1%  
+- ROC-AUC: 0.794  
+
+High precision was prioritised to ensure that flagged complaints were genuinely high-risk, reducing unnecessary workload for the resolution team.
+
+## Key Insights
+
+- Complaint risk varies significantly across product categories (e.g., credit cards vs loans)  
+- Higher complaint volumes are associated with increased financial risk  
+- Longer complaint narratives are more likely to result in monetary relief  
+- Seasonal trends impact complaint volume and operational pressure  
+
+These insights helped identify operational bottlenecks and prioritisation opportunities.
+
+## Business Impact
+
+The implementation of this model enables:
+
+- Faster identification of high-risk complaints  
+- Improved allocation of specialist resolution teams  
+- Reduction in financial losses due to delayed action  
+
+A simulation estimated:
+
+- Net Benefit: ~$470,000  
+- ROI: ~1191%  
+
+This demonstrates significant operational and financial value from data-driven decision making.
+
+## Solution & Deployment
+
+The final solution was deployed as an interactive Streamlit dashboard, allowing:
+
+- Real-time complaint risk scoring  
+- Decision support for resolution teams  
+- Monitoring of operational performance  
+
+The system enables a shift from reactive complaint handling to proactive risk management.
